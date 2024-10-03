@@ -207,11 +207,11 @@
                                         baby
                                     </h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Find them the best care</p>
-                                    <a href="@Url.Action("Signup", "Account")" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
+                                    <a href="@Url.Action("Index", "Service")" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
                                         Find Child Care
                                     </a>
 
-                                    <a href="@Url.Action("JoinUs", "Home")" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
+                                    <a href="@Url.Action("Login", "Sitter")" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
                                         I'm a Sitter
                                     </a>
                                 </div>
@@ -234,15 +234,12 @@
                                         Our personalized services are designed to meet your specific child care
                                         requirements
                                     </p>
-                                    <a href="html/Signup.html"
-                                       class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
-                                        Find
-                                        Child Care
+                                    <a href="@Url.Action("Index", "Service")" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
+                                        Find Child Care
                                     </a>
-                                    <a href="html/JoinUs.html"
-                                       class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
-                                        I'm a
-                                        Sitter
+
+                                    <a href="@Url.Action("Login", "Sitter")" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
+                                        I'm a Sitter
                                     </a>
                                 </div>
                             </div>
@@ -269,29 +266,29 @@
                     <div class="container">
                         <div class="row g-4">
                             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="facility-item" onclick="location.href='@Url.Action("Services", "Html")'">
+                                <div class="facility-item" onclick="location.href='@Url.Action("BookService","Service",new {id=1})'">
                                     <div class="facility-icon">
                                         <img src="~/img/Light.svg" alt="Babysitter" class="img-fluid">
                                     </div>
                                     <div class="facility-text">
-                                        <h3 class="text-secondary mb-3">Babysitter</h3>
-                                        <p class="mb-0">Occasional help with last minute needs, date night, and more</p>
+                                        <h3 class="text-secondary mb-3">Regular Sitter</h3>
+                                        <p class="mb-0">Regular support for after school, weekdays, and weekends</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="facility-item" onclick="location.href='@Url.Action("Services", "Html")'">
+                                <div class="facility-item" onclick="location.href='@Url.Action("BookService","Service",new {id=4})'">
                                     <div class="facility-icon">
                                         <img src="~/img/Light (1).svg" alt="Nanny" class="img-fluid">
                                     </div>
                                     <div class="facility-text">
                                         <h3 class="text-dark mb-3">Nanny</h3>
-                                        <p class="mb-0">Regular support for after school, weekdays, and weekends</p>
+                                        <p class="mb-0">Ongoing, usually 2-5 full weekdays</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="facility-item" onclick="location.href=@Url.Action("Services", "Html")">
+                                <div class="facility-item" onclick="location.href='@Url.Action("BookService","Service",new {id=5})'">
                                     <div class="facility-icon">
                                         <img src="~/img/Light (2).svg" alt="Special needs" class="img-fluid">
                                     </div>
@@ -302,7 +299,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                                <div class="facility-item" onclick="location.href=@Url.Action("Services", "Html")">
+                                <div class="facility-item" onclick="location.href='@Url.Action("BookService","Service",new {id=2})'">
                                     <div class="facility-icon">
                                         <img src="~/img/Light (3).svg" alt="Tutoring" class="img-fluid">
                                     </div>
@@ -394,7 +391,7 @@
                                     exceptional care and have experience working with children, we’d love to hear from
                                     you. Apply now to become a sitter and start a rewarding career with us!
                                 </p>
-                                <a class="btn btn-primary py-3 px-5" href="@Url.Action("JoinUs", "Html")">
+                                <a class="btn btn-primary py-3 px-5" href="@Url.Action("JoinUs", "Home")">
                                     Join Us Now<i class="fa fa-arrow-right ms-2"></i>
                                 </a>
                             </div>

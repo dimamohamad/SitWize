@@ -217,36 +217,36 @@
                     @Html.ValidationMessageFor(m => m.CurrentWork, "", new { @class = "invalid-feedback" })
                 </div>
                 @*<div class="mb-3">
-                <label class="form-label">Experience</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Newborn" id="newborn">
-                    <label class="form-check-label" for="newborn">Newborn</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Under 5 years" id="under5">
-                    <label class="form-check-label" for="under5">Under 5 years</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Over 5 years" id="over5">
-                    <label class="form-check-label" for="over5">Over 5 years</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Twins / Multiples" id="twinsMultiples">
-                    <label class="form-check-label" for="twinsMultiples">Twins / Multiples</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Special needs" id="specialNeeds">
-                    <label class="form-check-label" for="specialNeeds">Special needs</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Learning disabilities" id="learningDisabilities">
-                    <label class="form-check-label" for="learningDisabilities">Learning disabilities</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Behavioral difficulties" id="behavioralDifficulties">
-                    <label class="form-check-label" for="behavioralDifficulties">Behavioral difficulties</label>
-                </div>
-            </div>*@
+                        <label class="form-label">Experience</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Newborn" id="newborn">
+                            <label class="form-check-label" for="newborn">Newborn</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Under 5 years" id="under5">
+                            <label class="form-check-label" for="under5">Under 5 years</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Over 5 years" id="over5">
+                            <label class="form-check-label" for="over5">Over 5 years</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Twins / Multiples" id="twinsMultiples">
+                            <label class="form-check-label" for="twinsMultiples">Twins / Multiples</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Special needs" id="specialNeeds">
+                            <label class="form-check-label" for="specialNeeds">Special needs</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Learning disabilities" id="learningDisabilities">
+                            <label class="form-check-label" for="learningDisabilities">Learning disabilities</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Behavioral difficulties" id="behavioralDifficulties">
+                            <label class="form-check-label" for="behavioralDifficulties">Behavioral difficulties</label>
+                        </div>
+                    </div>*@
                 <div class="mb-3">
                     <label class="form-label">Experience</label>
                     <div class="form-check">
@@ -281,11 +281,11 @@
 
 
                 <!-- File Upload Section (hidden by default) -->
-        <div class="mb-3">
-            <label class="form-label experience-label" style="display: none;">Upload License (Required for special needs, learning disabilities, or behavioral difficulties)</label>
-            <input type="file" name="LicenseUpload" id="licenseUpload" class="form-control experience-upload" style="display: none;" accept=".pdf,.doc,.docx">
-            <span class="text-danger" id="licenseUploadError"></span>
-        </div>
+                <div class="mb-3">
+                    <label class="form-label experience-label" style="display: none;">Upload License (Required for special needs, learning disabilities, or behavioral difficulties)</label>
+                    <input type="file" name="LicenseUpload" id="licenseUpload" class="form-control experience-upload" style="display: none;" accept=".pdf,.doc,.docx">
+                    <span class="text-danger" id="licenseUploadError"></span>
+                </div>
 
                 <div class="mb-3">
                     @Html.LabelFor(m => m.JoinCompany, "Would you like to join The SitWise Company as a babysitter?", new { @class = "form-label" })
@@ -457,80 +457,251 @@
     </script>*@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Get the relevant checkboxes and the file input elements
-        var specialNeedsCheckbox = document.getElementById('specialNeeds');
-        var learningDisabilitiesCheckbox = document.getElementById('learningDisabilities');
-        var behavioralDifficultiesCheckbox = document.getElementById('behavioralDifficulties');
-        var licenseUploadInput = document.getElementById('licenseUpload');
-        var licenseUploadLabel = document.querySelector('.experience-label');
+@*<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the relevant checkboxes and the file input elements
+            var specialNeedsCheckbox = document.getElementById('specialNeeds');
+            var learningDisabilitiesCheckbox = document.getElementById('learningDisabilities');
+            var behavioralDifficultiesCheckbox = document.getElementById('behavioralDifficulties');
+            var licenseUploadInput = document.getElementById('licenseUpload');
+            var licenseUploadLabel = document.querySelector('.experience-label');
 
-        // Function to check if any relevant checkbox is checked
-        function toggleLicenseUpload() {
-            if (specialNeedsCheckbox.checked || learningDisabilitiesCheckbox.checked || behavioralDifficultiesCheckbox.checked) {
-                licenseUploadInput.style.display = 'block';  // Show the input
-                licenseUploadLabel.style.display = 'block';  // Show the label
+            // Function to check if any relevant checkbox is checked
+            function toggleLicenseUpload() {
+                if (specialNeedsCheckbox.checked || learningDisabilitiesCheckbox.checked || behavioralDifficultiesCheckbox.checked) {
+                    licenseUploadInput.style.display = 'block';  // Show the input
+                    licenseUploadLabel.style.display = 'block';  // Show the label
+                } else {
+                    licenseUploadInput.style.display = 'none';  // Hide the input
+                    licenseUploadLabel.style.display = 'none';  // Hide the label
+                }
+            }
+
+            // Add event listeners to the checkboxes to trigger the function on change
+            specialNeedsCheckbox.addEventListener('change', toggleLicenseUpload);
+            learningDisabilitiesCheckbox.addEventListener('change', toggleLicenseUpload);
+            behavioralDifficultiesCheckbox.addEventListener('change', toggleLicenseUpload);
+
+            // Run the function once on page load to ensure the correct state
+            toggleLicenseUpload();
+        });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var experienceYearsInput = document.querySelector('input[name="ExperienceYears"]');
+        var hourlyRateInput = document.querySelector('input[name="HourlyRate"]');
+        var hourlyRateError = hourlyRateInput.nextElementSibling;
+        var form = document.getElementById('joinUsForm');
+
+        function validateHourlyRate() {
+            var experience = parseInt(experienceYearsInput.value, 10);
+            var hourlyRate = parseFloat(hourlyRateInput.value);
+            var minRate = 5;
+            var maxRate = 7;
+
+            if (experience >= 0 && experience <= 2) {
+                minRate = 5;
+                maxRate = 7;
+            } else if (experience >= 3 && experience <= 5) {
+                minRate = 7;
+                maxRate = 10;
+            } else if (experience >= 5 && experience <= 10) {
+                minRate = 10;
+                maxRate = 15;
+            } else if (experience > 10) {
+                minRate = 15;
+                maxRate = 20;
+            }
+
+            hourlyRateInput.setAttribute('min', minRate);
+            hourlyRateInput.setAttribute('max', maxRate);
+            hourlyRateInput.placeholder = `Rate between $${minRate} - $${maxRate}`;
+
+            if (isNaN(hourlyRate) || hourlyRate < minRate || hourlyRate > maxRate) {
+                hourlyRateInput.classList.add('is-invalid');
+                hourlyRateError.textContent = `Please enter a rate between $${minRate} and $${maxRate}.`;
             } else {
-                licenseUploadInput.style.display = 'none';  // Hide the input
-                licenseUploadLabel.style.display = 'none';  // Hide the label
+                hourlyRateInput.classList.remove('is-invalid');
+                hourlyRateError.textContent = '';
             }
         }
 
-        // Add event listeners to the checkboxes to trigger the function on change
-        specialNeedsCheckbox.addEventListener('change', toggleLicenseUpload);
-        learningDisabilitiesCheckbox.addEventListener('change', toggleLicenseUpload);
-        behavioralDifficultiesCheckbox.addEventListener('change', toggleLicenseUpload);
+        experienceYearsInput.addEventListener('change', validateHourlyRate);
+        hourlyRateInput.addEventListener('input', validateHourlyRate);
 
-        // Run the function once on page load to ensure the correct state
-        toggleLicenseUpload();
+        form.addEventListener('submit', function (event) {
+            // First validate hourly rate and required fields
+            validateHourlyRate();
+
+            var inputs = form.querySelectorAll('[required]');
+            var allValid = true;
+
+            inputs.forEach(function (input) {
+                if (!input.value.trim()) {
+                    allValid = false;
+                    input.classList.add('is-invalid');
+                    input.nextElementSibling.textContent = 'This field is required';
+                } else {
+                    input.classList.remove('is-invalid');
+                    input.nextElementSibling.textContent = '';
+                }
+            });
+
+            if (!allValid || document.querySelectorAll('.is-invalid').length > 0) {
+                // Prevent submission if there are invalid fields
+                event.preventDefault();
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Please fill all required fields.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            } else {
+                // Proceed to show the confirmation dialog about 25% tax
+                event.preventDefault(); // Prevent form submission for confirmation dialog
+
+                var hourlyRate = parseFloat(hourlyRateInput.value);
+                var tax = 0.25 * hourlyRate; // Calculate 25% tax
+                var finalRate = hourlyRate - tax;
+
+                // Show the confirmation dialog using SweetAlert
+                Swal.fire({
+                    title: 'Confirm Your Hourly Rate',
+                    html: `You have entered an hourly rate of <strong>$${hourlyRate.toFixed(2)}</strong>.<br>
+                            After joining our team, <strong>25% tax</strong> will be deducted.<br>
+                            Your effective hourly rate will be <strong>$${finalRate.toFixed(2)}</strong>.<br>
+                            Do you agree?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, I agree!',
+                    cancelButtonText: 'No, I don\'t agree'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // If user agrees, submit the form programmatically
+                        form.submit();
+                    } else {
+                        // If user disagrees, show a "Sorry" message
+                        Swal.fire({
+                            title: 'Sorry!',
+                            text: 'You must agree to the tax deduction to proceed.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                });
+            }
+        });
+
+        // Display success or error messages from TempData
+        var successMessage = '@TempData["SuccessMessage"]';
+        var errorMessage = '@TempData["ErrorMessage"]';
+
+        if (successMessage) {
+            Swal.fire({
+                title: 'Success!',
+                text: successMessage,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
+
+        if (errorMessage) {
+            Swal.fire({
+                title: 'Error!',
+                text: errorMessage,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
     });
+    </script>*@
 
 
-
-
-
-
-
-
-
-
+<script>
 document.addEventListener('DOMContentLoaded', function () {
+    // Get the relevant checkboxes and the file input elements
+    var specialNeedsCheckbox = document.getElementById('specialNeeds');
+    var learningDisabilitiesCheckbox = document.getElementById('learningDisabilities');
+    var behavioralDifficultiesCheckbox = document.getElementById('behavioralDifficulties');
+    var licenseUploadInput = document.getElementById('licenseUpload');
+    var licenseUploadLabel = document.querySelector('.experience-label');
+
     var experienceYearsInput = document.querySelector('input[name="ExperienceYears"]');
     var hourlyRateInput = document.querySelector('input[name="HourlyRate"]');
     var hourlyRateError = hourlyRateInput.nextElementSibling;
     var form = document.getElementById('joinUsForm');
 
+    // Function to check if any relevant checkbox is checked
+    function toggleLicenseUpload() {
+        if (specialNeedsCheckbox.checked || learningDisabilitiesCheckbox.checked || behavioralDifficultiesCheckbox.checked) {
+            licenseUploadInput.style.display = 'block';  // Show the input
+            licenseUploadLabel.style.display = 'block';  // Show the label
+        } else {
+            licenseUploadInput.style.display = 'none';  // Hide the input
+            licenseUploadLabel.style.display = 'none';  // Hide the label
+        }
+    }
+
+    // Add event listeners to the checkboxes to trigger the function on change
+    specialNeedsCheckbox.addEventListener('change', toggleLicenseUpload);
+    learningDisabilitiesCheckbox.addEventListener('change', toggleLicenseUpload);
+    behavioralDifficultiesCheckbox.addEventListener('change', toggleLicenseUpload);
+
+    // Run the function once on page load to ensure the correct state
+    toggleLicenseUpload();
+
+    function getHourlyRateRange(experience) {
+        var ranges = {
+            minRate: 5,
+            maxRate: 7
+        };
+
+        if (experience >= 0 && experience <= 2) {
+            ranges.minRate = 5;
+            ranges.maxRate = 7;
+        } else if (experience >= 3 && experience <= 5) {
+            ranges.minRate = 7;
+            ranges.maxRate = 10;
+        } else if (experience >= 5 && experience <= 10) {
+            ranges.minRate = 10;
+            ranges.maxRate = 15;
+        } else if (experience > 10) {
+            ranges.minRate = 15;
+            ranges.maxRate = 20;
+        }
+
+        return ranges;
+    }
+
     function validateHourlyRate() {
         var experience = parseInt(experienceYearsInput.value, 10);
         var hourlyRate = parseFloat(hourlyRateInput.value);
-        var minRate = 5;
-        var maxRate = 7;
+        var ranges = getHourlyRateRange(experience);
 
-        if (experience >= 0 && experience <= 2) {
-            minRate = 5;
-            maxRate = 7;
-        } else if (experience >= 3 && experience <= 5) {
-            minRate = 7;
-            maxRate = 10;
-        } else if (experience >= 5 && experience <= 10) {
-            minRate = 10;
-            maxRate = 15;
-        } else if (experience > 10) {
-            minRate = 15;
-            maxRate = 20;
-        }
+        hourlyRateInput.setAttribute('min', ranges.minRate);
+        hourlyRateInput.setAttribute('max', ranges.maxRate);
+        hourlyRateInput.placeholder = `Rate between $${ranges.minRate} - $${ranges.maxRate}`;
 
-        hourlyRateInput.setAttribute('min', minRate);
-        hourlyRateInput.setAttribute('max', maxRate);
-        hourlyRateInput.placeholder = `Rate between $${minRate} - $${maxRate}`;
-
-        if (isNaN(hourlyRate) || hourlyRate < minRate || hourlyRate > maxRate) {
+        if (isNaN(hourlyRate) || hourlyRate < ranges.minRate || hourlyRate > ranges.maxRate) {
             hourlyRateInput.classList.add('is-invalid');
-            hourlyRateError.textContent = `Please enter a rate between $${minRate} and $${maxRate}.`;
+            hourlyRateError.textContent = `Please enter a rate between $${ranges.minRate} and $${ranges.maxRate}.`;
+            return {
+                isValid: false,
+                minRate: ranges.minRate,
+                maxRate: ranges.maxRate,
+                currentRate: hourlyRate
+            };
         } else {
             hourlyRateInput.classList.remove('is-invalid');
             hourlyRateError.textContent = '';
+            return {
+                isValid: true,
+                minRate: ranges.minRate,
+                maxRate: ranges.maxRate,
+                currentRate: hourlyRate
+            };
         }
     }
 
@@ -538,73 +709,107 @@ document.addEventListener('DOMContentLoaded', function () {
     hourlyRateInput.addEventListener('input', validateHourlyRate);
 
     form.addEventListener('submit', function (event) {
-        // First validate hourly rate and required fields
-        validateHourlyRate();
+        event.preventDefault(); // Prevent default form submission
 
+        // Validate hourly rate
+        var hourlyRateValidation = validateHourlyRate();
+
+        // Validate required fields
         var inputs = form.querySelectorAll('[required]');
-        var allValid = true;
+        var allValid = hourlyRateValidation.isValid;
 
+        // Check license requirements
+        var needsLicense = specialNeedsCheckbox.checked ||
+                          learningDisabilitiesCheckbox.checked ||
+                          behavioralDifficultiesCheckbox.checked;
+
+        var errorMessages = [];
+
+        if (needsLicense) {
+            if (!licenseUploadInput.files || licenseUploadInput.files.length === 0) {
+                allValid = false;
+                licenseUploadInput.classList.add('is-invalid');
+                document.getElementById('licenseUploadError').textContent =
+                    'License upload is required for special needs, learning disabilities, or behavioral difficulties';
+                errorMessages.push('License upload is required for selected experience types.');
+            } else {
+                licenseUploadInput.classList.remove('is-invalid');
+                document.getElementById('licenseUploadError').textContent = '';
+            }
+        }
+
+        // Validate all required fields
         inputs.forEach(function (input) {
             if (!input.value.trim()) {
                 allValid = false;
                 input.classList.add('is-invalid');
-                input.nextElementSibling.textContent = 'This field is required';
+                if (input.nextElementSibling) {
+                    input.nextElementSibling.textContent = 'This field is required';
+                }
             } else {
                 input.classList.remove('is-invalid');
-                input.nextElementSibling.textContent = '';
+                if (input.nextElementSibling) {
+                    input.nextElementSibling.textContent = '';
+                }
             }
         });
 
-        if (!allValid || document.querySelectorAll('.is-invalid').length > 0) {
-            // Prevent submission if there are invalid fields
-            event.preventDefault();
+        // Check hourly rate and add to error messages if invalid
+        if (!hourlyRateValidation.isValid) {
+            errorMessages.push(`Hourly rate must be between $${hourlyRateValidation.minRate} and $${hourlyRateValidation.maxRate} based on your experience.`);
+        }
+
+        if (!allValid) {
+            let errorText = 'Please correct the following issues:\n\n';
+            if (errorMessages.length > 0) {
+                errorText += errorMessages.join('\n');
+            } else {
+                errorText = 'Please fill all required fields and correct any errors.';
+            }
+
             Swal.fire({
-                title: 'Error!',
-                text: 'Please fill all required fields.',
+                title: 'Validation Error',
+                html: errorText.replace(/\n/g, '<br>'),
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
-        } else {
-            // Proceed to show the confirmation dialog about 25% tax
-            event.preventDefault(); // Prevent form submission for confirmation dialog
-
-            var hourlyRate = parseFloat(hourlyRateInput.value);
-            var tax = 0.25 * hourlyRate; // Calculate 25% tax
-            var finalRate = hourlyRate - tax;
-
-            // Show the confirmation dialog using SweetAlert
-            Swal.fire({
-                title: 'Confirm Your Hourly Rate',
-                html: `You have entered an hourly rate of <strong>$${hourlyRate.toFixed(2)}</strong>.<br>
-                        After joining our team, <strong>25% tax</strong> will be deducted.<br>
-                        Your effective hourly rate will be <strong>$${finalRate.toFixed(2)}</strong>.<br>
-                        Do you agree?`,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, I agree!',
-                cancelButtonText: 'No, I don\'t agree'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // If user agrees, submit the form programmatically
-                    form.submit();
-                } else {
-                    // If user disagrees, show a "Sorry" message
-                    Swal.fire({
-                        title: 'Sorry!',
-                        text: 'You must agree to the tax deduction to proceed.',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                }
-            });
+            return;
         }
+
+        // If all validations pass, show tax confirmation
+        var hourlyRate = parseFloat(hourlyRateInput.value);
+        var tax = 0.25 * hourlyRate;
+        var finalRate = hourlyRate - tax;
+
+        Swal.fire({
+            title: 'Confirm Your Hourly Rate',
+            html: `You have entered an hourly rate of <strong>$${hourlyRate.toFixed(2)}</strong>.<br>
+                    After joining our team, <strong>25% tax</strong> will be deducted.<br>
+                    Your effective hourly rate will be <strong>$${finalRate.toFixed(2)}</strong>.<br>
+                    Do you agree?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, I agree!',
+            cancelButtonText: 'No, I don\'t agree'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit(); // Actually submit the form
+            } else {
+                Swal.fire({
+                    title: 'Sorry!',
+                    text: 'You must agree to the tax deduction to proceed.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
     });
 
     // Display success or error messages from TempData
     var successMessage = '@TempData["SuccessMessage"]';
     var errorMessage = '@TempData["ErrorMessage"]';
 
-    if (successMessage) {
+    if (successMessage && successMessage !== '@TempData["SuccessMessage"]') {
         Swal.fire({
             title: 'Success!',
             text: successMessage,
@@ -613,7 +818,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    if (errorMessage) {
+    if (errorMessage && errorMessage !== '@TempData["ErrorMessage"]') {
         Swal.fire({
             title: 'Error!',
             text: errorMessage,
@@ -622,4 +827,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
 </script>

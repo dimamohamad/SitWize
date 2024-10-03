@@ -48,7 +48,7 @@
             <h1 class="display-2 text-white animated slideInDown mb-4">About us</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">About us</li>
                 </ol>
@@ -113,7 +113,10 @@
                                 Join our team of dedicated child care professionals and make a meaningful impact in families' lives. If you’re passionate about providing exceptional care and have experience working with children, we’d love to hear from you. Apply now to become a sitter and start a rewarding career with us!
 
                             </p>
-                            <a class="btn btn-primary py-3 px-5" href="../html/JoinUs.html">Get Started Now<i class="fa fa-arrow-right ms-2"></i></a>
+                   
+                            <a class="btn btn-primary py-3 px-5" href="@Url.Action("JoinUs", "Home")">
+                                Get Started Now<i class="fa fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

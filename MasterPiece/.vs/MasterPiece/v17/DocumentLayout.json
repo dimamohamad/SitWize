@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|c:\\users\\d\\desktop\\sitwize\\sitwize\\masterpiece\\masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\shared\\_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\shared\\_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|c:\\users\\d\\desktop\\sitwize\\sitwize\\masterpiece\\masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\replycontact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\createbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\createbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -83,14 +99,6 @@
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\booking\\confirmbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\booking\\selectsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\booking\\selectsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -119,10 +127,6 @@
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -145,10 +149,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\gettest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\gettest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -193,10 +193,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
@@ -287,10 +283,6 @@
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice4.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\servicedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\servicedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -318,34 +310,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "MasterPiece\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "ViewState": "AQIAAIEBAAAAAAAAAAASwIsBAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-30T20:39:33.049Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "SelectSitter.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-29T17:12:22.059Z",
-              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -357,13 +336,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\Index.cshtml",
               "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\Index.cshtml",
               "RelativeToolTip": "MasterPiece\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AQIAAKUAAAAAAAAAAAAAABYBAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-22T14:25:46.582Z",
               "EditorCaption": ""
@@ -371,18 +350,109 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAJMAAAAAAAAAAADwv60AAAAOAAAA",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAWwIMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:54:45.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T00:02:41.854Z"
+              "WhenOpened": "2024-09-29T14:32:40.925Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "_Admin.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAAAAsBAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T11:14:57.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\About.cshtml",
+              "ViewState": "AQIAAOEAAAAAAAAAAAAAAHMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T12:39:27.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T12:24:32.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JoinUs.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "ViewState": "AQIAAC4DAAAAAAAAAAAiwDwDAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:41:13.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAmwKcBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:54:45.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddSitter.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T19:57:54.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ReplyContact.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
@@ -394,45 +464,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddSitter.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAJMAAAAAAAAAAADwv60AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-29T19:57:54.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T00:02:41.854Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MasterPiece\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAJsBAAAAAAAAAAAAAKIBAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T20:54:45.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Admin.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
-              "ViewState": "AQIAALEAAAAAAAAAAAAAAMQAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-30T11:14:57.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "CreateBookings.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
@@ -444,19 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\Index.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Service\\Index.cshtml",
-              "ViewState": "AQIAAEsAAAAAAAAAAAApwFcAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-29T14:32:40.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Index.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Index.cshtml",
@@ -468,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Login.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Login.cshtml",
@@ -480,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "GetServices.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetServices.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetServices.cshtml",
@@ -492,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "LoginAdmin.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
@@ -504,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Profile.cshtml",
@@ -516,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
@@ -528,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Profile.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Profile.cshtml",
@@ -540,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Edit.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Edit.cshtml",
@@ -552,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "Bookings.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Bookings.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Bookings.cshtml",
@@ -564,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Testimonial\\Index.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Testimonial\\Index.cshtml",
@@ -576,19 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "JoinUs.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T19:41:13.944Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\Contact.cshtml",
@@ -600,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "BookService1.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService1.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService1.cshtml",
@@ -612,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "ConfirmBooking.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
@@ -624,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "BookService5.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService5.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService5.cshtml",
@@ -636,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "_LayoutPage1.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
@@ -648,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\privacy.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\privacy.cshtml",
@@ -660,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "ServiceController.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\ServiceController.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Controllers\\ServiceController.cs",
@@ -672,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\DashboardViewModel.cs",
@@ -684,19 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "MasterPiece\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAABUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T12:24:32.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "GetBookings.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetBookings.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetBookings.cshtml",
@@ -708,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\Booking.cs",
@@ -720,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\User.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\User.cs",
@@ -732,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Service.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Service.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\Service.cs",
@@ -744,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\Payment.cs",
@@ -756,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "GetTest.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetTest.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetTest.cshtml",
@@ -765,18 +773,6 @@
               "ViewState": "AQIAAD0AAAAAAAAAAAAAAKkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-30T21:07:16.557Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\About.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Home\\About.cshtml",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAMwJQAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-30T12:39:27.388Z"
             },
             {
               "$type": "Document",
@@ -912,19 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "MasterPiece\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAD4v4MAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T20:54:45.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 49,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Login.cshtml",
@@ -936,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 48,
               "Title": "Model1.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Model1.edmx",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\Model1.edmx",
@@ -947,7 +931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 51,
               "Title": "BookingDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
@@ -959,7 +943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 50,
               "Title": "GetAllPayments.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
@@ -971,7 +955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 52,
               "Title": "EditViewModel.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\EditViewModel.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\EditViewModel.cs",
@@ -983,7 +967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 53,
               "Title": "AddSitterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\AddSitterViewModel.cs",
               "RelativeDocumentMoniker": "MasterPiece\\Models\\AddSitterViewModel.cs",
@@ -995,7 +979,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 54,
               "Title": "EditPayments.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditPayments.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\EditPayments.cshtml",
@@ -1007,7 +991,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 55,
               "Title": "_ServiceDetail1.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
@@ -1019,7 +1003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 56,
               "Title": "Payment.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\Payment.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\Payment.cshtml",
@@ -1031,7 +1015,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 57,
               "Title": "EditBooking.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditBooking.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\EditBooking.cshtml",
@@ -1043,7 +1027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 58,
               "Title": "SitterDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
@@ -1055,7 +1039,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 59,
               "Title": "GetAllSitters.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
@@ -1067,7 +1051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 60,
               "Title": "JoinUsApplications.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
@@ -1079,7 +1063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 61,
               "Title": "PendingPayment.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
@@ -1091,7 +1075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 62,
               "Title": "ReviewApplication.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
@@ -1103,7 +1087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 63,
               "Title": "PaymentDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
@@ -1115,7 +1099,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 64,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Web.config",
               "RelativeDocumentMoniker": "MasterPiece\\Web.config",
@@ -1128,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 65,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Edit.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Edit.cshtml",
@@ -1140,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 66,
               "Title": "YourBookings.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\YourBookings.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\YourBookings.cshtml",
@@ -1152,7 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 67,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Create.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\Create.cshtml",
@@ -1164,7 +1148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 68,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\ResetPassword.cshtml",
@@ -1176,7 +1160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 69,
               "Title": "BookService4.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService4.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService4.cshtml",
@@ -1188,19 +1172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
-              "Title": "BookService2.cshtml",
-              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService2.cshtml",
-              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService2.cshtml",
-              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService2.cshtml",
-              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService2.cshtml",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAAAGMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T23:40:52.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 70,
               "Title": "ServiceDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
@@ -1212,7 +1184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 71,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Register.cshtml",
@@ -1224,7 +1196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 72,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\Error.cshtml",
@@ -1236,7 +1208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 73,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\packages.config",
               "RelativeDocumentMoniker": "MasterPiece\\packages.config",
@@ -1248,7 +1220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 74,
               "Title": "BookService3.cshtml",
               "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService3.cshtml",
               "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService3.cshtml",

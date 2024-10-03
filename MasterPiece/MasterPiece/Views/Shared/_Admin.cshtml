@@ -192,8 +192,8 @@
                 <ul id="accordion-menu">
                     <li class="dropdown">
                         @*<a href="index1.html" class="dropdown-toggle  no-arrow">
-            <span class="micon bi bi-house"></span><span class="mtext">Home</span>
-        </a>*@
+                <span class="micon bi bi-house"></span><span class="mtext">Home</span>
+            </a>*@
                         <a href="@Url.Action("Index", "Admin")" class="dropdown-toggle no-arrow">
                             <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                         </a>
@@ -258,6 +258,16 @@
                         <ul class="submenu">
                             <li>@Html.ActionLink("All Payments", "GetALLPayments", "Admin")</li>
                             <li>@Html.ActionLink("Pending Payments", "PendingPayment", "Admin")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon bi bi-file-earmark-text"></span><span class="mtext">Testimonials</span>
+                        </a>
+                        <ul class="submenu">
+                            <li>@Html.ActionLink("All Testimonials", "GetTest", "Admin")</li>
+
+                            @*<li><a href="Contact/ReplyAdmin.html">Reply Contact</a></li>*@
                         </ul>
                     </li>
                     <li class="dropdown">

@@ -1,0 +1,99 @@
+﻿}
+
+@model MasterPiece.Models.ServiceDetail
+
+@{
+    ViewBag.Title = "_ServiceDetail1";
+    Layout = "~/Views/Shared/_Admin.cshtml"; }
+
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <img src="~/img/1.png" alt="Regular sitter" class="Regularicon">
+            <h1 class="d-inline-block align-middle ms-2">Regular Sitter</h1>
+            <p>Weekly, before/after school</p>
+        </div>
+        <div class="card mx-auto" style="max-width: 600px;">
+            <div class="card-body">
+                <!-- Start Date -->
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.StartDate, "Start Date", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", type = "date", value = Model.StartDate.HasValue ? Model.StartDate.Value.ToString("yyyy-MM-dd") : "" })
+                    <div class="form-check mt-2">
+                        @Html.CheckBox("StartDateFlexible", new { @class = "form-check-input", id = "flexibleStartDate" })
+                        @Html.Label("Start date is flexible", htmlAttributes: new { @class = "form-check-label", @for = "flexibleStartDate" })
+                    </div>
+
+                </div>
+
+                <!-- Start Date Flexible -->
+                @*<div class="form-check">
+            @Html.CheckBoxFor(m => m.StartDateFlexible, new { @class = "form-check-input", id = "StartDateFlexible" })
+            @Html.Label("Start Date is Flexible", new { @class = "form-check-label", @for = "StartDateFlexible" })
+        </div>*@
+
+                <!-- Days Selection -->
+                <div class="mb-3">
+                    @Html.Label("Days", htmlAttributes: new { @class = "form-label" })
+                    <div id="days" class="d-flex flex-wrap">
+                        @foreach (var day in new[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" })
+                        {
+                            <div class="form-check form-check-inline">
+                                @Html.CheckBox("Days", Model.Days?.Contains(day) ?? false, new { @class = "form-check-input", @value = day, @id = day.ToLower() })
+                                @Html.Label(day.Substring(0, 3), day, new { @class = "form-check-label", @for = day.ToLower() })
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Start Time -->
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.StartTime, "Start Time", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.StartTime, new { @class = "form-control", type = "time", id = "StartTime" })
+                </div>
+
+                <!-- End Time -->
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.EndTime, "End Time", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.EndTime, new { @class = "form-control", type = "time", id = "EndTime" })
+                </div>
+
+                <!-- Duration (Auto-calculated) -->
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Duration, "Duration (Hours)", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Duration, new { @class = "form-control", @readonly = "readonly", id = "Duration" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Calculate duration based on start and end times
+            function calculateDuration() {
+                var startTime = $('#StartTime').val();
+                var endTime = $('#EndTime').val();
+
+                console.log("Start Time:", startTime); // Debugging line
+                console.log("End Time:", endTime);     // Debugging line
+
+                if (startTime && endTime) {
+                    var start = new Date("1970-01-01T" + startTime + "Z");
+                    var end = new Date("1970-01-01T" + endTime + "Z");
+
+                    if (end > start) {
+                        var duration = (end - start) / (1000 * 60 * 60); // Convert milliseconds to hours
+                        console.log("Duration:", duration.toFixed(2)); // Debugging line
+                        $('#Duration').val(duration.toFixed(2)); // Update the duration field
+                    } else {
+                        $('#Duration').val('');
+                        console.log("End time is earlier than or equal to the start time");
+                    }
+                }
+            }
+
+            // Attach the change event to StartTime and EndTime fields
+            $('#StartTime, #EndTime').change(function () {
+                calculateDuration();
+            });
+        });
+    </script>

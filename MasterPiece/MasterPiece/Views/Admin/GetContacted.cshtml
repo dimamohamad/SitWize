@@ -1,0 +1,205 @@
+﻿@model IEnumerable<MasterPiece.Models.ContactU>
+
+@{
+    ViewBag.Title = "GetContacted";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Get All Contacts</h1>
+        <br />
+        @*<p>
+            @Html.ActionLink("Reply Message", "Create", null, new { @class = "btn btn-sm btn-primary" })
+        </p>*@
+        <div class="table-container">
+            <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Subject)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Message)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.SubmittedAt)</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@Html.DisplayFor(modelItem => item.Name)</th>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                            <td>@(item.Message.Length > 15 ? item.Message.Substring(0, 15) + "..." : item.Message)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SubmittedAt)</td>
+                            <td>
+                                <a href="@Url.Action("ContactedDetails", new { id = item.MessageID })" class="btn btn-sm btn-dark">Details</a>
+                                <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                   onclick="confirmDelete('@Url.Action("DeleteContacted", new { id = item.MessageID })',
+                                                          '@item.Name',
+                                                          '@item.Email',
+                                                          '@item.Subject',
+                                                          '@item.Message.Replace("'", "\\'").Replace(Environment.NewLine, " ")')">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .table .thead-light th {
+        text-align: center;
+        color: #000;
+        vertical-align: middle;
+        background-color: #99005c;
+        border-color: #99005c;
+    }
+
+    th {
+        background-color: white;
+        text-align: center;
+    }
+
+    td {
+        background-color: white;
+    }
+    .fa-book-reader:before {
+        content: "\f5da";
+        margin-left: 38px;
+    }
+
+    .text-primary {
+        color: #99005C !important;
+    }
+
+    .left-side-bar {
+        background-color: white;
+    }
+
+    .bi-file-earmark-text::before {
+        content: "\f38b";
+        color: #212529;
+    }
+
+
+    .sidebar-menu .dropdown-toggle {
+        display: block;
+        padding: 14px 15px 14px 67px;
+        font-size: 15px;
+        color: #000;
+        font-weight: 500;
+        position: relative;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .bi-house::before {
+        content: "\f425";
+        color: #000;
+    }
+
+    .sidebar-menu > ul > li > .dropdown-toggle.active {
+        background-color: rgba(236, 240, 244, .19);
+        color: black;
+    }
+
+    .header-left {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        background: #99005c;
+    }
+
+    .header-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        height: 70px;
+        width: 50%;
+        background-color: #99005c;
+    }
+
+    .toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+
+    .sidebar-menu .submenu li a {
+        display: block;
+        padding: 14px 15px 14px 60px;
+        font-size: 14px;
+        color: #000;
+        font-weight: 400;
+        border-radius: 8px;
+        position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .sidebar-menu .dropdown-toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+
+    .table thead th {
+        font-weight: 600;
+        font-size: 15px;
+        border-bottom: 0;
+        padding-left: 1rem;
+        background-color: #99005c;
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function confirmDelete(deleteUrl, name, email, subject, message) {
+        Swal.fire({
+            title: 'Are you sure you want to delete this contact?',
+            html: `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <p><strong>Message:</strong></p>
+                <textarea style="width: 100%; height: 100px;" readonly>${message}</textarea>
+                <br /><br />
+                <strong>This action cannot be undone!</strong>
+            `,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = deleteUrl;
+            }
+        });
+    }
+</script>

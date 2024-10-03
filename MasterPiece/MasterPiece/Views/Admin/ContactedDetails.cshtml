@@ -1,0 +1,129 @@
+﻿@model MasterPiece.Models.ContactU
+
+@{
+    ViewBag.Title = "Message Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Message Details</h1>
+        <br />
+        <div class="details-container">
+            <dl class="row">
+                <dt class="col-sm-2 text-primary1">
+                    Name
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-2 text-primary1">
+                    Email
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt class="col-sm-2 text-primary1">
+                    Subject
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Subject)
+                </dd>
+
+                <dt class="col-sm-2 text-primary1">
+                    Message
+                </dt>
+                <dd class="col-sm-10">
+                    <textarea class="message-box" readonly>@Model.Message</textarea>
+                </dd>
+
+                <dt class="col-sm-2 text-primary1">
+                    Submitted At
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.SubmittedAt)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="actions">
+            <a href="@Url.Action("GetContacted")" class="btn btn-sm btn-secondary">Back to All Contacts</a>
+            <a href="@Url.Action("ReplyContact", new { id = Model.MessageID })" class="btn btn-sm btn-primary">Reply</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .details-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .row dt {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .row dd {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .text-primary1 {
+        color: #103741 !important;
+    }
+
+    .message-box {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        overflow-y: scroll;
+        resize: none;
+        white-space: pre-wrap;
+        font-family: inherit;
+        font-size: 1rem;
+    }
+
+    .actions {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn-secondary {
+        background-color: gray;
+        border-color: gray;
+        color: white;
+        margin: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+        margin: 5px;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        text-align: center;
+    }
+</style>

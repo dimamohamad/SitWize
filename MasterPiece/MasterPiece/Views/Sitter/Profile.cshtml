@@ -1,0 +1,129 @@
+﻿@model MasterPiece.Models.Sitter
+
+@{
+    ViewBag.Title = "Sitter Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="profile-section">
+    <div class="profile-header">
+        @if (!string.IsNullOrEmpty(Model.sitterImage))
+        {
+            <img src="~/Images/@Model.sitterImage" alt="Profile Image" class="profile-image" />
+        }
+        else
+        {
+            <img src="~/img/default-profile.png" alt="Default Profile Image" class="profile-image" /> <!-- Default image if no sitter image -->
+        }
+        <h2>Personal Information</h2>
+    </div>
+    <div class="profile-info">
+        <p><strong>First Name:</strong></p>
+        <p id="sitterFirstName">@Model.FirstName</p>
+
+        <p><strong>Last Name:</strong></p>
+        <p id="sitterLastName">@Model.LastName</p>
+
+        <p><strong>Email:</strong></p>
+        <p id="sitterEmail">@Model.Email</p>
+
+        <p><strong>Phone:</strong></p>
+        <p id="sitterPhone">@Model.PhoneNumber</p>
+
+        <p><strong>Bio:</strong></p>
+        <p id="sitterBio">@Model.Bio</p>
+
+        <p><strong>Experience Years:</strong></p>
+        <p id="sitterExperience">@Model.ExperienceYears</p>
+
+        <p><strong>Hourly Rate:</strong></p>
+        <p id="sitterHourlyRate">$@Model.HourlyRate</p>
+    </div>
+</section>
+
+<div class="action-links">
+    <p>
+        @Html.ActionLink("Edit Profile", "Edit", new { id = Model.SitterID }) |
+        @Html.ActionLink("Reset Password", "ResetPassword", new { id = Model.SitterID }) |
+        @Html.ActionLink("View Bookings", "Bookings", "Sitter", null, new { @class = "btn btn-info" })
+
+        @Html.ActionLink("Back to Home", "Index", "Sitter")
+    </p>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .action-links {
+        text-align: center;  Center the text inside this div 
+        margin-top: 20px;  Optional: Add some margin above the links 
+    }
+/*
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }*/
+
+    .profile-section {
+        background: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+    }
+
+    .profile-info p {
+        margin: 5px 0;
+    }
+
+    .profile-info strong {
+        font-weight: bold;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #99005C;
+        margin-right: 10px;
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+   @@media (max-width: 600px) {
+        .profile-info {
+            grid-template-columns: 1fr;
+        }
+
+        .profile-header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-header img {
+            margin-bottom: 10px;
+        }
+    }
+</style>

@@ -1,0 +1,209 @@
+﻿@*@model MasterPiece.Models.AddSitterViewModel
+
+    @{
+        ViewBag.Title = "Add New Sitter";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+    }
+
+    <div class="main-container">
+        <div class="pd-ltr-20">
+            <h2>Add New Sitter</h2>
+
+            @using (Html.BeginForm("AddSitter", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Bio, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(m => m.Bio, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ExperienceYears, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.ExperienceYears, new { @class = "form-control", type = "number" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.HourlyRate, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.HourlyRate, new { @class = "form-control", type = "number", step = "0.01" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LicenseUpload, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        <input type="file" id="LicenseUpload" name="LicenseUpload" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Add Sitter" />
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "GetAllSitters")
+            </div>
+        </div>
+    </div>*@
+
+@model MasterPiece.Models.AddSitterViewModel
+
+@{
+    ViewBag.Title = "Add New Sitter";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Add New Sitter</h1>
+        <br />
+
+        @using (Html.BeginForm("AddSitter", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="table-container">
+                <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                    <tbody>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.FirstName)</th>
+                            <td>@Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.LastName)</th>
+                            <td>@Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.Email)</th>
+                            <td>@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.PhoneNumber)</th>
+                            <td>@Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.Bio)</th>
+                            <td>@Html.TextAreaFor(m => m.Bio, new { @class = "form-control", rows = 3 })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.ExperienceYears)</th>
+                            <td>@Html.TextBoxFor(m => m.ExperienceYears, new { @class = "form-control", type = "number", min = "0" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.HourlyRate)</th>
+                            <td>@Html.TextBoxFor(m => m.HourlyRate, new { @class = "form-control", type = "number", step = "0.01", min = "0" })</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(m => m.LicenseUpload)</th>
+                            <td><input type="file" id="LicenseUpload" name="LicenseUpload" class="form-control" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-sm btn-primary1" value="Add Sitter" />
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "GetAllSitters", null, new { @class = "btn btn-sm btn-dark" })
+        </div>
+    </div>
+</div>
+
+<style>
+    .table-container {
+        margin-top: 20px;
+    }
+
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+    .table th {
+        background-color: #99005c;
+        color: white;
+    }
+
+    .btn-primary1 {
+        color: #fff;
+        background-color: black;
+        border-color: black;
+        height: 36px;
+        text-align: center;
+        margin-left: 22px;
+    }
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .btn-dark {
+        color: #fff;
+        background-color: #495057;
+        border-color: #495057;
+        margin: 5px;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var successMessage = '@TempData["SuccessMessage"]';
+        var errorMessage = '@TempData["ErrorMessage"]';
+
+        if (successMessage) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: successMessage
+            });
+        }
+
+        if (errorMessage) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: errorMessage
+            });
+        }
+    });
+</script>

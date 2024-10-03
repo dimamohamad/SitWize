@@ -1,0 +1,310 @@
+﻿@*@model MasterPiece.Models.Sitter
+
+    @{
+        ViewBag.Title = "Edit Sitter";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+    }
+
+    <div class="main-container">
+        <div class="pd-ltr-20">
+            <br />
+            <h1>Edit Sitter</h1>
+            <br />
+            @using (Html.BeginForm())  // Form to edit the sitter
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.SitterID)
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Bio, htmlAttributes: new { @class = "control-label" })
+                @Html.TextAreaFor(model => model.Bio, new { @class = "form-control", rows = 4 })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ExperienceYears, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.ExperienceYears, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HourlyRate, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.HourlyRate, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LicensePath, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.LicensePath, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label" })
+                <select class="form-control" asp-for="IsAvailable">
+                    <option value="">Select Availability</option>
+                    <option value="true" @(Model.IsAvailable == true ? "selected" : "")>Yes</option>
+                    <option value="false" @(Model.IsAvailable == false ? "selected" : "")>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsApproved, htmlAttributes: new { @class = "control-label" })
+                <select class="form-control" asp-for="IsApproved">
+                    <option value="">Select Approval Status</option>
+                    <option value="true" @(Model.IsApproved == true ? "selected" : "")>Yes</option>
+                    <option value="false" @(Model.IsApproved == false ? "selected" : "")>No</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+    </div>*@
+@model MasterPiece.Models.Sitter
+
+@{
+    ViewBag.Title = "Edit Sitter";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Edit Sitter</h1>
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.SitterID)
+
+            <div class="sitter-edit">
+                <div>
+                    <strong>@Html.LabelFor(model => model.FirstName):</strong>
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.LastName):</strong>
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.Email):</strong>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.PhoneNumber):</strong>
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.Bio):</strong>
+                    @Html.TextAreaFor(model => model.Bio, new { @class = "form-control", rows = 3 })
+                    @Html.ValidationMessageFor(model => model.Bio, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.ExperienceYears):</strong>
+                    @Html.EditorFor(model => model.ExperienceYears, new { htmlAttributes = new { @class = "form-control", id = "experienceYears" } })
+                    @Html.ValidationMessageFor(model => model.ExperienceYears, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.HourlyRate):</strong>
+                    @Html.EditorFor(model => model.HourlyRate, new { htmlAttributes = new { @class = "form-control", id = "hourlyRate" } })
+                    @Html.ValidationMessageFor(model => model.HourlyRate, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.LicensePath):</strong>
+                    @Html.EditorFor(model => model.LicensePath, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LicensePath, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.IsAvailable):</strong>
+                    @Html.EditorFor(model => model.IsAvailable)
+                    @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
+                </div>
+
+                <div>
+                    <strong>@Html.LabelFor(model => model.IsApproved):</strong>
+                    @Html.EditorFor(model => model.IsApproved)
+                    @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+            <div>
+                <input type="submit" value="Save" class="btn btn-primary" />
+
+                <a href="@Url.Action("GetAllSitters", "Admin")" class="btn btn-secondary">Back to List</a>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .sitter-edit div {
+        margin: 10px 0;
+    }
+
+    .sitter-edit strong {
+        width: 150px;
+        display: inline-block;
+    }
+
+    .form-control {
+        display: inline-block;
+        width: calc(100% - 160px);
+    }
+
+    .text-danger {
+        display: block;
+        margin-left: 150px;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function () {
+        // SweetAlert Handling
+         var message = '@TempData["swalMessage"]';
+    console.log("TempData Message:", message);
+        if (message) {
+            var parts = message.split('|');
+            var type = parts[0];
+            var text = parts[1];
+
+            if (type === 'success') {
+                Swal.fire({
+                    title: 'Success!',
+                    text: text,
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#28a745'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '@Url.Action("GetAllSitters", "Admin")';
+                    }
+                });
+            } else if (type === 'error') {
+                Swal.fire({
+                    title: 'Error!',
+                    text: text,
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#dc3545'
+                });
+            }
+        }
+
+        // Client-side Validation for Hourly Rate
+        function validateHourlyRate() {
+            var experienceYearsStr = $('#experienceYears').val();
+            var hourlyRateStr = $('#hourlyRate').val();
+
+            if (!experienceYearsStr) {
+                return "Experience years is required.";
+            }
+
+            if (!hourlyRateStr) {
+                return "Hourly rate is required.";
+            }
+
+            var experienceYears = parseInt(experienceYearsStr);
+            var hourlyRate = parseFloat(hourlyRateStr);
+            var minRate, maxRate;
+
+            if (experienceYears >= 0 && experienceYears <= 2) {
+                minRate = 5; maxRate = 7;
+            } else if (experienceYears >= 3 && experienceYears <= 5) {
+                minRate = 7; maxRate = 10;
+            } else if (experienceYears > 5 && experienceYears <= 10) {
+                minRate = 10; maxRate = 15;
+            } else if (experienceYears > 10) {
+                minRate = 15; maxRate = 20;
+            } else {
+                return "Invalid experience years.";
+            }
+
+            if (hourlyRate < minRate || hourlyRate > maxRate) {
+                return `Hourly rate should be between $${minRate} and $${maxRate} based on your experience.`;
+            }
+
+            return "";
+        }
+
+        // Add custom validation method
+        $.validator.addMethod("validateHourlyRate", function (value, element) {
+            return validateHourlyRate() === "";
+        }, function () { return validateHourlyRate(); });
+
+        // Add validation rule to the form
+        $("form").validate({
+            rules: {
+                ExperienceYears: {
+                    required: true,
+                    number: true
+                },
+                HourlyRate: {
+                    required: true,
+                    number: true,
+                    validateHourlyRate: true
+                }
+            },
+            messages: {
+                ExperienceYears: {
+                    required: "Please enter your experience years.",
+                    number: "Please enter a valid number."
+                },
+                HourlyRate: {
+                    required: "Please enter your hourly rate.",
+                    number: "Please enter a valid number."
+                }
+            }
+        });
+
+        // Revalidate hourly rate when experience years changes
+        $('#experienceYears').on('change', function () {
+            $('#hourlyRate').valid();
+        });
+    });
+</script>

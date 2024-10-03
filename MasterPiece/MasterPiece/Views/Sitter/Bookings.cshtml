@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MasterPiece.Models.Booking>
+@{
+    ViewBag.Title = "Your Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+  
+    <style>
+        .booking-card {
+            transition: transform 0.3s;
+        }
+
+            .booking-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+
+        .card-header.bg-primary.text-white {
+            background-color: #99005c !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Your Bookings</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var booking in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 booking-card">
+                        <div class="card-header bg-primary text-white">
+                            Booking ID: @booking.BookingID
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@booking.User.FirstName @booking.User.LastName</h5>
+                            <p class="card-text">
+                                <strong>Booking Date:</strong> @(booking.BookingDate?.ToString("MM/dd/yyyy HH:mm") ?? "N/A")<br>
+                                <strong>Start Date:</strong> @(booking.ServiceDetail.StartDate?.ToString("MM/dd/yyyy") ?? "N/A")<br>
+                                <strong>Start Time:</strong> @(booking.ServiceDetail.StartTime?.ToString() ?? "N/A")<br>
+                                <strong>Duration:</strong> @booking.ServiceDetail.Duration<br>
+                                <strong>Status:</strong> <span class="badge bg-info">@booking.Status</span>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <strong>Total Amount:</strong> $@(booking.TotalAmount?.ToString("F2") ?? "N/A")
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+   
+</body>
+</html>

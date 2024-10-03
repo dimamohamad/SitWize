@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5a23b7e6f6b487d89b6e6d463e9382d" Name="Diagram1">
+        <EntityTypeShape EntityType="MasterPeiceModel.Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.Booking" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.ContactU" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.JoinU" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.Payment" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.ServiceDetail" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.Service" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.Sitter" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.sysdiagram" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.Testimonial" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPeiceModel.User" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Bookings__Detail__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Bookings__Servic__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Bookings__Sitter__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Bookings__UserID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Payments__Bookin__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__ServiceDe__Servi__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Testimoni__UserI__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPeiceModel.FK__Testimoni__Booki__07C12930" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

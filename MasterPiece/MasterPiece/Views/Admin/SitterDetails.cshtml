@@ -1,0 +1,92 @@
+﻿@model MasterPiece.Models.Sitter
+
+@{
+    ViewBag.Title = "Sitter Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Sitter Details</h1>
+        <br />
+        <div class="sitter-details">
+            <div>
+                <strong>Full Name:</strong> @Model.FirstName @Model.LastName
+            </div>
+            <div>
+                <strong>Sitter Image:</strong>
+                @if (!string.IsNullOrEmpty(Model.sitterImage))
+                {
+                    <img src="~/Images/@Model.sitterImage" alt="Sitter Image" style="width: 150px; height: 150px;" />
+                }
+                else
+                {
+                    <span>No image</span>
+                }
+            </div>
+            <div>
+                <strong>Email:</strong> @Model.Email
+            </div>
+            <div>
+                <strong>Phone Number:</strong> @Model.PhoneNumber
+            </div>
+            <div>
+                <strong>Bio:</strong> @Model.Bio
+            </div>
+            <div>
+                <strong>Experience :</strong> @Model.ExperienceYears Years
+            </div>
+            <div>
+                <strong>Hourly Rate:</strong> $@Model.HourlyRate
+            </div>
+            <div>
+                <strong>License:</strong>
+                @if (string.IsNullOrEmpty(Model.LicensePath))
+                {
+                    <span>No license for special needs care</span>
+                }
+                else
+                {
+                    @Model.LicensePath
+                }
+            </div>
+            <div>
+                <strong>Available:</strong> @(Model.IsAvailable == true ? "Yes" : "No")
+            </div>
+            <div>
+                <strong>Approved:</strong> @(Model.IsApproved == true ? "Yes" : "No")
+            </div>
+            <div>
+                <strong>Joined On:</strong>@Model.CreatedAt
+
+            </div>
+
+        </div>
+        <br />
+        <p>
+            <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Show All Sitters</a>
+            <a href="@Url.Action("SitterEdit","Admin",new { id = Model.SitterID })" class="btn btn-primary">Edit</a>
+
+        </p>
+    </div>
+</div>
+
+<style>
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .sitter-details div {
+        margin: 10px 0;
+    }
+
+    .sitter-details strong {
+        width: 150px;
+        display: inline-block;
+    }
+</style>

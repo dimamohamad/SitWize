@@ -1,0 +1,379 @@
+﻿@model MasterPiece.Models.Booking
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="mb-4 text-center">Confirm Your Booking and Payment</h1>
+
+            <!-- Booking Details -->
+            <h2 class="mt-4 mb-3">Booking Details</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">User Name</label>
+                    <input type="text" class="form-control" value="@Model.User.FirstName @Model.User.LastName" readonly>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Service Name</label>
+                    <input type="text" class="form-control" value="@Model.Service.ServiceName" readonly>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Service Start Date</label>
+                    <input type="text" class="form-control"
+                           value="@(@Model.ServiceDetail.StartDate.HasValue ? @Model.ServiceDetail.StartDate.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : "N/A")"
+                           readonly>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Duration</label>
+                    <input type="text" class="form-control" value="@Model.ServiceDetail.Duration" readonly>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Booking Date</label>
+                    <input type="text" class="form-control"
+                           value="@(@Model.BookingDate.HasValue ? @Model.BookingDate.Value.ToString("MM/dd/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture) : "")"
+                           readonly>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Total Amount (USD)</label>
+                    <input type="text" class="form-control"
+                           value="@(@Model.TotalAmount.HasValue ? @Model.TotalAmount.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) : "")"
+                           readonly>
+
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <h2 class="mt-4 mb-3">Select Payment Method</h2>
+            <div id="paypal-button-container">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<style>
+    .team-text h3 {
+        font-size: 20px !important;
+    }
+
+    .team-text p {
+        font-size: 15px !important;
+        text-align: center;
+    }
+
+    img.img-fluid.rounded-circle.w-75 {
+        width: 400px;
+        height: 700px;
+    }
+
+
+
+
+
+
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: black
+    }
+
+    .btn-primary {
+        background-color: #c71b7c;
+        border: none;
+        /* width: 100%; */
+        padding: 10px;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: #c71b7c;
+        }
+
+    .payment-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .payment-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-card.selected {
+            border-color: #c71b7c;
+            background-color: #f8f9fa;
+        }
+
+    .payment-logo {
+        max-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .payment-details {
+        display: none;
+        margin-top: 20px;
+    }
+
+    .form-control,
+    .form-control:focus {
+        border-color: #74787c;
+        box-shadow: none;
+    }
+
+    .card-body {
+        box-shadow: 0 -11px 10px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<script src="https://www.paypal.com/sdk/js?client-id=AdCQ7BQpWdP87-pGlQProxp2Y2gpDAIFgV5L-_tDUMxpyefDN7_ED46_N2GGBdmOBF2ACflslD_zWXnJ&currency=USD"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Render the PayPal button into #paypal-button-container
+    @*paypal.Buttons({
+        // Set up the transaction
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '@(Model.TotalAmount.HasValue ? Model.TotalAmount.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) : "0.00")'
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Call your server to save the transaction
+                return fetch('@Url.Action("Success", "Booking", new { bookingId = Model.BookingID })', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                }).then(function(response) {
+                    return response.json();
+                }).then(function(result) {
+                    if (result.success) {
+                        // Show success message using SweetAlert
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Your booking has been successfully completed!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '@Url.Action("Index", "Home")';
+                            }
+                        });
+                    } else {
+                        // Handle error case
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'There was a problem processing your booking. Please try again.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                });
+            });
+        },
+
+        // Handle cancellation
+        onCancel: function(data) {
+            Swal.fire({
+                title: 'Cancelled',
+                text: 'Payment was cancelled.',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+        },
+
+        // Handle errors
+        onError: function(err) {
+            console.log('PayPal Error:', err);
+            Swal.fire({
+                title: 'Error',
+                text: 'An error occurred during the transaction. Please try again.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
+    }).render('#paypal-button-container');*@
+
+   @*paypal.Buttons({
+    // Set up the transaction
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '@(Model.TotalAmount.HasValue ? Model.TotalAmount.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) : "0.00")'
+                }
+            }]
+        });
+    },
+
+    // Finalize the transaction
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            let paymentMethod = "PayPal"; // Default to PayPal
+
+            // Check for the payment method type in the details object
+            if (details.payer && details.payment_source) {
+                if (details.payment_source.card) {
+                    // If card information is present, it's a credit card payment
+                    paymentMethod = "Credit Card";
+                } else if (details.payment_source.paypal) {
+                    // If PayPal information is present, it's a PayPal payment
+                    paymentMethod = "PayPal";
+                }
+            }
+
+            // Call your server to save the transaction and payment method
+            return fetch('@Url.Action("Success", "Booking", new { bookingId = Model.BookingID })', {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    orderID: data.orderID,
+                    payerID: details.payer.payer_id,
+                    paymentMethod: paymentMethod // Send the detected payment method to the backend
+                })
+            }).then(function(response) {
+                return response.json();
+            }).then(function(result) {
+                if (result.success) {
+                    // Show success message using SweetAlert
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your booking has been successfully completed!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '@Url.Action("Index", "Home")';
+                        }
+                    });
+                } else {
+                    // Handle error case
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'There was a problem processing your booking. Please try again.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        });
+    },
+
+    // Handle errors
+    onError: function(err) {
+        console.log('PayPal Error:', err);
+        Swal.fire({
+            title: 'Error',
+            text: 'An error occurred during the transaction. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    }
+}).render('#paypal-button-container');*@
+
+
+
+
+
+
+
+   let selectedPaymentMethod = "PayPal"; // Default to PayPal
+
+paypal.Buttons({
+    // Capture the payment method onClick
+    onClick: function(data, actions) {
+        // Check the funding source to see if the user selected 'card' or 'paypal'
+        if (data.fundingSource === 'card') {
+            selectedPaymentMethod = "Credit Card";
+        } else if (data.fundingSource === 'paypal') {
+            selectedPaymentMethod = "PayPal";
+        }
+        return actions.resolve();
+    },
+
+    // Set up the transaction
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '@(Model.TotalAmount.HasValue ? Model.TotalAmount.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) : "0.00")'
+                }
+            }]
+        });
+    },
+
+    // Finalize the transaction
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            // Call your server to save the transaction and payment method
+            return fetch('@Url.Action("Success", "Booking", new { bookingId = Model.BookingID })', {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    orderID: data.orderID,
+                    paymentMethod: selectedPaymentMethod // Send the detected payment method to the backend
+                })
+            }).then(function(response) {
+                return response.json();
+            }).then(function(result) {
+                if (result.success) {
+                    // Show success message using SweetAlert
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your booking has been successfully completed!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '@Url.Action("Index", "Home")';
+                        }
+                    });
+                } else {
+                    // Handle error case
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'There was a problem processing your booking. Please try again.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        });
+    },
+
+    // Handle errors
+    onError: function(err) {
+        console.log('PayPal Error:', err);
+        Swal.fire({
+            title: 'Error',
+            text: 'An error occurred during the transaction. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    }
+}).render('#paypal-button-container');
+
+</script>

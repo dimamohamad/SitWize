@@ -1,0 +1,1266 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|c:\\users\\d\\desktop\\sitwize\\sitwize\\masterpiece\\masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\addsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\shared\\_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\shared\\_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\replycontact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\replycontact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\createbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\createbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\loginadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\loginadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\sitter\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\sitter\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\testimonial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\testimonial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\booking\\confirmbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\booking\\confirmbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\booking\\selectsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\booking\\selectsitter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\joinus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice5.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice5.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\gettest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\gettest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\sitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\sitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\sittercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\sittercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\editsitterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\editsitterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\contactu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\contactu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\testimonial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\testimonial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\sysdiagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\sysdiagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getallpayments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getallpayments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\editviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\editviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\models\\addsitterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\models\\addsitterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\editpayments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\editpayments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\_servicedetail1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\_servicedetail1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\editbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\editbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\sitterdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\sitterdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\getallsitters.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\getallsitters.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\joinusapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\joinusapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\pendingpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\pendingpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\reviewapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\reviewapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\admin\\paymentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\admin\\paymentdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\yourbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\yourbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice4.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice4.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\servicedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\servicedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\masterpiece\\views\\service\\bookservice3.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B7E47FA-F646-47FB-ADE2-5507D71C644B}|MasterPiece\\MasterPiece.csproj|solutionrelative:masterpiece\\views\\service\\bookservice3.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T20:39:33.049Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SelectSitter.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Booking\\SelectSitter.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T17:12:22.059Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAABYBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-22T14:25:46.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAJMAAAAAAAAAAADwv60AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T00:02:41.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReplyContact.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\ReplyContact.cshtml",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAAcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T08:18:06.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddSitter.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\AddSitter.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T19:57:54.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAJsBAAAAAAAAAAAAAKIBAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:54:45.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Admin.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_Admin.cshtml",
+              "ViewState": "AQIAALEAAAAAAAAAAAAAAMQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T11:14:57.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\CreateBookings.cshtml",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAAAC8AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T19:53:56.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\Index.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAApwFcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T14:32:40.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:40:43.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Login.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Login.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Login.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T10:41:47.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetServices.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetServices.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetServices.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetServices.cshtml",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAAAKIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-22T16:32:00.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\LoginAdmin.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T22:20:13.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAAAHkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T18:32:07.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\ResetPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-13T17:42:26.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Profile.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Profile.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\Profile.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:47:05.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Edit.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Edit.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:40:47.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Bookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Bookings.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Sitter\\Bookings.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Sitter\\Bookings.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Sitter\\Bookings.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:40:36.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Testimonial\\Index.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Testimonial\\Index.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Testimonial\\Index.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Testimonial\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:41:29.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "JoinUs.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\JoinUs.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:41:13.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:41:09.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "BookService1.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService1.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService1.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService1.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService1.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGAAAAB2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T20:25:15.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ConfirmBooking.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Booking\\ConfirmBooking.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T18:49:16.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BookService5.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService5.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService5.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService5.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService5.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-31T14:41:48.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_LayoutPage1.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\_LayoutPage1.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAF8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:30:57.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\privacy.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\privacy.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\privacy.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\privacy.cshtml",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAAAIcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T19:07:46.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\ServiceController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\ServiceController.cs",
+              "ViewState": "AQIAAOYBAAAAAAAAAAAAwPwBAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T19:11:38.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\DashboardViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T16:20:06.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T12:24:32.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "GetBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetBookings.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetBookings.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetBookings.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetBookings.cshtml",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAIwLMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T11:44:20.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Booking.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Booking.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAuwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T12:08:52.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\User.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\User.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\User.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAuwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T12:09:46.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Service.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Service.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Service.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAgwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T16:12:11.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Payment.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Payment.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T16:12:07.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GetTest.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetTest.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetTest.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetTest.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetTest.cshtml",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAAKkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T21:07:16.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Home\\About.cshtml",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAMwJQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T12:39:27.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Sitter.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Sitter.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Sitter.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Sitter.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Sitter.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAiwB4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T21:17:17.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SitterController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\SitterController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\SitterController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\SitterController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\SitterController.cs",
+              "ViewState": "AQIAAAEBAAAAAAAAAAAuwAcBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T21:02:04.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\BookingController.cs",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAIwNMBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T19:11:38.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "EditSitterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\EditSitterViewModel.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\EditSitterViewModel.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\EditSitterViewModel.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\EditSitterViewModel.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAowBwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T15:01:59.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ContactU.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\ContactU.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\ContactU.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\ContactU.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\ContactU.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T21:25:07.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Admin.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T21:21:59.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Testimonial.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Testimonial.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Testimonial.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Testimonial.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\Testimonial.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T12:09:55.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "sysdiagram.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\sysdiagram.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\sysdiagram.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\sysdiagram.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\sysdiagram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T21:10:51.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ContactModel.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\ContactModel.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\ContactModel.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\ContactModel.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\ContactModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T21:22:50.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "GetAllUsers.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllUsers.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetAllUsers.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllUsers.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetAllUsers.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T19:58:07.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "TestimonialController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\TestimonialController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\TestimonialController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\TestimonialController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\TestimonialController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA1wBIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T12:08:30.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "MasterPiece\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAD4v4MAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:54:45.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAFoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T06:37:10.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\Model1.edmx",
+              "ToolTip": "C:\\Users\\d\\Desktop\\BackendMaster\\MasterPiece\\MasterPiece\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "..\\..\\..\\BackendMaster\\MasterPiece\\MasterPiece\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-09-29T21:47:28.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "BookingDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\BookingDetails.cshtml",
+              "ViewState": "AQIAACgAAAAAAAAAAAAkwDcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T18:42:00.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "GetAllPayments.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetAllPayments.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T08:50:44.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "EditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\EditViewModel.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\EditViewModel.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\EditViewModel.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\EditViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T21:19:57.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "AddSitterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\AddSitterViewModel.cs",
+              "RelativeDocumentMoniker": "MasterPiece\\Models\\AddSitterViewModel.cs",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Models\\AddSitterViewModel.cs",
+              "RelativeToolTip": "MasterPiece\\Models\\AddSitterViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T21:19:14.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "EditPayments.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditPayments.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\EditPayments.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditPayments.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\EditPayments.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAswHAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T09:43:25.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "_ServiceDetail1.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\_ServiceDetail1.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwBEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-29T18:22:57.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\Payment.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Booking\\Payment.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Booking\\Payment.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Booking\\Payment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T11:56:41.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "EditBooking.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditBooking.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\EditBooking.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\EditBooking.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\EditBooking.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAAB0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T13:21:11.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "SitterDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\SitterDetails.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAkwFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T08:30:12.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "GetAllSitters.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\GetAllSitters.cshtml",
+              "ViewState": "AQIAAAIBAAAAAAAAAAAAAAQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T11:50:00.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "JoinUsApplications.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\JoinUsApplications.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAHoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T10:23:47.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "PendingPayment.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\PendingPayment.cshtml",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAUwM0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T08:30:29.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "ReviewApplication.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\ReviewApplication.cshtml",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAEgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-16T13:03:00.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "PaymentDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Admin\\PaymentDetails.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAAD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-27T09:09:12.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Web.config",
+              "RelativeDocumentMoniker": "MasterPiece\\Web.config",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Web.config",
+              "RelativeToolTip": "MasterPiece\\Web.config",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwBQAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-09-13T14:31:29.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Edit.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Edit.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\Edit.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T18:17:06.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "YourBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\YourBookings.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\YourBookings.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\YourBookings.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\YourBookings.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T18:39:52.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Create.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\Create.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\Create.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\Create.cshtml",
+              "ViewState": "AQIAADEAAAAAAAAAAAAmwHYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T20:25:04.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\ResetPassword.cshtml",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAAD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-15T17:05:27.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "BookService4.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService4.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService4.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService4.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService4.cshtml",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAIwKAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-31T13:07:59.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "BookService2.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService2.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService2.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService2.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService2.cshtml",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAAAGMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T23:40:52.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ServiceDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\ServiceDetails.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAmwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T20:36:32.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAFoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-03T22:22:32.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T12:56:29.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\packages.config",
+              "RelativeDocumentMoniker": "MasterPiece\\packages.config",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\packages.config",
+              "RelativeToolTip": "MasterPiece\\packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-09-04T13:08:36.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "BookService3.cshtml",
+              "DocumentMoniker": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService3.cshtml",
+              "RelativeDocumentMoniker": "MasterPiece\\Views\\Service\\BookService3.cshtml",
+              "ToolTip": "C:\\Users\\d\\Desktop\\SitWize\\SitWize\\MasterPiece\\MasterPiece\\Views\\Service\\BookService3.cshtml",
+              "RelativeToolTip": "MasterPiece\\Views\\Service\\BookService3.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAAQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-31T00:54:34.461Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

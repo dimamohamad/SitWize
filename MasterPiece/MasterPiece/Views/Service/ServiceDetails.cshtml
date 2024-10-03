@@ -1,0 +1,34 @@
+﻿@model MasterPiece.Models.Service
+
+@{
+    ViewBag.Title = "Service Details - " + Model.ServiceName;
+}
+
+<h2>@Model.ServiceName</h2>
+
+<p>@Model.Description</p>
+
+<h3>Service Details</h3>
+
+@if (Model.ServiceDetails.Any())
+{
+    <ul>
+        @foreach (var detail in Model.ServiceDetails)
+        {
+            <li>
+                <strong>Detail Type:</strong> @detail.DetailType<br />
+                <strong>Start Date:</strong> @detail.StartDate?.ToString("MM/dd/yyyy") ?? "Not specified"<br />
+                <strong>Days:</strong> @detail.Days<br />
+                <strong>Start Time:</strong> @detail.StartTime?.ToString("hh\\:mm") ?? "Not specified"<br />
+                <strong>End Time:</strong> @detail.EndTime?.ToString("hh\\:mm") ?? "Not specified"<br />
+                <strong>Additional Info:</strong> @detail.AdditionalInfo
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No additional details available for this service.</p>
+}
+
+<a href="@Url.Action("Index", "Service")">Back to Services</a>

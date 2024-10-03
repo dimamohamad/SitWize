@@ -1,0 +1,63 @@
+﻿@model MasterPiece.Models.EditViewModel
+
+@{
+    ViewBag.Title = "Edit Profile";
+}
+
+<h2 class="text-center">Edit Profile</h2>
+<style>
+    .custom-shadow {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow size */
+
+    }
+    .subt {
+        background-color: #99005C;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+    }
+</style>
+<div class="container mt-5">
+    <div class="custom-shadow p-4 mb-5 bg-white rounded">
+        <!-- Use custom shadow class -->
+        @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.UserID)
+
+            <div class="form-group">
+                <label for="FirstName">First Name:</label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="LastName">Last Name:</label>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+            <div class="form-group">
+                <label for="PhoneNumber">Phone:</label>
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Address">Address:</label>
+                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="ImageFile">Profile Picture:</label>
+                <input type="file" name="ImageFile" id="ImageFile" class="form-control" />
+                @Html.ValidationMessage("ImageFile", "Please choose an image.", new { @class = "text-danger" })
+            </div>
+            <button type="submit" id="subt"class="btn ">Save Changes</button>
+        }
+
+        <div>
+            @Html.ActionLink("Back", "Profile", null, new { @class = "btn btn-secondary mt-2" })
+        </div>
+    </div>
+</div>

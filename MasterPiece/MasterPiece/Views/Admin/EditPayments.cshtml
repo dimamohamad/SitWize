@@ -1,0 +1,112 @@
+﻿@model MasterPiece.Models.Payment
+
+@{
+    ViewBag.Title = "Edit Payment Status";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Edit Payment Status</h1>
+        <br />
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <div class="row">
+            <!-- Left Column: Payment Details -->
+            <div class="col-md-12 payment-details-container">
+                <h4>Payment Details</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PaymentID)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.PaymentID)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Amount)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Amount)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PaymentMethod)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.PaymentMethod)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.TransactionID)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.TransactionID)</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PaymentDate)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.PaymentDate)</dd>
+                </dl>
+            </div>
+
+            <!-- Right Column: Edit Status Form -->
+            <div class="col-md-12">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.PaymentID)
+
+                    <div class="form-group">
+                        <label for="status" class="control-label">Payment Status</label>
+                        <div>
+                            @Html.DropDownListFor(model => model.Status, new SelectList(new[] { "Pending", "Completed", "Failed" }, Model.Status), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save Changes" class="btn btn-primary" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    /* Layout and spacing */
+    .payment-details-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+
+    /* Payment Details List */
+    .dl-horizontal dt {
+        font-weight: 600;
+        text-align: left;
+        color: #495057;
+    }
+
+    .dl-horizontal dd {
+        margin-bottom: 15px;
+        color: #343a40;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        margin-top: 10px;
+    }
+
+    /* Validation styling */
+    .text-danger {
+        color: #dc3545;
+    }
+</style>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MasterPeiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AdminName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SitterID" Type="Int32" />
+    <Property Name="ServiceID" Type="Int32" />
+    <Property Name="DetailID" Type="Int32" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="ServiceDetail" Relationship="Self.FK__Bookings__Detail__59063A47" FromRole="Bookings" ToRole="ServiceDetails" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__Bookings__Servic__5812160E" FromRole="Bookings" ToRole="Services" />
+    <NavigationProperty Name="Sitter" Relationship="Self.FK__Bookings__Sitter__571DF1D5" FromRole="Bookings" ToRole="Sitters" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Bookings__UserID__5629CD9C" FromRole="Bookings" ToRole="Users" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK__Payments__Bookin__5FB337D6" FromRole="Bookings" ToRole="Payments" />
+    <NavigationProperty Name="Testimonials" Relationship="MasterPeiceModel.FK__Testimoni__Booki__07C12930" FromRole="Booking" ToRole="Testimonial" />
+  </EntityType>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubmittedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="JoinU">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExperienceYears" Type="Int32" />
+    <Property Name="CoverLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubmittedAt" Type="DateTime" Precision="3" />
+    <Property Name="ApplicationStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MedicalConditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EligibleToWorkInJordan" Type="Boolean" />
+    <Property Name="ValidDrivingLicense" Type="Boolean" />
+    <Property Name="NannyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WillingToTravel" Type="Boolean" />
+    <Property Name="WillingToWorkWeekends" Type="Boolean" />
+    <Property Name="FlexibleHours" Type="Boolean" />
+    <Property Name="CurrentWork" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExperienceTypes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="JoinCompany" Type="Boolean" />
+    <Property Name="RegisteredWithOtherAgency" Type="Boolean" />
+    <Property Name="OtherAgencies" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConsentToDataProcessing" Type="Boolean" />
+    <Property Name="Disclaimer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HourlyRate" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="LicensePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookingID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK__Payments__Bookin__5FB337D6" FromRole="Payments" ToRole="Bookings" />
+  </EntityType>
+  <EntityType Name="ServiceDetail">
+    <Key>
+      <PropertyRef Name="DetailID" />
+    </Key>
+    <Property Name="DetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceID" Type="Int32" />
+    <Property Name="DetailType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="StartDateFlexible" Type="Boolean" />
+    <Property Name="Days" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StartTime" Type="Time" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ScheduleType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialNeedsTypes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AdditionalInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__Detail__59063A47" FromRole="ServiceDetails" ToRole="Bookings" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__ServiceDe__Servi__5070F446" FromRole="ServiceDetails" ToRole="Services" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__Servic__5812160E" FromRole="Services" ToRole="Bookings" />
+    <NavigationProperty Name="ServiceDetails" Relationship="Self.FK__ServiceDe__Servi__5070F446" FromRole="Services" ToRole="ServiceDetails" />
+  </EntityType>
+  <EntityType Name="Sitter">
+    <Key>
+      <PropertyRef Name="SitterID" />
+    </Key>
+    <Property Name="SitterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExperienceYears" Type="Int32" />
+    <Property Name="sitterImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="HourlyRate" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="LicensePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__Sitter__571DF1D5" FromRole="Sitters" ToRole="Bookings" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="statues" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestimonialSubmitted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Testimoni__UserI__03F0984C" FromRole="Testimonials" ToRole="Users" />
+    <Property Name="BookingID" Type="Int32" />
+    <NavigationProperty Name="Booking" Relationship="MasterPeiceModel.FK__Testimoni__Booki__07C12930" FromRole="Testimonial" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UserType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__UserID__5629CD9C" FromRole="Users" ToRole="Bookings" />
+    <NavigationProperty Name="Testimonials" Relationship="Self.FK__Testimoni__UserI__03F0984C" FromRole="Users" ToRole="Testimonials" />
+  </EntityType>
+  <Association Name="FK__Bookings__Detail__59063A47">
+    <End Role="ServiceDetails" Type="Self.ServiceDetail" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceDetails">
+        <PropertyRef Name="DetailID" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="DetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookings__Servic__5812160E">
+    <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookings__Sitter__571DF1D5">
+    <End Role="Sitters" Type="Self.Sitter" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sitters">
+        <PropertyRef Name="SitterID" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="SitterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookings__UserID__5629CD9C">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payments__Bookin__5FB337D6">
+    <End Role="Bookings" Type="Self.Booking" Multiplicity="0..1" />
+    <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookings">
+        <PropertyRef Name="BookingID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="BookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ServiceDe__Servi__5070F446">
+    <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="ServiceDetails" Type="Self.ServiceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="ServiceDetails">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Testimoni__UserI__03F0984C">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Testimonials" Type="Self.Testimonial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Testimonials">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MasterPeiceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Bookings" EntityType="Self.Booking" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+    <EntitySet Name="JoinUs" EntityType="Self.JoinU" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="ServiceDetails" EntityType="Self.ServiceDetail" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Sitters" EntityType="Self.Sitter" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Testimonials" EntityType="Self.Testimonial" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Bookings__Detail__59063A47" Association="Self.FK__Bookings__Detail__59063A47">
+      <End Role="ServiceDetails" EntitySet="ServiceDetails" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookings__Servic__5812160E" Association="Self.FK__Bookings__Servic__5812160E">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookings__Sitter__571DF1D5" Association="Self.FK__Bookings__Sitter__571DF1D5">
+      <End Role="Sitters" EntitySet="Sitters" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookings__UserID__5629CD9C" Association="Self.FK__Bookings__UserID__5629CD9C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payments__Bookin__5FB337D6" Association="Self.FK__Payments__Bookin__5FB337D6">
+      <End Role="Bookings" EntitySet="Bookings" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ServiceDe__Servi__5070F446" Association="Self.FK__ServiceDe__Servi__5070F446">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="ServiceDetails" EntitySet="ServiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Testimoni__UserI__03F0984C" Association="Self.FK__Testimoni__UserI__03F0984C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Testimonials" EntitySet="Testimonials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Testimoni__Booki__07C12930" Association="MasterPeiceModel.FK__Testimoni__Booki__07C12930">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Testimonial" EntitySet="Testimonials" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__Testimoni__Booki__07C12930">
+    <End Type="MasterPeiceModel.Booking" Role="Booking" Multiplicity="0..1" />
+    <End Type="MasterPeiceModel.Testimonial" Role="Testimonial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="BookingID" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="BookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

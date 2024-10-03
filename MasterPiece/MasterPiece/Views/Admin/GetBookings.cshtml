@@ -1,0 +1,179 @@
+﻿// View (Bookings.cshtml)
+@model IEnumerable<MasterPiece.Models.Booking>
+
+@{
+    ViewBag.Title = "Bookings";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Bookings</h1>
+        <br />
+        <p>
+            @Html.ActionLink("Create New Booking", "CreateBookings", null, new { @class = "btn btn-sm btn-primary1" })
+        </p>
+        <div class="table-container">
+            <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Sitter</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Booking Date</th>
+                        <th scope="col">Service Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Total Amount</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@(item.User != null ? item.User.FirstName : "No User") @(item.User != null ? item.User.LastName : "No User")</td>
+                            <td>@(item.Sitter != null ? item.Sitter.FirstName : "No Sitter")</td>
+                            <td>@(item.Service != null ? item.Service.ServiceName : "No Service")</td>
+                            <td>@item.BookingDate</td>
+                            <td>@(item.ServiceDetail?.StartDate.HasValue == true ? item.ServiceDetail.StartDate.Value.ToString("MM/dd/yyyy") : "N/A")</td>
+                            <td>@item.Status</td>
+                            <td>@string.Format("{0:C}", item.TotalAmount)</td>
+                            <td>
+                                <a href="@Url.Action("EditBooking", new { id = item.BookingID })" class="btn btn-sm btn-primary">Edit</a>
+
+                                <a href="@Url.Action("BookingDetails", new { id = item.BookingID })" class="btn btn-sm btn-dark">Details</a>
+                                <a href="javascript:void(0);"
+                                   onclick="confirmDelete(@item.BookingID, '@item.User.FirstName', '@item.Sitter.FirstName', '@item.Service.ServiceName', '@(item.BookingDate.HasValue ? item.BookingDate.Value.ToString("MM/dd/yyyy") : "N/A")', '@(item.ServiceDetail?.StartDate.HasValue == true ? item.ServiceDetail.StartDate.Value.ToString("MM/dd/yyyy") : "N/A")', '@item.Status', '@string.Format("{0:C}", item.TotalAmount)')"
+                                   class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        function confirmDelete(bookingId, user, sitter, service, bookingDate, serviceDate, status, totalAmount) {
+            Swal.fire({
+                title: `Details for Booking ID: ${bookingId}`,
+                html: `
+                    <strong>User:</strong> ${user} <br>
+                    <strong>Sitter:</strong> ${sitter} <br>
+                    <strong>Service:</strong> ${service} <br>
+                    <strong>Booking Date:</strong> ${bookingDate} <br>
+                    <strong>Service Date:</strong> ${serviceDate} <br>
+                    <strong>Status:</strong> ${status} <br>
+                    <strong>Total Amount:</strong> ${totalAmount} <br>
+                    <hr>
+                    <strong style="color: red;">Are you sure you want to delete this booking?</strong>
+                `,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteBookings", "Admin")/' + bookingId,
+                        type: 'POST',
+                        data: {
+                            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire('Deleted!', response.message, 'success')
+                                    .then(() => {
+                                        location.reload();
+                                    });
+                            } else {
+                                Swal.fire('Error!', response.message, 'error');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('AJAX Error:', status, error);
+                            console.log('Response:', xhr.responseText);
+                            Swal.fire('Error!', 'An error occurred while deleting the booking. Please check the console for details.', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+
+
+@Html.AntiForgeryToken()
+
+
+<style>
+    .table .thead-light th {
+        text-align: center;
+        color: #000;
+        vertical-align: middle;
+        background-color: #99005c;
+        border-color: #99005c;
+    }
+
+    .btn-dark {
+        color: #fff;
+        background-color: #495057;
+        border-color: #495057;
+        margin: 2px;
+        width: 58px;
+    }
+
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    td {
+        background-color: white;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #1b00ff;
+        border-color: #1b00ff;
+        width: 59px;
+        margin: 2px;
+    }
+
+    .btn-primary1 {
+        color: #fff;
+        background-color: black;
+        border-color: black;
+        height: 36px;
+        text-align: center;
+        margin-left: 22px;
+    }
+
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .table-container {
+        margin-top: 20px;
+    }
+
+    @@media (max-width: 426px) {
+        .btn-primary, .btn-dark, .btn-danger {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    }
+</style>
+
+

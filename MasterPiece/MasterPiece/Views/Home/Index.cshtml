@@ -1,0 +1,667 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>@ViewBag.Title</title>
+
+<style>
+    .testimonial-item.bg-light.rounded.p-5 {
+        height: 322px;
+    }
+
+    .facility-item {
+        transition: transform 0.3s;
+        cursor: pointer;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 6px 11px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 8px;
+        margin: 20px 0;
+        background-color: #fff;
+    }
+
+        .facility-item:hover {
+            transform: scale(1.05);
+        }
+
+    .facility-icon img {
+        max-width: 100px;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .facility-text h3,
+    .facility-text p {
+        transition: none;
+        /* Ensure no transitions affect visibility */
+        color: inherit;
+        /* Maintain original color on hover */
+        font-size: inherit;
+        /* Maintain font size on hover */
+        margin-top: 5px;
+    }
+
+    .facility-text h3 {
+        font-size: 1.4em;
+        margin-top: 10px;
+    }
+
+    .facility-text p {
+        font-size: 0.9em;
+        color: #000000;
+        margin-top: 5px;
+    }
+
+
+
+
+
+    .text-info {
+        color: #000000 !important;
+    }
+
+    .text-warning {
+        color: #000000 !important;
+    }
+
+    .text-secondary {
+        color: #000000 !important;
+    }
+
+
+
+
+    .display-2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+
+
+    .team-text h3 {
+        font-size: 20px !important;
+    }
+
+    .team-text p {
+        font-size: 15px !important;
+        text-align: center;
+    }
+
+    img.img-fluid.rounded-circle.w-75 {
+        width: 400px;
+        height: 700px;
+    }
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+    }
+
+    .popup {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        color: black;
+        width: 500px;
+        max-width: 90%;
+        z-index: 10000; 
+    }
+
+    #toast {
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+</style>
+
+<body>
+    <main>
+        @if (ViewBag.ShowToastNotification != null && (bool)ViewBag.ShowToastNotification)
+        {
+            <div id="toast">
+                <span>Please submit your testimonial about WhiteAura!</span>
+                <button onclick="showPopup()" style="margin-left: 10px; background-color: #5cb85c; border: none; color: white; padding: 5px 10px; border-radius: 5px;">Submit</button>
+                <button onclick="closeToast()" style="margin-left: 10px; background-color: #d9534f; border: none; color: white; padding: 5px 10px; border-radius: 5px;">X</button>
+            </div>
+        }
+
+        <div class="popup-overlay" id="popupOverlay">
+            <div id="testimonialPopup" class="popup">
+                <button class="close-popup" onclick="closePopup()" style="margin-top: 10px; background-color: #d9534f; border: none; color: white; padding: 5px 10px; border-radius: 5px; float: right;">X</button>
+
+                <h2>Submit Your Testimonial about WhiteAura!</h2>
+
+                <form id="testimonialForm" method="post">
+                    @Html.AntiForgeryToken()
+                    <textarea name="TestimonialText" required style="width: 100%; height: 100px;"></textarea>
+                    <button type="submit" id="submitTestimonialBtn" style="margin-top: 10px; background-color: #5cb85c; border: none; color: white; padding: 10px; border-radius: 5px;">Submit</button>
+                </form>
+            </div>
+        </div>
+        </main>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <!--<div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>-->
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <!--<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <a href="index.html" class="navbar-brand">
+            <h1 class="m-0 text-primary"><i class="fa fa-book-reader me-3"></i>SitWise</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="html/about.html" class="nav-item nav-link">About us</a>
+                <a href="html/Services.html" class="nav-item nav-link">Services</a>
+
+                <a href="html/contact.html" class="nav-item nav-link">Contact us</a>
+
+            </div>
+            <a href="html/Signup.html" class="nav-item nav-link">Register </a>
+            <a href="html/Login.html" class="nav-item nav-link"> Log in </a>
+            <a href="html/JoinUs.html" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">
+                Join Us<i class="fa fa-arrow-right ms-3"></i>
+            </a>
+        </div>
+    </nav>-->
+        <!-- Navbar End -->
+        <!-- Carousel Start -->
+        <div class="container-fluid p-0 mb-5">
+            <div class="owl-carousel header-carousel position-relative">
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid"
+                         src="~/img/special-needs-with-girl-desktop2x-31098ea143912782c0cd8ecdf63285ddbc54401c21083d6ef1453bf033e92966-ezgif.com-webp-to-jpg-converter.jpg"
+                         alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                         style="background: rgba(0, 0, 0, .2);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">
+                                        They'll always be your
+                                        baby
+                                    </h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Find them the best care</p>
+                                    <a href="@Url.Action("Signup", "Account")" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
+                                        Find Child Care
+                                    </a>
+
+                                    <a href="@Url.Action("JoinUs", "Home")" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
+                                        I'm a Sitter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid"
+                         src="~/img/child-care-with-child-desktop2x-5572fdbadfe1e952816f662dfe5ed5d75303dc604493bab1cbf970cee62248d6-ezgif.com-webp-to-jpg-converter.jpg"
+                         alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                         style="background: rgba(0, 0, 0, .2);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">Tailored Child Care</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                                        We understand every family is unique.
+                                        Our personalized services are designed to meet your specific child care
+                                        requirements
+                                    </p>
+                                    <a href="html/Signup.html"
+                                       class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">
+                                        Find
+                                        Child Care
+                                    </a>
+                                    <a href="html/JoinUs.html"
+                                       class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">
+                                        I'm a
+                                        Sitter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+        <!-- Facilities Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Services</h1>
+                    <p>
+                        At SitWise, we provide a range of customized child care solutions designed to fit your
+                        family’s unique needs. From dependable babysitters for occasional needs to skilled nannies for
+                        full-time care, our dedicated professionals ensure your children receive exceptional support and
+                        attention. Whether you require care for newborns, school-age kids, or teenagers, we offer
+                        personalized services that adapt to your schedule and preferences.
+                    </p>
+                </div>
+                <div class="container service-cards py-5">
+                    <div class="container">
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="facility-item" onclick="location.href='@Url.Action("Services", "Html")'">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light.svg" alt="Babysitter" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-secondary mb-3">Babysitter</h3>
+                                        <p class="mb-0">Occasional help with last minute needs, date night, and more</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="facility-item" onclick="location.href='@Url.Action("Services", "Html")'">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (1).svg" alt="Nanny" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-dark mb-3">Nanny</h3>
+                                        <p class="mb-0">Regular support for after school, weekdays, and weekends</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="facility-item" onclick="location.href=@Url.Action("Services", "Html")">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (2).svg" alt="Special needs" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-info mb-3">Special needs</h3>
+                                        <p class="mb-0">Specialized care to meet the individual needs of your child</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="facility-item" onclick="location.href=@Url.Action("Services", "Html")">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (3).svg" alt="Tutoring" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-warning mb-3">Occasional sitter</h3>
+                                        <p class="mb-0"> As-needed for when you need care</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                >
+            </div>
+        </div>
+        <!-- Facilities End -->
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mb-4">To make child care work.</h1>
+                        <p>
+                            there is no group more motivated to reimagine the in-home child care industry than a team of
+                            problem-solving parents and experienced child care providers. Child care is not only
+                            critical to the fabric of our economy, supporting working parents, but it is also a
+                            challenging and life-changing career for many providers
+                        </p>
+                        <p class="mb-4">
+                            there is no group more motivated to reimagine the in-home child care industry
+                            than a team of problem-solving parents and experienced child care providers. Child care is
+                            not only critical to the fabric of our economy, supporting working parents, but it is also a
+                            challenging and life-changing career for many providers
+                        </p>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-sm-6">
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="@Url.Action("About", "Home")">Read More</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle flex-shrink-0"
+                                         src="~/img/WhatsApp Image 2024-05-17 at 12.57.44 PM.png" alt=""
+                                         style="width: 45px; height: 45px;">
+                                    <div class="ms-3">
+                                        <h6 class="text-primary mb-1">Dima </h6>
+                                        <small>CEO & Founder</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid w-75 rounded-pill bg-light p-1"
+                                     src="~/img/istockphoto-1309383515-612x612.jpg" alt="">
+                            </div>
+                            <div class="col-6 text-start" style="margin-top: -100px;">
+                                <img class="img-fluid w-100 rounded-pill bg-light p-1"
+                                     src="~/img/istockphoto-1298997043-612x612.jpg" alt="">
+                            </div>
+                            <div class="col-6 text-end" style="margin-top: -100px;">
+                                <img class="img-fluid w-100 rounded-pill bg-light p-1"
+                                     src="~/img/istockphoto-1028379220-612x612.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+        <!-- Call To Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class="position-absolute w-100 h-100 rounded"
+                                     src="~/img/istockphoto-1309039195-612x612.jpg" style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Become A sitter</h1>
+                                <p class="mb-4">
+                                    Join our team of dedicated child care professionals and make a
+                                    meaningful impact in families' lives. If you’re passionate about providing
+                                    exceptional care and have experience working with children, we’d love to hear from
+                                    you. Apply now to become a sitter and start a rewarding career with us!
+                                </p>
+                                <a class="btn btn-primary py-3 px-5" href="@Url.Action("JoinUs", "Html")">
+                                    Join Us Now<i class="fa fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call To Action End -->
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Popular Sitters</h1>
+                    <p>
+                        Meet our top-rated nannies, known for their exceptional care and dedication. These experienced
+                        professionals are highly recommended by families and are here to provide the best support for
+                        your children.
+
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle " src="~/img/istockphoto-1329936184-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Alia Ahmad</h3>
+                                <p>10 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle" src="~/img/istockphoto-1311084168-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Sara Ali</h3>
+                                <p> 4 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle " src="~/img/istockphoto-1311326724-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Lana Ziad</h3>
+                                <p>8 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Clients Say!</h1>
+                    <p>
+                        Our clients love the exceptional care and peace of mind they receive from our skilled child care
+                        professionals. Here’s a glimpse of what they have to say about their experiences with us:
+                    </p>
+                </div>
+
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    @foreach (var testimonial in ViewBag.ApprovedTestimonials)
+                    {
+                        <div class="testimonial-item bg-light rounded p-5">
+                            <p class="fs-5" style="word-wrap: break-word; word-break: break-word;">
+                                @testimonial.Text 
+                            </p>
+                            <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                                <img class="img-fluid flex-shrink-0 rounded-circle"
+                                     src="@Url.Content("~/Images/" + testimonial.User.UserImage)"
+                                     style="width: 90px; height: 90px;">
+                                <div class="ps-3">
+                                    <h3 class="mb-1">@testimonial.User.FirstName @testimonial.User.LastName</h3>
+                                </div>
+                                <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Testimonial End -->
+        <!-- Footer Start -->
+        @*<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>7th circle, AMMAN, JORDAN</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+962 781 541 015</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>SitWise@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="../html/about.html">About us</a>
+                        <a class="btn btn-link text-white-50" href="../html/contact.html">Contact us</a>
+                        <a class="btn btn-link text-white-50" href="../html/Services.html">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Photo Gallery</h3>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="~/img/classes-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-primary"><i class="fa fa-book-reader me-3"></i>SitWise</h1>
+                        </a>
+                        <p style="font-size: 15px;">
+                            At Sitwise, we provide trusted and reliable babysitting services,
+                            connecting families with experienced and caring babysitters and nannies. Our mission is to
+                            ensure peace of mind for parents and a nurturing environment for children.
+                        </p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                                   placeholder="Your email">
+                            <button type="button"
+                                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                                SignUp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy;SitWize</a>, All Right Reserved.
+
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="index.html">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <!-- Footer End -->
+        <!-- Back to Top -->
+
+    </div>
+
+
+        <!-- JavaScript Libraries -->
+        @*<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/lib/wow/wow.min.js"></script>
+            <script src="~/lib/easing/easing.min.js"></script>
+            <script src="~/lib/waypoints/waypoints.min.js"></script>
+            <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>*@
+
+        <!-- Template Javascript -->
+        @*<script src="~/js/main.js"></script>*@
+</body>
+
+@*</html>*@
+<script>
+        window.onload = function () {
+            var toast = document.getElementById("toast");
+            if (toast) {
+                toast.style.display = "flex"; // Show the toast
+            }
+        };
+
+        function showPopup() {
+            var popupOverlay = document.getElementById("popupOverlay");
+            popupOverlay.style.display = "flex"; // Show the popup overlay and center the content
+        }
+
+        function closePopup() {
+            var popupOverlay = document.getElementById("popupOverlay");
+            popupOverlay.style.display = "none"; // Hide the popup overlay
+        }
+
+        function closeToast() {
+            var toast = document.getElementById("toast");
+            if (toast) {
+                toast.style.display = "none"; // Hide the toast when X is clicked
+            }
+        }
+
+        // Handle form submission with AJAX
+        document.getElementById('testimonialForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form from submitting normally
+
+            var formData = new FormData(this); // Create FormData object
+
+            fetch('@Url.Action("SubmitTestimonial", "Testimonial")', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: data.message
+                    });
+                    closePopup(); // Close the popup
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: data.message
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'An error occurred while submitting your testimonial.'
+                });
+            });
+        });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>

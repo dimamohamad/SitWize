@@ -1,0 +1,100 @@
+﻿@model IEnumerable<MasterPiece.Models.Service>
+
+@{
+    ViewBag.Title = "Services";
+}
+<style>
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 70px);
+        padding: 20px;
+    }
+
+    .questionnaire {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .questionnaire h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .questionnaire p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+    .services {
+        display: grid;
+        gap: 10px;
+    }
+
+    .service {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .service:hover {
+            background-color: #f9f9f9;
+        }
+
+    img.icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<!-- Page Header End -->
+<div class="container-xxl py-5 page-header position-relative mb-5">
+    <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Services</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- 404 Start -->
+
+
+<div class="content">
+    <div class="questionnaire">
+        <h2>What type of care are you looking for?</h2>
+        <p>Skip the scrolling and searching. You've got a specific need—create your job to attract matching sitters.</p>
+        <div class="services">
+            @foreach (var service in Model)
+            {
+                <a class="service" href="@Url.Action("BookService", "Service", new { id = service.ServiceID })">
+                    <img src="@($"{Url.Content("~/img/")}{service.ServiceID}.png")" alt="@service.ServiceName" class="icon">
+                    <div>
+                        <strong>@service.ServiceName</strong><br />
+                        @service.Description
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>

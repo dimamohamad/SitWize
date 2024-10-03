@@ -1,0 +1,149 @@
+﻿@model IEnumerable<MasterPiece.Models.Payment>
+
+@{
+    ViewBag.Title = "GetAllPayments";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+   
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>All Payments</h1>
+        <br />
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary1" })
+        </p>
+        <div class="table-container">
+            <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">@Html.DisplayNameFor(model => model.PaymentID)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Amount)</th>
+                        <th scope="col">Net Profit</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.PaymentMethod)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.TransactionID)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.PaymentDate)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Status)</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.PaymentID)</td>
+                            <td>$@Html.DisplayFor(modelItem => item.Amount)</td>
+                            <td>$@(0.25m * item.Amount)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PaymentMethod)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TransactionID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PaymentDate)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                            <td>
+                                <a href="@Url.Action("EditPayments", new { id = item.PaymentID })" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="@Url.Action("PaymentDetails", new { id = item.PaymentID })" class="btn btn-sm btn-dark">Details</a>
+                                <a href="javascript:void(0);" onclick="confirmDelete('@item.PaymentID')" class="btn btn-sm btn-danger">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript">
+    function confirmDelete(paymentId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to delete this payment. This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                
+                window.location.href = '@Url.Action("DeletePayments", "Admin")/' + paymentId;
+            }
+        });
+    }
+</script>
+<style>
+    .table .thead-light th {
+        text-align: center;
+        color: #000;
+        vertical-align: middle;
+        background-color: #99005c;
+        border-color: #99005c;
+    }
+
+    .btn-dark {
+        color: #fff;
+        background-color: #495057;
+        border-color: #495057;
+        margin: 2px;
+        width: 58px;
+    }
+
+    th {
+        background-color: white;
+        text-align: center;
+    }
+
+    td {
+        background-color: white;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #1b00ff;
+        border-color: #1b00ff;
+        width: 59px;
+        margin: 2px;
+    }
+
+    .btn-primary1 {
+        color: #fff;
+        background-color: black;
+        border-color: black;
+        height: 36px;
+        text-align: center;
+        margin-left: 22px
+    }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #d33;
+        border-color: #d33;
+        margin: 2px;
+        width: 59px;
+    }
+
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    @@media (max-width: 426px) {
+        .btn-primary, .btn-dark, .btn-danger {
+            font-size: 12px;
+            width: 50px;
+        }
+    }
+
+    .table td, .table th {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>

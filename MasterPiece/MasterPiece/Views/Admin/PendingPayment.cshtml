@@ -1,0 +1,214 @@
+﻿@*@model IEnumerable<MasterPiece.Models.Payment>
+
+
+    @{
+        ViewBag.Title = "Pending Payment";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+    }
+
+
+
+
+    <h2>Pending Payments</h2>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Booking ID</th>
+                        <th>Sitter</th>
+                        <th>Service</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var payment in Model)
+                    {
+                        <tr>
+                            <td>@payment.PaymentID</td>
+                            <td>@payment.Booking.BookingID</td>
+                            <td>@payment.Booking.Sitter.FirstName @payment.Booking.Sitter.LastName</td>
+                            <td>@payment.Booking.Service.ServiceName</td>
+                            <td>@payment.Amount</td>
+                            @using (Html.BeginForm("UpdatePaymentStatus", "Admin", FormMethod.Post, new { @class = "form-inline" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("PaymentID", payment.PaymentID)
+                                <td>
+
+                                    <select name="Status" class="form-control">
+                                        <option value="Pending" @(payment.Status == "Pending" ? "selected" : "")>Pending</option>
+                                        <option value="Completed" @(payment.Status == "Completed" ? "selected" : "")>Completed</option>
+                                        <option value="Failed" @(payment.Status == "Failed" ? "selected" : "")>Failed</option>
+                                    </select>
+
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Update Status</button>
+                                </td>
+    }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        select.form-control {
+            width: 92px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        button.btn btn-primary {
+            font-size: 13px;
+            width: 108px;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+
+        @@media (max-width: 426px) {
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 5px;
+            }
+
+            select, button {
+                font-size: 12px;
+            }
+
+            .btn {
+                font-size: smaller;
+                font-weight: 500;
+                transition: .5s;
+            }
+        }
+
+        @@media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>*@
+@model IEnumerable<MasterPiece.Models.Payment>
+
+@{
+    ViewBag.Title = "Pending Payment";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Pending Payments</h1>
+        <br /><br />
+        <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm" id="table">
+            <thead>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Booking ID</th>
+                    <th>Sitter</th>
+                    <th>Service</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var payment in Model)
+                {
+                    <tr>
+                        <td>@payment.PaymentID</td>
+                        <td>@payment.Booking.BookingID</td>
+                        <td>@payment.Booking.Sitter.FirstName @payment.Booking.Sitter.LastName</td>
+                        <td>@payment.Booking.Service.ServiceName</td>
+                        <td>@payment.Amount</td>
+                        @using (Html.BeginForm("UpdatePaymentStatus", "Admin", FormMethod.Post, new { @class = "form-inline" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Hidden("PaymentID", payment.PaymentID)
+                            <td style="text-align: center; vertical-align: middle;">
+                                <select name="Status" class="form-control status-select">
+                                    <option value="Pending" @(payment.Status == "Pending" ? "selected" : "")>Pending</option>
+                                    <option value="Completed" @(payment.Status == "Completed" ? "selected" : "")>Completed</option>
+                                    <option value="Failed" @(payment.Status == "Failed" ? "selected" : "")>Failed</option>
+                                </select>
+                            </td>
+                            <td style="text-align: center;">
+                                <button type="submit" class="btn btn-primary">Update Status</button>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .table thead th {
+        font-weight: 600;
+        font-size: 15px;
+        border-color: #99005c;
+        border-bottom: 0;
+        padding-left: 1rem;
+        background-color: #99005c;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table tbody td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px;
+    }
+
+    .status-select {
+        width: 120px;
+        font-size: 14px;
+        margin: 0 auto; /* Centers the select horizontally */
+    }
+
+    .btn-primary {
+        font-size: 13px;
+        padding: 8px;
+        width: 120px;
+    }
+
+    @@media (max-width: 426px) {
+        .table {
+            font-size: 12px;
+        }
+        th, td {
+            padding: 5px;
+        }
+        .form-control, .btn-primary {
+            font-size: 12px;
+            width: 100px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .table {
+            font-size: 14px;
+        }
+        th, td {
+            padding: 8px;
+        }
+    }
+</style>

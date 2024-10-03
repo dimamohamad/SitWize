@@ -1,0 +1,394 @@
+﻿
+@*@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}*@
+
+<!--<div class="mobile-menu-overlay"></div>
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="row">-->
+<!-- Total Bookings -->
+<!--<div class="col-md-6 col-sm-12 mb-4">
+    <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h4 class="text-muted">Total Bookings</h4>
+        <h2 class="text-primary" style="font-size: 48px;">150</h2>
+        <div class="chart-container" style="margin-top: 20px; position: relative;">
+            <canvas id="bookingTrend"></canvas>
+        </div>
+    </div>
+</div>-->
+<!-- Total Revenue -->
+<!--<div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <h4 class="text-muted">Total Revenue</h4>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stats-container" style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 20px;">
+            <div class="stats-card" style="width: calc(25% - 20px);">
+                <div class="icon">
+                    <i class="bi bi-calendar-check"></i>
+                </div>
+                <div class="count">120</div>
+                <div class="label">Total Bookings</div>
+            </div>
+            <div class="stats-card" style="width: calc(25% - 20px);">
+                <div class="icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                <div class="count">45</div>
+                <div class="label">Vendors</div>
+            </div>
+            <div class="stats-card" style="width: calc(25% - 20px);">
+                <div class="icon">
+                    <i class="bi bi-briefcase"></i>
+                </div>
+                <div class="count">85</div>
+                <div class="label">Services</div>
+            </div>
+            <div class="stats-card" style="width: calc(25% - 20px);">
+                <div class="icon">
+                    <i class="bi bi-camera"></i>
+                </div>
+                <div class="count">30</div>
+                <div class="label">Photographers</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctxBooking = document.getElementById('bookingTrend').getContext('2d');
+            new Chart(ctxBooking, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Bookings',
+                        data: [100, 120, 140, 130, 150, 160, 170, 180, 190, 200, 210, 220],
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            var ctxRevenue = document.getElementById('revenueChart').getContext('2d');
+            new Chart(ctxRevenue, {
+                type: 'bar', // Bar chart for revenue
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [5000, 6000, 7000, 8000, 7500, 9000, 8500, 9500, 9000, 10000, 11000, 12000],
+                        backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+
+
+
+@model MasterPiece.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="mobile-menu-overlay"></div>
+<div class="main-container">
+    <div class="pd-ltr-20">
+
+        <div class="row text-dark">
+
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);height:194px">
+                    <h4 class="text-muted">Total Bookings</h4>
+                    <h2 class="text-primary" style="font-size: 48px;">@Model.TotalBookings</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);height:194px">
+                    <h4 class="text-muted">Total Revenue</h4>
+                    <h2 class="text-primary" style="font-size: 48px;">@Model.TotalRevenue.ToString("C")</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+
+                    <h2 class="section-title">Monthly Bookings</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas id="bookingsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+
+                    <h2 class="section-title">Monthly Revenue</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var bookingData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyBookings));
+    var revenueData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyRevenue));
+
+    // Total Bookings Chart
+    var bookingsChart = new Chart(document.getElementById('bookingsChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: bookingData.map(d => 'Month ' + d.Month),
+            datasets: [{
+                label: 'Monthly Bookings',
+                data: bookingData.map(d => d.Count),
+                borderColor: 'rgba(0, 123, 255, 1)',
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+
+    // Total Revenue Chart
+    var revenueChart = new Chart(document.getElementById('revenueChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: revenueData.map(d => 'Month ' + d.Month),
+            datasets: [{
+                label: 'Monthly Revenue',
+                data: revenueData.map(d => d.Total),
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+});
+</script>
+
+@*@model MasterPiece.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="mobile-menu-overlay"></div>
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <h4 class="text-muted">Total Bookings</h4>
+                    <h2 class="text-primary" style="font-size: 48px;">@Model.TotalBookings</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas id="bookingsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card-box widget-style3" style="border: 1px solid #ddd; border-radius: 8px; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <h4 class="text-muted">Total Revenue</h4>
+                    <h2 class="text-primary" style="font-size: 48px;">@Model.TotalRevenue.ToString("C")</h2>
+                    <div class="chart-container" style="margin-top: 20px; position: relative;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="section-title">Monthly Bookings</h2>
+                <div class="chart-container" style="margin-top: 20px; position: relative;">
+                    <canvas id="bookingsTrend"></canvas>
+                </div>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                <h2 class="section-title">Monthly Revenue</h2>
+                <div class="chart-container" style="margin-top: 20px; position: relative;">
+                    <canvas id="revenueTrend"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var bookingData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyBookings));
+    var revenueData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyRevenue));
+
+    // Total Bookings Trend Chart
+    var bookingsTrend = new Chart(document.getElementById('bookingsTrend').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: bookingData.map(d => 'Month ' + d.Month),
+            datasets: [{
+                label: 'Monthly Bookings',
+                data: bookingData.map(d => d.Count),
+                borderColor: 'rgba(0, 123, 255, 1)',
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+
+    // Monthly Revenue Chart
+    var revenueTrend = new Chart(document.getElementById('revenueTrend').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: revenueData.map(d => 'Month ' + d.Month),
+            datasets: [{
+                label: 'Monthly Revenue',
+                data: revenueData.map(d => d.Total),
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+});
+</script>*@

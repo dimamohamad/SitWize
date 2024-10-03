@@ -1,0 +1,98 @@
+﻿@model MasterPiece.Models.JoinU
+
+@{
+    ViewBag.Title = "Review Application";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Review Application</h1>
+        <br />
+        <div class="application-details">
+            <div>
+                <strong>First Name:</strong> @Model.FirstName
+            </div>
+            <div>
+                <strong>Last Name:</strong> @Model.LastName
+            </div>
+            <div>
+                <strong>Email:</strong> @Model.Email
+            </div>
+            <div>
+                <strong>Phone Number:</strong> @Model.PhoneNumber
+            </div>
+            <div>
+                <strong>Experience Years:</strong> @Model.ExperienceYears
+            </div>
+            <div>
+                <strong>Hourly Rate:</strong> $@Model.HourlyRate
+            </div>
+            <div>
+                <strong>Cover Letter:</strong> @Model.CoverLetter
+            </div>
+            <div>
+                <strong>Experience Type:</strong> @Model.ExperienceTypes
+            </div>
+        </div>
+
+        <br />
+        <div class="license-section">
+            <strong>License:</strong>
+            <div>
+                @if (!string.IsNullOrEmpty(Model.LicensePath))
+                {
+                    <a href="@Url.Action("DownloadLicense", "Admin", new { id = Model.ApplicationID })" class="btn btn-primary">
+                        Download License
+                    </a>
+                }
+                else
+                {
+                    <span>No license available</span>
+                }
+            </div>
+        </div>
+
+        <br />
+        <div class="action-buttons">
+         
+            @using (Html.BeginForm("AcceptApplication", "Admin", new { id = Model.ApplicationID }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Accept" class="btn btn-success" />
+            }
+
+            @using (Html.BeginForm("RejectApplication", "Admin", new { id = Model.ApplicationID }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Reject" class="btn btn-danger" />
+            }
+
+            
+            <a href="@Url.Action("JoinUsApplications", "Admin")" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .application-details div, .license-section div {
+        margin: 10px 0;
+    }
+
+    .application-details strong, .license-section strong {
+        width: 150px;
+        display: inline-block;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+</style>

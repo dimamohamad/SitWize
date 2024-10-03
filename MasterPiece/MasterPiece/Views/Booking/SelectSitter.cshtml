@@ -1,0 +1,613 @@
+﻿@*@model IEnumerable<MasterPiece.Models.Sitter>
+
+    @{
+        ViewBag.Title = "Select a Sitter";
+    }
+
+    <h2>Select a Sitter</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Experience</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sitter in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@Url.Content(sitter.sitterImage)" alt="@sitter.FirstName" width="100" />
+                    </td>
+                    <td>@sitter.FirstName @sitter.LastName</td>
+                    <td>@sitter.ExperienceYears years</td>
+                    <td>
+                        @using (Html.BeginForm("BookSitter", "Booking", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()  Add this line
+                            @Html.Hidden("sitterId", sitter.SitterID)
+                            <button type="submit" class="btn btn-primary">Book Sitter</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+
+
+@* the upper is before filter the this is after *@
+
+@*@model IEnumerable<MasterPiece.Models.Sitter>
+
+
+
+
+    <style>
+
+
+        img.card-img {
+            border: 1px solid;
+            border-radius: 50%;
+            align-items: center;
+            vertical-align: middle;
+            margin-top: 37px;
+            margin-left: 63px;
+            width: 126px;
+            height: 127px;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 10px;
+            height: 213px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+
+
+    </style>
+
+
+
+     Page Header End
+    <div class="container-xxl py-5 page-header position-relative mb-5">
+        <div class="container py-5">
+            <h1 class="display-2 text-white animated slideInDown mb-4">Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+     Page Header End
+     404 Start
+
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Refine Results</h5>
+                    @using (Html.BeginForm("SelectSitter", "Booking", FormMethod.Get))
+                    {
+                        <div class="form-group">
+                            <label for="ExperienceRange">Years of Experience</label>
+                            <select id="ExperienceRange" name="ExperienceRange" class="form-control">
+                                <option value="">Any</option>
+                                <option value="0-2">0-2 years</option>
+                                <option value="2-5">2-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">More than 10 years</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Find</button>
+                        @Html.AntiForgeryToken()
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                @foreach (var sitter in Model)
+                {
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="@Url.Content(sitter.sitterImage)" class="card-img" alt="@sitter.FirstName">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@sitter.FirstName @sitter.LastName</h5>
+                                        <p class="card-text">@sitter.ExperienceYears years paid experience</p>
+                                        <p class="card-text">
+                                            <strong>Price per Hour:</strong>
+                                           $@sitter.HourlyRate
+                                        </p>
+
+                                        <p class="card-text">@sitter.Bio </p>
+                                        @using (Html.BeginForm("BookSitter", "Booking", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.Hidden("sitterId", sitter.SitterID)
+                                            <button type="submit" class="btn btn-primary">Book</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+@*@model IEnumerable<MasterPiece.Models.Sitter>
+
+    <style>
+        img.card-img {
+            border: 1px solid;
+            border-radius: 50%;
+            align-items: center;
+            vertical-align: middle;
+            margin-top: 37px;
+            margin-left: 63px;
+            width: 126px;
+            height: 127px;
+        }
+
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 10px;
+            height: auto;
+            margin: 13px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .card-text {
+
+            font-size:13px;
+        }
+    </style>
+
+    <div class="container-xxl py-5 page-header position-relative mb-5">
+        <div class="container py-5">
+            <h1 class="display-2 text-white animated slideInDown mb-4">Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+     Filters Start
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Fiter by  </h5>
+
+
+                    <div class="form-group">
+                        <label for="ExperienceRange">Years of Experience</label>
+                        <select id="ExperienceRange" name="ExperienceRange" class="form-control">
+                            <option value="">Any</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="2-5">2-5 years</option>
+                            <option value="5-10">5-10 years</option>
+                            <option value="10+">More than 10 years</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="HourlyRateRange">Hourly Rate</label>
+                        <select id="HourlyRateRange" name="HourlyRateRange" class="form-control">
+                            <option value="">Any</option>
+                            <option value="3-5">$3 - $5</option>
+                            <option value="5-7">$5 - $7</option>
+                            <option value="7-10">$7 - $10</option>
+                            <option value="10-15">$10 - $15</option>
+                            <option value="15+">$15+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-9">
+            <div id="sitters-list">
+
+                @foreach (var sitter in Model)
+                {
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="@Url.Content(sitter.sitterImage)" class="card-img" alt="@sitter.FirstName">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@sitter.FirstName @sitter.LastName</h5>
+                                        <p class="card-text"><strong> Experience Years:</strong>@sitter.ExperienceYears years paid experience</p>
+                                        <p class="card-text"><strong>Price per Hour:</strong> $@sitter.HourlyRate</p>
+                                        <p class="card-text"><strong>Bio:</strong>@sitter.Bio</p>
+                                        @using (Html.BeginForm("BookSitter", "Booking", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.Hidden("sitterId", sitter.SitterID)
+                                            <button type="submit" class="btn btn-primary">Book</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            function updateSitters() {
+                var experienceRange = $('#ExperienceRange').val();
+                var hourlyRateRange = $('#HourlyRateRange').val();
+
+                $.ajax({
+                    url: '@Url.Action("FilterSitters", "Booking")',
+                    type: 'GET',
+                    data: {
+                        ExperienceRange: experienceRange,
+                        HourlyRateRange: hourlyRateRange
+                    },
+                    success: function (sitters) {
+                        var sittersHtml = '';
+
+
+                        $.each(sitters, function (index, sitter) {
+                            sittersHtml += '<div class="col-md-12">' +
+                                           '<div class="card mb-4">' +
+                                           '<div class="row no-gutters">' +
+                                           '<div class="col-md-4">' +
+                                           '<img src="' + sitter.sitterImage + '" class="card-img" alt="' + sitter.FirstName + '">' +
+                                           '</div>' +
+                                           '<div class="col-md-8">' +
+                                           '<div class="card-body">' +
+                                           '<h5 class="card-title">' + sitter.FirstName + ' ' + sitter.LastName + '</h5>' +
+                                           '<p class="card-text">' + sitter.ExperienceYears + ' years paid experience</p>' +
+                                           '<p class="card-text"><strong>Price per Hour:</strong> $' + sitter.HourlyRate + '</p>' +
+                                           '<p class="card-text">' + sitter.Bio + '</p>' +
+                                           '<form action="@Url.Action("BookSitter", "Booking")" method="post">' +
+                                           '<input type="hidden" name="sitterId" value="' + sitter.SitterID + '">' +
+                                           '<input type="submit" class="btn btn-primary" value="Book">' +
+                                           '</form>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>';
+                        });
+
+
+                        $('#sitters-list').html(sittersHtml);
+                    }
+                });
+            }
+
+
+            $('#ExperienceRange, #HourlyRateRange').on('change', function () {
+                updateSitters();
+            });
+        });
+    </script>*@
+
+
+
+
+@model IEnumerable<MasterPiece.Models.Sitter>
+
+<style>
+    img.card-img {
+        border: 1px solid;
+        border-radius: 50%;
+        align-items: center;
+        vertical-align: middle;
+        margin-top: 37px;
+        margin-left: 63px;
+        width: 126px;
+        height: 127px;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 10px;
+        height: auto;
+        margin: 13px;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .card-text {
+        font-size: 13px;
+    }
+</style>
+
+<div class="container-xxl py-5 page-header position-relative mb-5">
+    <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Bookings</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Booking Sitter</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Filters Start -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Filter by</h5>
+
+                @using (Html.BeginForm("SelectSitter", "Booking", FormMethod.Get))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label for="ExperienceRange">Years of Experience</label>
+                        <select id="ExperienceRange" name="ExperienceRange" class="form-control">
+                            <option value="">Any</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="2-5">2-5 years</option>
+                            <option value="5-10">5-10 years</option>
+                            <option value="10+">More than 10 years</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="HourlyRateRange">Hourly Rate</label>
+                        <select id="HourlyRateRange" name="HourlyRateRange" class="form-control">
+                            <option value="">Any</option>
+                            <option value="3-5">$3 - $5</option>
+                            <option value="5-7">$5 - $7</option>
+                            <option value="7-10">$7 - $10</option>
+                            <option value="10-15">$10 - $15</option>
+                            <option value="15+">$15+</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="HasSpecialNeedsLicense">Special Needs License</label>
+                        <select id="HasSpecialNeedsLicense" name="HasSpecialNeedsLicense" class="form-control">
+                            <option value="">Any</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div id="sitters-list">
+            @foreach (var sitter in Model)
+            {
+                <div class="col-md-12">
+                    <div class="card mb-4">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="~/Images/@sitter.sitterImage" class="card-img" alt="@sitter.FirstName">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@sitter.FirstName @sitter.LastName</h5>
+                                    <p class="card-text"><strong>Experience Years:</strong>@sitter.ExperienceYears years paid experience</p>
+                                    <p class="card-text"><strong>Price per Hour:</strong> $@sitter.HourlyRate</p>
+                                    <p class="card-text"><strong>Bio:</strong>@sitter.Bio</p>
+
+
+                                    @if (!string.IsNullOrEmpty(sitter.LicensePath))
+                                    {
+                                        <p>
+                                            <a href="@Url.Action("DownloadLicense", "Booking", new { path = sitter.LicensePath })" class="btn btn-secondary">
+                                                Download License
+                                            </a>
+                                        </p>
+                                    }
+
+
+                                    @using (Html.BeginForm("BookSitter", "Booking", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.Hidden("sitterId", sitter.SitterID)
+                                        <button type="submit" class="btn btn-primary">Book</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@*<script>
+    $(document).ready(function () {
+
+        function updateSitters() {
+            var experienceRange = $('#ExperienceRange').val();
+            var hourlyRateRange = $('#HourlyRateRange').val();
+
+            $.ajax({
+                url: '@Url.Action("FilterSitters", "Booking")',
+                type: 'GET',
+                data: {
+                    ExperienceRange: experienceRange,
+                    HourlyRateRange: hourlyRateRange
+                },
+                success: function (sitters) {
+                    var sittersHtml = '';
+
+                    // Get the anti-forgery token
+                    var antiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
+
+                    $.each(sitters, function (index, sitter) {
+                        sittersHtml += '<div class="col-md-12">' +
+                                       '<div class="card mb-4">' +
+                                       '<div class="row no-gutters">' +
+                                       '<div class="col-md-4">' +
+                                       '<img src="' + sitter.sitterImage + '" class="card-img" alt="' + sitter.FirstName + '">' +
+                                       '</div>' +
+                                       '<div class="col-md-8">' +
+                                       '<div class="card-body">' +
+                                       '<h5 class="card-title">' + sitter.FirstName + ' ' + sitter.LastName + '</h5>' +
+                                       '<p class="card-text">' + sitter.ExperienceYears + ' years paid experience</p>' +
+                                       '<p class="card-text"><strong>Price per Hour:</strong> $' + sitter.HourlyRate + '</p>' +
+                                       '<p class="card-text">' + sitter.Bio + '</p>' +
+                                       '<form action="@Url.Action("BookSitter", "Booking")" method="post">' +
+                                       '<input type="hidden" name="sitterId" value="' + sitter.SitterID + '">' +
+                                       '<input type="hidden" name="__RequestVerificationToken" value="' + antiForgeryToken + '">' +
+                                       '<input type="submit" class="btn btn-primary" value="Book">' +
+                                       '</form>' +
+                                       '</div>' +
+                                       '</div>' +
+                                       '</div>' +
+                                       '</div>' +
+                                       '</div>';
+                    });
+
+                    // Update the sitter list with the new HTML
+                    $('#sitters-list').html(sittersHtml);
+                }
+            });
+        }
+
+        // Trigger update when the filters change
+        $('#ExperienceRange, #HourlyRateRange').on('change', function () {
+            updateSitters();
+        });
+    });
+</script>*@
+<script>
+    $(document).ready(function () {
+        function updateSitters() {
+            var experienceRange = $('#ExperienceRange').val();
+            var hourlyRateRange = $('#HourlyRateRange').val();
+            var hasSpecialNeedsLicense = $('#HasSpecialNeedsLicense').val();
+
+            $.ajax({
+                url: '@Url.Action("FilterSitters", "Booking")',
+                type: 'GET',
+                data: {
+                    ExperienceRange: experienceRange,
+                    HourlyRateRange: hourlyRateRange,
+                    HasSpecialNeedsLicense: hasSpecialNeedsLicense
+                },
+                success: function (sitters) {
+                    var sittersHtml = '';
+                    var antiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
+
+                    $.each(sitters, function (index, sitter) {
+                        sittersHtml += '<div class="col-md-12">' +
+                            '<div class="card mb-4">' +
+                            '<div class="row no-gutters">' +
+                            '<div class="col-md-4">' +
+                            '<img src="/Images/'+sitter.sitterImage +'" class="card-img" alt="' + sitter.FirstName + '">' +
+                            '</div>' +
+                            '<div class="col-md-8">' +
+                            '<div class="card-body">' +
+                            '<h5 class="card-title">' + sitter.FirstName + ' ' + sitter.LastName + '</h5>' +
+                            '<p class="card-text"><strong>Experience Years:</strong> ' + sitter.ExperienceYears + ' years paid experience</p>' +
+                            '<p class="card-text"><strong>Price per Hour:</strong> $' + sitter.HourlyRate + '</p>' +
+                            '<p class="card-text"><strong>Bio:</strong> ' + sitter.Bio + '</p>' +
+                            '<p class="card-text"><strong>Special Needs License:</strong> ' + (sitter.HasSpecialNeedsLicense ? 'Yes' : 'No') + '</p>';
+
+                           if (sitter.LicensePath) {
+                    sittersHtml += '<p><a href="' + '@Url.Action("DownloadLicense", "Booking")' + '?path=' + encodeURIComponent(sitter.LicensePath) + '" class="btn btn-secondary">Download License</a></p>';
+                }
+
+                        sittersHtml += '<form action="@Url.Action("BookSitter", "Booking")" method="post">' +
+                            '<input type="hidden" name="sitterId" value="' + sitter.SitterID + '">' +
+                            '<input type="hidden" name="__RequestVerificationToken" value="' + antiForgeryToken + '">' +
+                            '<input type="submit" class="btn btn-primary" value="Book">' +
+                            '</form>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    });
+
+                    $('#sitters-list').html(sittersHtml);
+                }
+            });
+        }
+
+        $('#ExperienceRange, #HourlyRateRange, #HasSpecialNeedsLicense').on('change', function () {
+            updateSitters();
+        });
+    });
+</script>

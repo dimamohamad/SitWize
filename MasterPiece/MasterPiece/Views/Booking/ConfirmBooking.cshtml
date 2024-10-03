@@ -1,0 +1,16 @@
+﻿@model MasterPiece.Models.Booking
+
+@{
+    ViewBag.Title = "Confirm Booking";
+}
+
+<h2>Confirm Booking</h2>
+
+<div>
+    <h3>Your booking with @Model.Sitter.FirstName @Model.Sitter.LastName is confirmed.</h3>
+    <p><strong>Service:</strong> @Model.Service.ServiceName</p>
+    <p><strong>Booking Date:</strong> @Model.BookingDate?.ToString("f")</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+</div>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>

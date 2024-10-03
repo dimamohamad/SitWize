@@ -1,0 +1,133 @@
+﻿@*@model IEnumerable<MasterPiece.Models.JoinU>
+
+    @{
+        ViewBag.Title = "Applications";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+
+    }
+
+    }
+
+
+
+    <h2 class="text-center">Applications</h2>
+    <div class="container ">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                    <th>Hourly Rate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var application in Model)
+                {
+                    <tr>
+                        <td>@application.FirstName</td>
+                        <td>@application.LastName</td>
+                        <td>@application.Email</td>
+                        <td>@application.PhoneNumber</td>
+                        <td>@application.ApplicationStatus</td>
+                        <td>@application.HourlyRate</td>
+                        <td>
+                            @Html.ActionLink("Review", "ReviewApplication", new { id = application.ApplicationID }, new { @class = "btn btn-primary" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>*@
+
+
+
+
+@model IEnumerable<MasterPiece.Models.JoinU>
+
+@{
+    ViewBag.Title = "Applications";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Applications</h1>
+        <br />
+        <div class="table-container">
+            <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Hourly Rate</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var application in Model)
+                    {
+                        <tr>
+                            <td>@application.FirstName</td>
+                            <td>@application.LastName</td>
+                            <td>@application.Email</td>
+                            <td>@application.PhoneNumber</td>
+                            <td>@application.ApplicationStatus</td>
+                            <td>@application.HourlyRate</td>
+                            <td>
+                                <a href="@Url.Action("ReviewApplication","Admin", new { id = application.ApplicationID })" class="btn btn-sm btn-primary">Review</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .table .thead-light th {
+        text-align: center;
+        color: #000;
+        vertical-align: middle;
+        background-color: #99005c;
+        border-color: #99005c;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #99005c;
+        border-color: #99005c;
+        width: 65px;
+        margin: 2px;
+    }
+
+    th, td {
+        background-color: white;
+        text-align: center;
+    }
+
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .table-container {
+        margin-top: 20px;
+    }
+
+    .table {
+        margin-top: 20px;
+    }
+</style>

@@ -1,0 +1,61 @@
+﻿@model MasterPiece.Models.Payment
+
+@{
+    ViewBag.Title = "Payment Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Payment Details</h1>
+        <br />
+        <div class="payment-details">
+            <div>
+                <strong>Payment ID:</strong> @Model.PaymentID
+            </div>
+            <div>
+                <strong>Amount:</strong> $@Model.Amount
+            </div>
+            <div>
+                <strong>Payment Method:</strong> @Model.PaymentMethod
+            </div>
+            <div>
+                <strong>Transaction ID:</strong> @Model.TransactionID
+            </div>
+            <div>
+                <strong>Payment Date:</strong> @Model.PaymentDate
+            </div>
+            <div>
+                <strong>Status:</strong> @Model.Status
+            </div>
+            <hr />
+            <h3>Related Information</h3>
+            <div>
+                <strong>Service:</strong> @(Model.Booking?.Service?.ServiceName ?? "No Service")
+            </div>
+            <div>
+                <strong>User:</strong> @(Model.Booking?.User?.FirstName + " " + Model.Booking?.User?.LastName ?? "No User")
+            </div>
+            <div>
+                <strong>Sitter:</strong> @(Model.Booking?.Sitter?.FirstName + " " + Model.Booking?.Sitter?.LastName ?? "No Sitter")
+            </div>
+        </div>
+        <br />
+        <p>
+            <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Show All Payments</a>
+            <a href="@Url.Action("Edit", "Admin", new { id = Model.PaymentID })" class="btn btn-primary">Edit</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    .payment-details div {
+        margin: 10px 0;
+    }
+
+    .payment-details strong {
+        width: 150px;
+        display: inline-block;
+    }
+</style>

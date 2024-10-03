@@ -1,0 +1,141 @@
+﻿@model MasterPiece.Models.ContactModel
+
+@*@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}*@
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+
+
+@{
+    ViewBag.Title = "Contact";
+}
+<title>@ViewBag.Title</title>
+
+<div class="container-xxl py-5 page-header position-relative mb-5">
+    <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Contact us</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Contact us</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Get In Touch</h1>
+            <p>We’re here to help you find the perfect child care solution for your family. Whether you have questions, need more information, or want to discuss your specific needs, our team is just a call or click away. Reach out to us today and let us assist you in making the best choice for your child’s care.</p>
+        </div>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-4 text-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 75px; height: 75px;">
+                    <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
+                </div>
+                <h6>7th circle, AMMAN, JORDAN</h6>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center wow fadeInUp" data-wow-delay="0.3s">
+                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 75px; height: 75px;">
+                    <i class="fa fa-envelope-open fa-2x text-primary"></i>
+                </div>
+                <h6>SitWise@gmail.com</h6>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center wow fadeInUp" data-wow-delay="0.5s">
+                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 75px; height: 75px;">
+                    <i class="fa fa-phone-alt fa-2x text-primary"></i>
+                </div>
+                <h6>+962 781 541 015</h6>
+            </div>
+        </div>
+        <div class="bg-light rounded">
+            <div class="row g-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100 d-flex flex-column justify-content-center p-5">
+                        <h1 class="mb-3">Contact Us</h1>
+                        <p class="mb-4">
+                            Contact us to learn more about our services or to schedule a consultation. You can reach us via phone, email, or by filling out the contact form on our website. Our friendly team is ready to provide you with all the information you need and help you get started with our trusted child care professionals.
+
+                        </p>
+                        @using (Html.BeginForm("SubmitContactForm", "Home", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control border-0", placeholder = "Your Name" })
+                                        @Html.LabelFor(m => m.Name)
+                                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control border-0", placeholder = "Your Email" })
+                                        @Html.LabelFor(m => m.Email)
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control border-0", placeholder = "Subject" })
+                                        @Html.LabelFor(m => m.Subject)
+                                        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control border-0", placeholder = "Leave a message here", style = "height: 100px" })
+                                        @Html.LabelFor(m => m.Message)
+                                        @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <iframe class="position-relative rounded w-100 h-100"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.0526511896614!2d35.85765810000001!3d31.9594683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca10efc21a31d%3A0x6e8f71c86248f350!2s7th%20Cir.%2C%20Amman!5e0!3m2!1sen!2sjo!4v1721996100194!5m2!1sen!2sjo"
+                                frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>*@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        var message = '@TempData["SuccessMessage"]';
+
+        if (message) {
+            Swal.fire({
+                title: 'Your message has been sent successfully!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
+    });
+</script>

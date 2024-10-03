@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MasterPiece.Models.Booking>
+@{
+    ViewBag.Title = "Your Bookings";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <style>
+        .booking-card {
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+            .booking-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .card-header {
+            background-color: #99005c !important;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h5 {
+            color: #99005C;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 49px 0;
+        }
+
+        strong {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Your Bookings</h2>
+        <div class="row">
+            @foreach (var booking in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 booking-card">
+                        <div class="card-header">
+                            Booking ID: @booking.BookingID
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <strong>Service:</strong> @booking.Service.ServiceName<br>
+                                <strong>Booking Date:</strong> @(booking.BookingDate?.ToString("MM/dd/yyyy HH:mm") ?? "N/A")<br>
+                                <strong>Payment Status:</strong> <span class="badge bg-info"> @(booking.Payments.FirstOrDefault()?.Status ?? "N/A")</span><br>
+                                <strong>Booking Status:</strong> <span class="badge bg-info"> @booking.Status</span><br>
+                                <strong>Sitter Name:</strong> @booking.Sitter.FirstName @booking.Sitter.LastName<br>
+                                <strong>Start Date:</strong> @(booking.ServiceDetail.StartDate?.ToString("MM/dd/yyyy") ?? "N/A")<br>
+                                <strong>Start Time:</strong> @(booking.ServiceDetail.StartTime?.ToString() ?? "N/A")<br>
+                                <strong>Duration:</strong> @booking.ServiceDetail.Duration
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="backbutton">
+            @Html.ActionLink("Back to Profile", "Profile")
+        </div>
+    </div>
+</body>
+</html>

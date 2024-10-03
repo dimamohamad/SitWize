@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "privacy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<
+<div class="container mt-5">
+    <h1 class="text-center mb-4">SitWize Privacy Policies</h1>
+
+    <!-- Privacy Policies Section -->
+    <div class="accordion" id="policiesAccordion">
+        <!-- User Data Privacy -->
+        <div class="card mb-3">
+            <div class="card-header" id="userPrivacyHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseUserPrivacy" aria-expanded="true" aria-controls="collapseUserPrivacy">
+                        <h4>User Data Privacy</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseUserPrivacy" class="collapse show" aria-labelledby="userPrivacyHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>We collect and store personal data such as your name, contact details, and payment information when you sign up or make a booking.</li>
+                        <li>We use your data to facilitate bookings, process payments, and improve our services. Your data is never sold or rented to third parties.</li>
+                        <li>We retain your personal data for as long as necessary to provide our services and comply with legal obligations.</li>
+                        <li>You may request the deletion of your account and personal data at any time by contacting our support team.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Information Privacy -->
+        <div class="card mb-3">
+            <div class="card-header" id="paymentPrivacyHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsePaymentPrivacy" aria-expanded="false" aria-controls="collapsePaymentPrivacy">
+                        <h4>Payment Information Privacy</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapsePaymentPrivacy" class="collapse" aria-labelledby="paymentPrivacyHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>All payment transactions are processed using SSL encryption to protect your financial data.</li>
+                        <li>We use trusted third-party payment gateways such as PayPal and Stripe. Your payment information is never stored on our servers.</li>
+                        <li>Fraud detection measures are in place to protect against unauthorized transactions. You will be notified immediately in case of suspicious activity.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sitter and Nanny Information Privacy -->
+        <div class="card mb-3">
+            <div class="card-header" id="sitterPrivacyHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSitterPrivacy" aria-expanded="false" aria-controls="collapseSitterPrivacy">
+                        <h4>Sitter and Nanny Privacy</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSitterPrivacy" class="collapse" aria-labelledby="sitterPrivacyHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>All sitters and nannies undergo background checks. Personal information gathered during this process is confidential.</li>
+                        <li>Sitter profiles are publicly visible to potential clients, but sensitive personal information such as home addresses are not shared.</li>
+                        <li>All communication between sitters and clients is conducted through the SitWize platform for privacy and security.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Children's Data Privacy -->
+        <div class="card mb-3">
+            <div class="card-header" id="childDataPrivacyHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseChildDataPrivacy" aria-expanded="false" aria-controls="collapseChildDataPrivacy">
+                        <h4>Children's Data Privacy</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseChildDataPrivacy" class="collapse" aria-labelledby="childDataPrivacyHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>We collect only essential data required for caregiving services, such as the child’s name, age, and special needs or instructions.</li>
+                        <li>Explicit parental consent is required before collecting any information related to children.</li>
+                        <li>Child-related information is used solely for caregiving purposes and is not shared with third parties.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Policies -->
+        <div class="card mb-3">
+            <div class="card-header" id="securityHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSecurityPolicies" aria-expanded="false" aria-controls="collapseSecurityPolicies">
+                        <h4>Security Policies</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSecurityPolicies" class="collapse" aria-labelledby="securityHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>We use state-of-the-art encryption technologies to protect personal and financial data during transmission.</li>
+                        <li>All data stored on our servers is encrypted and can only be accessed by authorized personnel.</li>
+                        <li>We regularly audit our systems to identify and resolve potential security vulnerabilities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Privacy Measures -->
+        <div class="card mb-3">
+            <div class="card-header" id="additionalPrivacyHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseAdditionalPrivacy" aria-expanded="false" aria-controls="collapseAdditionalPrivacy">
+                        <h4>Additional Privacy Measures</h4>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseAdditionalPrivacy" class="collapse" aria-labelledby="additionalPrivacyHeading" data-parent="#policiesAccordion">
+                <div class="card-body">
+                    <ul>
+                        <li>We adhere to all applicable data protection laws, including GDPR and CCPA.</li>
+                        <li>We use two-factor authentication (2FA) to secure user accounts and prevent unauthorized access.</li>
+                        <li>We allow users to control their privacy settings and manage how their data is used on our platform.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

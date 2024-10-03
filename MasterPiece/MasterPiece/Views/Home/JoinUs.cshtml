@@ -1,0 +1,625 @@
+﻿@model MasterPiece.Models.JoinU
+
+@{
+    ViewBag.Title = "Join Us";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        padding: 2rem;
+        box-shadow: 0 0 10px rgb(0 0 0 / 26%);
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: black;
+    }
+
+    .form-check-label {
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        background-color: #D9278D;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: #D9278D;
+        }
+
+    .is-invalid {
+        border-color: #dc3545;
+    }
+
+    .invalid-feedback {
+        color: red;
+        display: none;
+    }
+
+    .is-invalid + .invalid-feedback {
+        display: block;
+    }
+</style>
+
+<!-- Page Header -->
+<div class="container-xxl py-5 page-header position-relative mb-5">
+    <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Join us</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Join us</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Form Start -->
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="d-inline-block align-middle ms-2">Join Us As a Sitter</h1>
+    </div>
+    <div class="card mx-auto" style="max-width: 800px;">
+        <div class="card-body">
+            @using (Html.BeginForm("JoinUs", "Home", FormMethod.Post, new { id = "joinUsForm", enctype = "multipart/form-data", novalidate = "novalidate" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <h2 class="mb-4">About You</h2>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        @Html.LabelFor(m => m.FirstName, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @required = "required" })
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "invalid-feedback" })
+                    </div>
+                    <div class="col-md-6">
+                        @Html.LabelFor(m => m.LastName, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @required = "required" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "invalid-feedback" })
+                    </div>
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.DateOfBirth, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", @type = "date", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.DateOfBirth, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Nationality, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.Nationality, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.MaritalStatus, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.MaritalStatus, new { @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.MaritalStatus, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Address, new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.Address, new { @class = "form-control", rows = 3, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.MedicalConditions, new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.MedicalConditions, new { @class = "form-control", rows = 3, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.MedicalConditions, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.CoverLetter, "Cover Letter and Description", new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.CoverLetter, new { @class = "form-control", rows = 5, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.CoverLetter, "", new { @class = "invalid-feedback" })
+                </div>
+
+                <!-- Job Search -->
+                <h2 class="mb-4">Job Search</h2>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.EligibleToWorkInJordan, "Are you eligible to work in Jordan?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.EligibleToWorkInJordan,
+                        new SelectList(new[] {
+
+                            new { Text = "Yes", Value = "true" },
+                            new { Text = "No", Value = "false" }
+                        }, "Value", "Text"),
+                        "Please Select", new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.EligibleToWorkInJordan, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.ValidDrivingLicense, "Do you hold a valid driving license?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.ValidDrivingLicense,
+                        new SelectList(new[] {
+
+                            new { Text = "Yes", Value = "true" },
+                            new { Text = "No", Value = "false" }
+                        }, "Value", "Text"),
+                        "Please Select", new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.ValidDrivingLicense, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.NannyType, new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.NannyType, new { @class = "form-control", rows = 3, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.NannyType, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.WillingToTravel, "Would you accompany the family on holiday and work trips?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.WillingToTravel,
+                        new SelectList(new[] {
+
+                            new { Text = "Yes", Value = "true" },
+                            new { Text = "No", Value = "false" }
+                        }, "Value", "Text"),
+                        "Please Select", new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.WillingToTravel, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.WillingToWorkWeekends, "Would you work weekends?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.WillingToWorkWeekends,
+                        new SelectList(new[] {
+
+                            new { Text = "Yes", Value = "true" },
+                            new { Text = "No", Value = "false" }
+                        }, "Value", "Text"),
+                        "Please Select", new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.WillingToWorkWeekends, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.FlexibleHours, "Are you flexible with your hours?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.FlexibleHours,
+                        new SelectList(new[] {
+
+                            new { Text = "Yes", Value = "true" },
+                            new { Text = "No", Value = "false" }
+                        }, "Value", "Text"),
+                        "Please Select", new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.FlexibleHours, "", new { @class = "invalid-feedback" })
+                </div>
+
+                <!-- Work Experience -->
+                <h2 class="mb-4">Work Experience</h2>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.ExperienceYears, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.ExperienceYears, new { @class = "form-control", @type = "number", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.ExperienceYears, "", new { @class = "invalid-feedback" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.HourlyRate, "Hourly Rate (USD)", new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.HourlyRate, new { @class = "form-control", @type = "number", step = "0.01", @required = "required", @min = "5", @max = "20" })
+                    <span class="text-danger"></span>
+                    @Html.ValidationMessageFor(m => m.HourlyRate, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.CurrentWork, new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.CurrentWork, new { @class = "form-control", rows = 3, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.CurrentWork, "", new { @class = "invalid-feedback" })
+                </div>
+                @*<div class="mb-3">
+                <label class="form-label">Experience</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Newborn" id="newborn">
+                    <label class="form-check-label" for="newborn">Newborn</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Under 5 years" id="under5">
+                    <label class="form-check-label" for="under5">Under 5 years</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Over 5 years" id="over5">
+                    <label class="form-check-label" for="over5">Over 5 years</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Twins / Multiples" id="twinsMultiples">
+                    <label class="form-check-label" for="twinsMultiples">Twins / Multiples</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Special needs" id="specialNeeds">
+                    <label class="form-check-label" for="specialNeeds">Special needs</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Learning disabilities" id="learningDisabilities">
+                    <label class="form-check-label" for="learningDisabilities">Learning disabilities</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Behavioral difficulties" id="behavioralDifficulties">
+                    <label class="form-check-label" for="behavioralDifficulties">Behavioral difficulties</label>
+                </div>
+            </div>*@
+                <div class="mb-3">
+                    <label class="form-label">Experience</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Newborn" id="newborn" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Newborn") ? "checked" : "")>
+                        <label class="form-check-label" for="newborn">Newborn</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Under 5 years" id="under5" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Under 5 years") ? "checked" : "")>
+                        <label class="form-check-label" for="under5">Under 5 years</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Over 5 years" id="over5" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Over 5 years") ? "checked" : "")>
+                        <label class="form-check-label" for="over5">Over 5 years</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Twins / Multiples" id="twinsMultiples" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Twins / Multiples") ? "checked" : "")>
+                        <label class="form-check-label" for="twinsMultiples">Twins / Multiples</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Special needs" id="specialNeeds" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Special needs") ? "checked" : "")>
+                        <label class="form-check-label" for="specialNeeds">Special needs</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Learning disabilities" id="learningDisabilities" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Learning disabilities") ? "checked" : "")>
+                        <label class="form-check-label" for="learningDisabilities">Learning disabilities</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ExperienceTypes" value="Behavioral difficulties" id="behavioralDifficulties" @(Model.ExperienceTypes != null && Model.ExperienceTypes.Contains("Behavioral difficulties") ? "checked" : "")>
+                        <label class="form-check-label" for="behavioralDifficulties">Behavioral difficulties</label>
+                    </div>
+                </div>
+
+
+                <!-- File Upload Section (hidden by default) -->
+        <div class="mb-3">
+            <label class="form-label experience-label" style="display: none;">Upload License (Required for special needs, learning disabilities, or behavioral difficulties)</label>
+            <input type="file" name="LicenseUpload" id="licenseUpload" class="form-control experience-upload" style="display: none;" accept=".pdf,.doc,.docx">
+            <span class="text-danger" id="licenseUploadError"></span>
+        </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.JoinCompany, "Would you like to join The SitWise Company as a babysitter?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.JoinCompany, new SelectList(new[] { new { Text = "Please Select", Value = "" }, new { Text = "Yes", Value = "true" }, new { Text = "No", Value = "false" } }, "Value", "Text"), new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.JoinCompany, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.RegisteredWithOtherAgency, "Are you registered with any other agency?", new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.RegisteredWithOtherAgency, new SelectList(new[] { new { Text = "Please Select", Value = "" }, new { Text = "Yes", Value = "true" }, new { Text = "No", Value = "false" } }, "Value", "Text"), new { @class = "form-select", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.RegisteredWithOtherAgency, "", new { @class = "invalid-feedback" })
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.OtherAgencies, "If yes please state agency names", new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.OtherAgencies, new { @class = "form-control", rows = 3 })
+                    @Html.ValidationMessageFor(m => m.OtherAgencies, "", new { @class = "invalid-feedback" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Disclaimer, new { @class = "form-label" })
+                    @Html.TextAreaFor(m => m.Disclaimer, new { @class = "form-control", rows = 3, @required = "required" })
+                    @Html.ValidationMessageFor(m => m.Disclaimer, "", new { @class = "invalid-feedback" })
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            }
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+@*<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var experienceYearsInput = document.querySelector('input[name="ExperienceYears"]');
+            var hourlyRateInput = document.querySelector('input[name="HourlyRate"]');
+
+            experienceYearsInput.addEventListener('change', function() {
+                var experience = parseInt(experienceYearsInput.value, 10);
+                var minRate = 5;
+                var maxRate = 7;
+
+                if (experience >= 0 && experience <= 2) {
+                    minRate = 5;
+                    maxRate = 7;
+                } else if (experience >= 3 && experience <= 5) {
+                    minRate = 7;
+                    maxRate = 10;
+                } else if (experience >= 5 && experience <= 10) {
+                    minRate = 10;
+                    maxRate = 15;
+                } else if (experience > 10) {
+                    minRate = 15;
+                    maxRate = 20;
+                }
+
+                hourlyRateInput.setAttribute('min', minRate);
+                hourlyRateInput.setAttribute('max', maxRate);
+
+                hourlyRateInput.placeholder = 'Rate between $' + minRate + ' - ' + maxRate;
+            });
+        });
+    </script>*@
+
+
+
+@*<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var experienceYearsInput = document.querySelector('input[name="ExperienceYears"]');
+            var hourlyRateInput = document.querySelector('input[name="HourlyRate"]');
+            var hourlyRateError = hourlyRateInput.nextElementSibling;
+
+            function validateHourlyRate() {
+                var experience = parseInt(experienceYearsInput.value, 10);
+                var hourlyRate = parseFloat(hourlyRateInput.value);
+                var minRate = 5;
+                var maxRate = 7;
+
+
+                if (experience >= 0 && experience <= 2) {
+                    minRate = 5;
+                    maxRate = 7;
+                } else if (experience >= 3 && experience <= 5) {
+                    minRate = 7;
+                    maxRate = 10;
+                } else if (experience >= 5 && experience <= 10) {
+                    minRate = 10;
+                    maxRate = 15;
+                } else if (experience > 10) {
+                    minRate = 15;
+                    maxRate = 20;
+                }
+
+                hourlyRateInput.setAttribute('min', minRate);
+                hourlyRateInput.setAttribute('max', maxRate);
+                hourlyRateInput.placeholder = `Rate between $${minRate} - $${maxRate}`;
+
+
+                if (isNaN(hourlyRate) || hourlyRate < minRate || hourlyRate > maxRate) {
+                    hourlyRateInput.classList.add('is-invalid');
+                    hourlyRateError.textContent = `Please enter a rate between $${minRate} and $${maxRate}.`;
+                } else {
+                    hourlyRateInput.classList.remove('is-invalid');
+                    hourlyRateError.textContent = '';
+                }
+            }
+
+
+            experienceYearsInput.addEventListener('change', validateHourlyRate);
+            hourlyRateInput.addEventListener('input', validateHourlyRate);
+
+            document.getElementById('joinUsForm').addEventListener('submit', function (event) {
+                validateHourlyRate();
+                var invalidFields = document.querySelectorAll('.is-invalid');
+                if (invalidFields.length > 0) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('joinUsForm');
+
+            form.addEventListener('submit', function(event) {
+                var inputs = form.querySelectorAll('[required]');
+                var allValid = true;
+
+                inputs.forEach(function(input) {
+                    if (!input.value.trim()) {
+                        allValid = false;
+                        input.classList.add('is-invalid');
+                        input.nextElementSibling.textContent = 'This field is required';
+                    } else {
+                        input.classList.remove('is-invalid');
+                        input.nextElementSibling.textContent = '';
+                    }
+                });
+
+                if (!allValid) {
+                    event.preventDefault();
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Please fill all required fields.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+
+            var successMessage = '@TempData["SuccessMessage"]';
+            var errorMessage = '@TempData["ErrorMessage"]';
+            if (successMessage) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: successMessage,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }
+            if (errorMessage) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: errorMessage,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>*@
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the relevant checkboxes and the file input elements
+        var specialNeedsCheckbox = document.getElementById('specialNeeds');
+        var learningDisabilitiesCheckbox = document.getElementById('learningDisabilities');
+        var behavioralDifficultiesCheckbox = document.getElementById('behavioralDifficulties');
+        var licenseUploadInput = document.getElementById('licenseUpload');
+        var licenseUploadLabel = document.querySelector('.experience-label');
+
+        // Function to check if any relevant checkbox is checked
+        function toggleLicenseUpload() {
+            if (specialNeedsCheckbox.checked || learningDisabilitiesCheckbox.checked || behavioralDifficultiesCheckbox.checked) {
+                licenseUploadInput.style.display = 'block';  // Show the input
+                licenseUploadLabel.style.display = 'block';  // Show the label
+            } else {
+                licenseUploadInput.style.display = 'none';  // Hide the input
+                licenseUploadLabel.style.display = 'none';  // Hide the label
+            }
+        }
+
+        // Add event listeners to the checkboxes to trigger the function on change
+        specialNeedsCheckbox.addEventListener('change', toggleLicenseUpload);
+        learningDisabilitiesCheckbox.addEventListener('change', toggleLicenseUpload);
+        behavioralDifficultiesCheckbox.addEventListener('change', toggleLicenseUpload);
+
+        // Run the function once on page load to ensure the correct state
+        toggleLicenseUpload();
+    });
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var experienceYearsInput = document.querySelector('input[name="ExperienceYears"]');
+    var hourlyRateInput = document.querySelector('input[name="HourlyRate"]');
+    var hourlyRateError = hourlyRateInput.nextElementSibling;
+    var form = document.getElementById('joinUsForm');
+
+    function validateHourlyRate() {
+        var experience = parseInt(experienceYearsInput.value, 10);
+        var hourlyRate = parseFloat(hourlyRateInput.value);
+        var minRate = 5;
+        var maxRate = 7;
+
+        if (experience >= 0 && experience <= 2) {
+            minRate = 5;
+            maxRate = 7;
+        } else if (experience >= 3 && experience <= 5) {
+            minRate = 7;
+            maxRate = 10;
+        } else if (experience >= 5 && experience <= 10) {
+            minRate = 10;
+            maxRate = 15;
+        } else if (experience > 10) {
+            minRate = 15;
+            maxRate = 20;
+        }
+
+        hourlyRateInput.setAttribute('min', minRate);
+        hourlyRateInput.setAttribute('max', maxRate);
+        hourlyRateInput.placeholder = `Rate between $${minRate} - $${maxRate}`;
+
+        if (isNaN(hourlyRate) || hourlyRate < minRate || hourlyRate > maxRate) {
+            hourlyRateInput.classList.add('is-invalid');
+            hourlyRateError.textContent = `Please enter a rate between $${minRate} and $${maxRate}.`;
+        } else {
+            hourlyRateInput.classList.remove('is-invalid');
+            hourlyRateError.textContent = '';
+        }
+    }
+
+    experienceYearsInput.addEventListener('change', validateHourlyRate);
+    hourlyRateInput.addEventListener('input', validateHourlyRate);
+
+    form.addEventListener('submit', function (event) {
+        // First validate hourly rate and required fields
+        validateHourlyRate();
+
+        var inputs = form.querySelectorAll('[required]');
+        var allValid = true;
+
+        inputs.forEach(function (input) {
+            if (!input.value.trim()) {
+                allValid = false;
+                input.classList.add('is-invalid');
+                input.nextElementSibling.textContent = 'This field is required';
+            } else {
+                input.classList.remove('is-invalid');
+                input.nextElementSibling.textContent = '';
+            }
+        });
+
+        if (!allValid || document.querySelectorAll('.is-invalid').length > 0) {
+            // Prevent submission if there are invalid fields
+            event.preventDefault();
+            Swal.fire({
+                title: 'Error!',
+                text: 'Please fill all required fields.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        } else {
+            // Proceed to show the confirmation dialog about 25% tax
+            event.preventDefault(); // Prevent form submission for confirmation dialog
+
+            var hourlyRate = parseFloat(hourlyRateInput.value);
+            var tax = 0.25 * hourlyRate; // Calculate 25% tax
+            var finalRate = hourlyRate - tax;
+
+            // Show the confirmation dialog using SweetAlert
+            Swal.fire({
+                title: 'Confirm Your Hourly Rate',
+                html: `You have entered an hourly rate of <strong>$${hourlyRate.toFixed(2)}</strong>.<br>
+                        After joining our team, <strong>25% tax</strong> will be deducted.<br>
+                        Your effective hourly rate will be <strong>$${finalRate.toFixed(2)}</strong>.<br>
+                        Do you agree?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, I agree!',
+                cancelButtonText: 'No, I don\'t agree'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If user agrees, submit the form programmatically
+                    form.submit();
+                } else {
+                    // If user disagrees, show a "Sorry" message
+                    Swal.fire({
+                        title: 'Sorry!',
+                        text: 'You must agree to the tax deduction to proceed.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        }
+    });
+
+    // Display success or error messages from TempData
+    var successMessage = '@TempData["SuccessMessage"]';
+    var errorMessage = '@TempData["ErrorMessage"]';
+
+    if (successMessage) {
+        Swal.fire({
+            title: 'Success!',
+            text: successMessage,
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    if (errorMessage) {
+        Swal.fire({
+            title: 'Error!',
+            text: errorMessage,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    }
+});
+</script>

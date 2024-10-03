@@ -1,0 +1,218 @@
+﻿@{
+        ViewBag.Title = "Send Reply";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="admin-reply-form">
+            <h2>Send Reply</h2>
+            <form id="admin-reply" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="@ViewBag.Email" readonly required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="Subject" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your reply" rows="5" required></textarea>
+                </div>
+
+                <input type="submit" value="Send Reply">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    document.getElementById('admin-reply').addEventListener('submit', function (event) {
+        event.preventDefault(); 
+
+        
+        var formData = new FormData(this);
+
+       
+        fetch('@Url.Action("SendReply")', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+           
+            if (data.success) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+               
+                    window.location.href = '@Url.Action("GetConatcted")'; 
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        })
+        .catch(error => {
+            
+            Swal.fire({
+                title: 'Error!',
+                text: 'An error occurred while sending the email.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        });
+    });
+</script>
+
+<style>
+    fa-book-reader:before {
+        content: "\f5da";
+        margin-left: 38px;
+    }
+   
+    .admin-reply-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .admin-reply-form h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .admin-reply-form .form-group {
+            margin-bottom: 15px;
+        }
+
+            .admin-reply-form .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+                color: #333;
+            }
+
+            .admin-reply-form .form-group input,
+            .admin-reply-form .form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 1rem;
+                color: #333;
+            }
+
+            .admin-reply-form .form-group textarea {
+                resize: vertical;
+            }
+
+        .admin-reply-form input[type="submit"] {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+            .admin-reply-form input[type="submit"]:hover {
+                background: #0056b3;
+            }
+
+    .text-primary {
+        color: #99005C !important;
+    }
+
+    .left-side-bar {
+        background-color: white;
+    }
+
+    .bi-file-earmark-text::before {
+        content: "\f38b";
+        color: #212529;
+    }
+
+    .sidebar-menu .dropdown-toggle {
+        display: block;
+        padding: 14px 15px 14px 67px;
+        font-size: 15px;
+        color: #000;
+        font-weight: 500;
+        position: relative;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .bi-house::before {
+        content: "\f425";
+        color: #000;
+    }
+
+    .sidebar-menu > ul > li > .dropdown-toggle.active {
+        background-color: rgba(236, 240, 244, .19);
+        color: black;
+    }
+
+    .header-left {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        background: #99005c;
+    }
+
+    .header-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        height: 70px;
+        width: 50%;
+        background-color: #99005c;
+    }
+
+    .toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+
+    .sidebar-menu .submenu li a {
+        display: block;
+        padding: 14px 15px 14px 60px;
+        font-size: 14px;
+        color: #000;
+        font-weight: 400;
+        border-radius: 8px;
+        position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .sidebar-menu .dropdown-toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+</style>

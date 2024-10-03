@@ -1,0 +1,223 @@
+﻿@model IEnumerable<MasterPiece.Models.Sitter>
+
+
+@{
+    ViewBag.Title = "About";
+}
+<title>@ViewBag.Title</title>
+<style>
+
+
+    /*.nav-link {
+        display: block;
+        padding: .5rem 1rem;
+        color: #99005C;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+
+    .text-primary {
+        color: #99005C !important;
+    }
+
+    a.btn.btn-dark.rounded-pill.py-sm-3.px-sm-5.animated.slideInRight {
+        color: #99005C;
+        background-color: rgb(255, 255, 255);*/
+    /* color: black; */
+    /*}*/
+
+
+
+
+    .team-text h3 {
+        font-size: 20px !important;
+    }
+
+    .team-text p {
+        font-size: 15px !important;
+        text-align: center;
+    }
+
+    img.img-fluid.rounded-circle.w-75 {
+        width: 400px;
+        height: 700px;
+    }
+</style>
+<body>
+    <div class="container-xxl py-5 page-header position-relative mb-5">
+        <div class="container py-5">
+            <h1 class="display-2 text-white animated slideInDown mb-4">About us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">About us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="mb-4">To make child care work</h1>
+                    <p> there is no group more motivated to reimagine the in-home child care industry than a team of problem-solving parents and experienced child care providers. Child care is not only critical to the fabric of our economy, supporting working parents, but it is also a challenging and life-changing career for many providers.</p>
+                    <p class="mb-4">As the demands on today's parents continue to grow each year, it is crucial to simplify the process of connecting them with child care professionals. These professionals are not only seeking employment but are also passionate about supporting families.</p>
+                    <div class="row g-4 align-items-center">
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle flex-shrink-0" src="~/img/WhatsApp Image 2024-05-17 at 12.57.44 PM.png" alt="" style="width: 45px; height: 45px;">
+                                <div class="ms-3">
+                                    <h6 class="text-primary mb-1">Dima Ahmad </h6>
+                                    <small>CEO & Founder</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <img class="img-fluid w-75 rounded-pill bg-light p-1" src="~/img/istockphoto-1309383515-612x612.jpg" alt="">
+                        </div>
+                        <div class="col-6 text-start" style="margin-top: -100px;">
+                            <img class="img-fluid w-100 rounded-pill bg-light p-1" src="~/img/istockphoto-1298997043-612x612.jpg" alt="">
+                        </div>
+                        <div class="col-6 text-end" style="margin-top: -100px;">
+                            <img class="img-fluid w-100 rounded-pill bg-light p-1" src="~/img/istockphoto-1028379220-612x612.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Call To Action Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="bg-light rounded">
+                <div class="row g-0">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100 rounded" src="~/img/istockphoto-1309039195-612x612.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="h-100 d-flex flex-column justify-content-center p-5">
+                            <h1 class="mb-4">Become A sitter</h1>
+                            <p class="mb-4">
+                                Join our team of dedicated child care professionals and make a meaningful impact in families' lives. If you’re passionate about providing exceptional care and have experience working with children, we’d love to hear from you. Apply now to become a sitter and start a rewarding career with us!
+
+                            </p>
+                            <a class="btn btn-primary py-3 px-5" href="../html/JoinUs.html">Get Started Now<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action End -->
+    <!-- Team Start -->
+
+
+
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3">Popular Sitters</h1>
+                <p>
+                    Meet our top-rated nannies, known for their exceptional care and dedication.
+                    These experienced professionals are highly recommended by families and are here to provide 
+                    the best support for your children.
+                </p>
+            </div>
+            <div>
+                <div class="row g-4">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var sitter in Model)
+                        {
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="team-item position-relative">
+                                   
+                                        <img class="img-fluid rounded-circle" src="~/Images/@sitter.sitterImage" alt="Sitter Image">
+                                    <div class="team-text">
+                                        <h3>@sitter.FirstName @sitter.LastName</h3>
+                                        <p>@sitter.ExperienceYears years paid experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No sitters found.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Popular Sitters</h1>
+                    <p>
+                        Meet our top-rated nannies, known for their exceptional care and dedication. These experienced professionals are highly recommended by families and are here to provide the best support for your children.
+
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle " src="~/img/istockphoto-1329936184-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Alia Ahmad</h3>
+                                <p>10 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle" src="~/img/istockphoto-1311084168-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Sara Ali</h3>
+                                <p> 4 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item position-relative">
+                            <img class="img-fluid rounded-circle " src="~/img/istockphoto-1311326724-612x612.jpg" alt="">
+                            <div class="team-text">
+                                <h3>Lana Ziad</h3>
+                                <p>8 years paid experience</p>
+                                <div class="d-flex align-items-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+</body>

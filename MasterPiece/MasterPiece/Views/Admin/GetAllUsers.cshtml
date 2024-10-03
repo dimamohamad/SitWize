@@ -1,0 +1,166 @@
+﻿@model IEnumerable<MasterPiece.Models.User>
+
+@{
+    ViewBag.Title = "GetAllUsers";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Users</h1>
+        <br /><br />
+        <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm" id="table">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>User Image</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td> 
+
+
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.UserImage))
+                            {
+                                <img src="~/Images/@item.UserImage" alt="User Image" style="width: 50px; height: 50px;" />
+                            }
+                            else
+                            {
+                                <span>This user doesn't upload any Image</span>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+
+    .table thead th {
+        font-weight: 600;
+        font-size: 15px;
+        border-color: #99005c;
+        border-bottom: 0;
+        padding-left: 1rem;
+        background-color: #99005c;
+        align-items: center;
+        text-align: center;
+        VERTICAL-ALIGN: MIDDLE;
+    }
+    .fa-book-reader:before {
+        content: "\f5da";
+        margin-left: 38px;
+    }
+
+    .text-primary {
+        color: #99005C !important;
+    }
+
+    .left-side-bar {
+        background-color: white;
+    }
+
+    .bi-file-earmark-text::before {
+        content: "\f38b";
+        color: #212529;
+    }
+
+    .sidebar-menu .dropdown-toggle {
+        display: block;
+        padding: 14px 15px 14px 67px;
+        font-size: 15px;
+        color: #000;
+        font-weight: 500;
+        position: relative;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .bi-house::before {
+        content: "\f425";
+        color: #000;
+    }
+
+    .sidebar-menu > ul > li > .dropdown-toggle.active {
+        background-color: rgba(236, 240, 244, .19);
+        color: black;
+    }
+
+    .header-left {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        background: #99005c;
+    }
+
+    .header-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        height: 70px;
+        width: 50%;
+        background-color: #99005c;
+    }
+
+    .toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+
+    .sidebar-menu .submenu li a {
+        display: block;
+        padding: 14px 15px 14px 60px;
+        font-size: 14px;
+        color: #000;
+        font-weight: 400;
+        border-radius: 8px;
+        position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .sidebar-menu .dropdown-toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+        background: rgba(236, 240, 244, .19);
+        color: #000;
+    }
+
+    .table thead th {
+        font-weight: 600;
+        font-size: 15px;
+        border-bottom: 0;
+        padding-left: 1rem;
+        background-color: #99005c;
+    }
+
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+</style>

@@ -1,0 +1,96 @@
+﻿@model MasterPiece.Models.Booking
+
+@{
+    ViewBag.Title = "Booking Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+    var netAmount =  (0.25m * Model.TotalAmount);
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <br />
+        <h1>Booking Details</h1>
+        <br />
+        <div class="booking-details">
+            <div>
+                <strong>User:</strong> @Model.User.FirstName @Model.User.LastName
+            </div>
+            <div>
+                <strong>Sitter:</strong> @Model.Sitter.FirstName @Model.Sitter.LastName
+            </div>
+            <div>
+                <strong>Service:</strong> @Model.Service.ServiceName
+            </div>
+            <div>
+                <strong>Service Description:</strong> @Model.Service.Description
+            </div>
+            <div>
+                <strong>Booking Date:</strong>  @(Model.BookingDate.HasValue == true ? Model.BookingDate.Value.ToString("MM/dd/yyyy") : "N/A")
+            </div>
+            <div>
+                <strong>Booking Status:</strong> @Model.Status
+            </div>
+            <div>
+                <strong>Total Amount:</strong> @Model.TotalAmount
+            </div>
+            <div>
+                <strong>Net Profit:</strong> @netAmount
+            </div>
+            <div>
+                <strong>Service Date:</strong> @(Model.ServiceDetail?.StartDate.HasValue == true ? Model.ServiceDetail.StartDate.Value.ToString("MM/dd/yyyy") : "N/A")
+            </div>
+            <div>
+                <strong>Start Time:</strong>
+                @if (Model.ServiceDetail?.StartTime.HasValue == true)
+                {
+                    DateTime timeOfDay = DateTime.Today.Add(Model.ServiceDetail.StartTime.Value);
+                    @timeOfDay.ToString("hh:mm tt")
+                }
+                else
+                {
+                    @:N/A
+                }
+            </div>
+            <div>
+                <strong>Start Time:</strong>
+                @if (Model.ServiceDetail?.EndTime.HasValue == true)
+                {
+                    DateTime timeOfDay = DateTime.Today.Add(Model.ServiceDetail.EndTime.Value);
+                    @timeOfDay.ToString("hh:mm tt")
+                }
+                else
+                {
+                    @:N/A
+                }
+            </div>
+            <div>
+                <strong>Duration:</strong> @Model.ServiceDetail.Duration
+            </div>
+        </div>
+        <br />
+        <p>
+            <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Back to List</a>
+            <a href="@Url.Action("Edit", "Admin", new { id = Model.BookingID })" class="btn btn-primary">Edit</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    .h1, h1 {
+        font-size: 37.37px;
+        text-align: center;
+        color: #103741;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .booking-details div {
+        margin: 10px 0;
+    }
+
+    .booking-details strong {
+        width: 150px;
+        display: inline-block;
+    }
+</style>

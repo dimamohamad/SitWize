@@ -38,6 +38,7 @@
         .btn-continue:hover {
             background-color: #99005C;
         }
+
     .safety-center {
         background-color: #e9ecef;
         border-radius: 5px;
@@ -48,6 +49,7 @@
         text-decoration: none;
         background-color: transparent;
     }
+
     .form-control {
         display: block;
         width: 100%;
@@ -69,7 +71,7 @@
     <!-- Form -->
     <div class="container mt-5">
         <div class="form-container p-4 shadow">
-            <h2 class="text-center">Welcome parents</h2>
+            <h2 class="text-center">Welcome, parents</h2>
             <p class="text-center">Already have an account? <a href="@Url.Action("Login", "Account")">LOG IN</a></p>
             @using (Html.BeginForm("Register", "Account", FormMethod.Post))
             {
@@ -93,34 +95,82 @@
                 </div>
 
                 @*<div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" />
-                <span id="confirmPasswordError" class="text-danger"></span>
-            </div>*@
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" />
+                        <span id="confirmPasswordError" class="text-danger"></span>
+                    </div>*@
                 <div class="form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" />
-                        @Html.ValidationMessage("confirmPassword", "", new { @class = "text-danger" })
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password" />
+                    <span asp-validation-for="confirmPassword" class="text-danger"></span>
                 </div>
 
 
-                <div class="form-check mb-3">
+
+                @*<div class="form-check mb-3">
                     <input type="checkbox" class="form-check-input" id="termsCheck" required>
                     <label class="form-check-label" for="termsCheck">I agree to the Terms of Use.</label>
-                </div>
+                </div>*@
                 <button type="submit" class="btn btn-block btn-continue">SIGN UP</button>
             }
             @*<p class="text-center mt-3">Already have an Email <a href="@Url.Action("Login", "Account")">LOGIN</a></p>*@
             @*<div class="safety-center p-3 mt-3">
-            <p class="text-center">
-                All users are encouraged to visit our <a href="#">Trust & Safety Center</a>
-                to learn more about our commitment to keeping you safe.
-            </p>
-        </div>*@
+                    <p class="text-center">
+                        All users are encouraged to visit our <a href="#">Trust & Safety Center</a>
+                        to learn more about our commitment to keeping you safe.
+                    </p>
+                </div>*@
         </div>
     </div>
 </main>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@*@if (TempData["RegistrationSuccess"] != null)
+    {
+        <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registered Successfully!',
+                    text: '@TempData["RegistrationSuccess"]'
+                });
+        </script>}*@
+
+
+
+@if (TempData["RegistrationSuccess"] != null && (bool)TempData["RegistrationSuccess"])
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Registered Successfully!',
+            text: 'You are registered successfully. You will be redirected to the login page in a few seconds.',
+            timer: 3000, // Delay for 3 seconds
+            showConfirmButton: true
+        }).then(() => {
+            window.location.href = '@Url.Action("Login", "Account")'; // Redirect to the login page
+        });
+    </script>
+}
+
+@if ((bool?)ViewBag.ShowPasswordMismatchAlert == true)
+{
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Passwords do not match!'
+        });
+    </script>
+}
+
+@if ((bool?)ViewBag.ShowEmailExistsAlert == true)
+{
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Email Already Exists',
+            text: 'The email address you entered is already registered. Please use a different email or log in.'
+        });
+    </script>
+}
 }

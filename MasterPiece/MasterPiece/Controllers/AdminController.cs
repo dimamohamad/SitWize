@@ -32,20 +32,18 @@ namespace MasterPiece.Controllers
 
 
 
+            var bookings = db.Bookings
+                  .Where(b => b.Status == "Confirmed" || b.Status == "Completed")
+                  .ToList();
 
-
-
-
-
-
-
-
-            var bookings = db.Bookings.ToList();
-
+            // Calculate total bookings
             var totalBookings = bookings.Count;
+
+            // Calculate total revenue (assuming TotalAmount contains the amount and we're taking 25%)
             var totalRevenue = bookings.Where(b => b.TotalAmount.HasValue)
                                        .Sum(b => b.TotalAmount.Value * 0.25M);
 
+            // Group by month for booking counts
             var monthlyBookings = bookings
                 .GroupBy(b => b.BookingDate.HasValue ? b.BookingDate.Value.Month : 0)
                 .Select(g => new { Month = g.Key, Count = g.Count() })
@@ -54,6 +52,7 @@ namespace MasterPiece.Controllers
                 .Cast<dynamic>()
                 .ToList();
 
+            // Group by month for revenue calculation
             var monthlyRevenue = bookings
                 .Where(b => b.TotalAmount.HasValue)
                 .GroupBy(b => b.BookingDate.HasValue ? b.BookingDate.Value.Month : 0)
@@ -63,6 +62,7 @@ namespace MasterPiece.Controllers
                 .Cast<dynamic>()
                 .ToList();
 
+            // Prepare the ViewModel
             var viewModel = new DashboardViewModel
             {
                 TotalBookings = totalBookings,
@@ -72,10 +72,46 @@ namespace MasterPiece.Controllers
             };
 
             return View(viewModel);
+        
 
-           
 
-        }
+
+        //var bookings = db.Bookings.ToList();
+
+        //var totalBookings = bookings.Count;
+        //var totalRevenue = bookings.Where(b => b.TotalAmount.HasValue)
+        //                           .Sum(b => b.TotalAmount.Value * 0.25M);
+
+        //var monthlyBookings = bookings
+        //    .GroupBy(b => b.BookingDate.HasValue ? b.BookingDate.Value.Month : 0)
+        //    .Select(g => new { Month = g.Key, Count = g.Count() })
+        //    .OrderBy(m => m.Month)
+        //    .ToList()
+        //    .Cast<dynamic>()
+        //    .ToList();
+
+        //var monthlyRevenue = bookings
+        //    .Where(b => b.TotalAmount.HasValue)
+        //    .GroupBy(b => b.BookingDate.HasValue ? b.BookingDate.Value.Month : 0)
+        //    .Select(g => new { Month = g.Key, Total = g.Sum(b => b.TotalAmount.Value * 0.25M) })
+        //    .OrderBy(m => m.Month)
+        //    .ToList()
+        //    .Cast<dynamic>()
+        //    .ToList();
+
+        //var viewModel = new DashboardViewModel
+        //{
+        //    TotalBookings = totalBookings,
+        //    TotalRevenue = totalRevenue,
+        //    MonthlyBookings = monthlyBookings,
+        //    MonthlyRevenue = monthlyRevenue
+        //};
+
+        //return View(viewModel);
+
+
+
+    }
 
 
 
@@ -136,25 +172,39 @@ namespace MasterPiece.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-        public ActionResult GetAllUsers()
+        public ActionResult GetAllUsers(string searchTerm = null)
         {
-            var users = db.Users.ToList();
+            var users = db.Users.AsQueryable();
 
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                users = users.Where(u => u.FirstName.Contains(searchTerm)
+                                          || u.LastName.Contains(searchTerm)
+                                          || u.Email.Contains(searchTerm)
+                                          || u.PhoneNumber.Contains(searchTerm));
+            }
 
-            return View(users);
-
+            return View(users.ToList());
         }
+
+
+
+
+
+
+
+
+
+
+
+        //public ActionResult GetAllUsers()
+        //{
+        //    var users = db.Users.ToList();
+
+
+        //    return View(users);
+
+        //}
 
 
 
@@ -267,12 +317,46 @@ namespace MasterPiece.Controllers
 
 
 
-        public ActionResult GetAllSitters()
-        {
-            var sitters = db.Sitters.ToList();
-            return View(sitters);
+        //public ActionResult GetAllSitters()
+        //{
+        //    var sitters = db.Sitters.ToList();
+        //    return View(sitters);
 
+
+        //}
+        public ActionResult GetAllSitters(string searchTerm = null)
+        {
+            var sitters = db.Sitters.AsQueryable();
+
+            // Check if the search term is not null or empty
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                sitters = sitters.Where(s => s.FirstName.Contains(searchTerm)
+                                          || s.LastName.Contains(searchTerm)
+                                          || s.Email.Contains(searchTerm)
+                                          || s.PhoneNumber.Contains(searchTerm));
+            }
+
+            return View(sitters.ToList());
         }
+
+        //public ActionResult DeleteSitter(int id)
+        //{
+        //    var sitter = db.Sitters.Find(id);
+        //    if (sitter == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+
+        //    db.Sitters.Remove(sitter);
+        //    db.SaveChanges();
+
+        //    return RedirectToAction("GetAllSitters");
+        //}
+
+
+        //آخر تعديل قبل فوق 
+
 
         public ActionResult DeleteSitter(int id)
         {
@@ -282,11 +366,44 @@ namespace MasterPiece.Controllers
                 return HttpNotFound();
             }
 
+            // Check if the sitter has any active bookings
+            var hasBookings = db.Bookings.Any(b => b.SitterID == id);
+            if (hasBookings)
+            {
+                // Set an error message in TempData to show in the view
+                TempData["ErrorMessage"] = "This sitter cannot be deleted because they have active bookings.";
+                return RedirectToAction("GetAllSitters");
+            }
+
+            // If no active bookings, proceed with deletion
             db.Sitters.Remove(sitter);
             db.SaveChanges();
 
             return RedirectToAction("GetAllSitters");
         }
+
+        public ActionResult DownloadSitterLicense(int id)
+        {
+            var sitter = db.Sitters.Find(id);  
+            if (sitter == null || string.IsNullOrEmpty(sitter.LicensePath))
+            {
+                TempData["ErrorMessage"] = "License file not found.";
+                return RedirectToAction("GetAllSitters","Admin");  
+            }
+
+            var filePath = Server.MapPath(sitter.LicensePath);
+            if (!System.IO.File.Exists(filePath))
+            {
+                TempData["ErrorMessage"] = "License file does not exist.";
+                return RedirectToAction("GetAllSitters","Admin");  
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+            var fileName = Path.GetFileName(filePath);
+
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
 
 
 
@@ -1282,10 +1399,87 @@ namespace MasterPiece.Controllers
         }
 
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreateBookings([Bind(Include = "BookingID,UserID,SitterID,ServiceID,DetailID,BookingDate,StartDate,StartTime,EndTime,Duration,Status,CreatedAt,TotalAmount")] Booking booking)
+        //{
+
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        string startTimeStr = Request.Form["StartTime"];
+        //        string endTimeStr = Request.Form["EndTime"];
+        //        string durationStr = Request.Form["Duration"];
+
+
+        //        TimeSpan startTimeParsed, endTimeParsed;
+        //        bool isStartTimeValid = TimeSpan.TryParse(startTimeStr, out startTimeParsed);
+        //        bool isEndTimeValid = TimeSpan.TryParse(endTimeStr, out endTimeParsed);
+
+        //        if (!isStartTimeValid || !isEndTimeValid)
+        //        {
+        //            ModelState.AddModelError("", "Invalid time format. Please ensure Start Time and End Time are valid.");
+        //            return View(booking);
+        //        }
+        //        DateTime? startDate = null;
+        //        if (DateTime.TryParse(Request.Form["StartDate"], out DateTime parsedStartDate))
+        //        {
+        //            startDate = parsedStartDate;
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "Invalid Start Date format.");
+        //            return View(booking);
+        //        }
+
+
+
+
+        //        var serviceDetail = new ServiceDetail
+        //        {
+        //            ServiceID = booking.ServiceID,
+        //            DetailType = "Regular Sitter", 
+        //            StartTime = startTimeParsed,        
+        //            EndTime = endTimeParsed,            
+        //            Duration = durationStr,             
+        //            StartDate = startDate,             
+
+        //        };
+
+        //        db.ServiceDetails.Add(serviceDetail);
+        //        db.SaveChanges();
+
+        //        booking.DetailID = serviceDetail.DetailID;
+        //        booking.Status = "Pending";
+        //        booking.CreatedAt = DateTime.Now;
+
+
+
+
+
+
+        //        db.Bookings.Add(booking);
+        //        db.SaveChanges();
+
+        //        return RedirectToAction("GetBookings","Admin");
+        //    }
+
+
+        //    ViewBag.ServiceID = new SelectList(db.Services, "ServiceID", "ServiceName", booking.ServiceID);
+        //    ViewBag.SitterID = new SelectList(db.Sitters, "SitterID", "FirstName", booking.SitterID);
+        //    ViewBag.UserID = new SelectList(db.Users, "UserID", "FirstName", booking.UserID);
+
+        //    return View(booking);
+
+        //}
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateBookings([Bind(Include = "BookingID,UserID,SitterID,ServiceID,DetailID,BookingDate,StartDate,StartTime,EndTime,Duration,Status,CreatedAt,TotalAmount")] Booking booking)
+        public ActionResult CreateBookings([Bind(Include = "BookingID,UserID,SitterID,ServiceID,DetailID,BookingDate,StartDate,StartTime,EndTime,Duration,Status")] Booking booking)
         {
+            // Note: Removed TotalAmount from the Bind attribute since we'll calculate it server-side
 
             if (ModelState.IsValid)
             {
@@ -1293,7 +1487,6 @@ namespace MasterPiece.Controllers
                 string endTimeStr = Request.Form["EndTime"];
                 string durationStr = Request.Form["Duration"];
 
-             
                 TimeSpan startTimeParsed, endTimeParsed;
                 bool isStartTimeValid = TimeSpan.TryParse(startTimeStr, out startTimeParsed);
                 bool isEndTimeValid = TimeSpan.TryParse(endTimeStr, out endTimeParsed);
@@ -1303,6 +1496,7 @@ namespace MasterPiece.Controllers
                     ModelState.AddModelError("", "Invalid time format. Please ensure Start Time and End Time are valid.");
                     return View(booking);
                 }
+
                 DateTime? startDate = null;
                 if (DateTime.TryParse(Request.Form["StartDate"], out DateTime parsedStartDate))
                 {
@@ -1313,39 +1507,70 @@ namespace MasterPiece.Controllers
                     ModelState.AddModelError("", "Invalid Start Date format.");
                     return View(booking);
                 }
+
+                // Get sitter's hourly rate
+                var sitter = db.Sitters.FirstOrDefault(s => s.SitterID == booking.SitterID);
+                if (sitter == null || !sitter.HourlyRate.HasValue)
+                {
+                    ModelState.AddModelError("", "Selected sitter's hourly rate is not set.");
+                    return View(booking);
+                }
+
+                // Calculate duration
+                TimeSpan duration = endTimeParsed - startTimeParsed;
+                if (duration.TotalHours < 0)
+                {
+                    duration = duration.Add(TimeSpan.FromHours(24));
+                }
+
+                // Calculate total amount
+                decimal totalHours = (decimal)duration.TotalHours;
+                decimal totalAmount = sitter.HourlyRate.Value * totalHours;
+
+                // Create ServiceDetail
                 var serviceDetail = new ServiceDetail
                 {
                     ServiceID = booking.ServiceID,
-                    DetailType = "Regular Sitter", 
-                    StartTime = startTimeParsed,        
-                    EndTime = endTimeParsed,            
-                    Duration = durationStr,             
-                    StartDate = startDate,             
-
+                    DetailType = "Regular Sitter",
+                    StartTime = startTimeParsed,
+                    EndTime = endTimeParsed,
+                    Duration = durationStr,
+                    StartDate = startDate
                 };
 
                 db.ServiceDetails.Add(serviceDetail);
                 db.SaveChanges();
 
+                // Set up the booking
                 booking.DetailID = serviceDetail.DetailID;
                 booking.Status = "Pending";
                 booking.CreatedAt = DateTime.Now;
+                booking.TotalAmount = totalAmount; // Set the calculated total amount
 
                 db.Bookings.Add(booking);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("GetBookings", "Admin");
             }
 
-            
+            // If we get here, something failed, redisplay form
             ViewBag.ServiceID = new SelectList(db.Services, "ServiceID", "ServiceName", booking.ServiceID);
             ViewBag.SitterID = new SelectList(db.Sitters, "SitterID", "FirstName", booking.SitterID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "FirstName", booking.UserID);
 
             return View(booking);
-     
         }
 
+        [HttpGet]
+        public JsonResult GetSitterRate(int sitterId)
+        {
+            var sitter = db.Sitters.FirstOrDefault(s => s.SitterID == sitterId);
+            if (sitter != null && sitter.HourlyRate.HasValue)
+            {
+                return Json(new { hourlyRate = sitter.HourlyRate.Value }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { hourlyRate = 0 }, JsonRequestBehavior.AllowGet);
+        }
 
 
         public ActionResult GetTest()

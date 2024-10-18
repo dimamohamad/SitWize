@@ -84,7 +84,7 @@
 
 <main>
     <div class="login-container">
-        <h1>SitWise</h1>
+        <h1>Welcome back</h1>
 
         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
         {
@@ -93,12 +93,12 @@
             <input type="email" name="email" placeholder="EMAIL" required />
             <input type="password" name="password" placeholder="PASSWORD" required />
 
-            <div class="options">
+            @*<div class="options">
                 <label>
                     <input type="checkbox" name="rememberMe" /> Remember me
                 </label>
                 <a href="#">Forgot password?</a>
-            </div>
+            </div>*@
 
             <button type="submit">LOG IN</button>
         }

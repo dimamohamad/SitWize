@@ -1,4 +1,200 @@
-﻿@model MasterPiece.Models.Booking
+﻿@*@model MasterPiece.Models.Booking
+
+    @{
+        ViewBag.Title = "Create Booking";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+    }
+
+    <div class="main-container">
+        <div class="pd-ltr-20">
+            <br />
+            <h1>Create Booking</h1>
+            <br />
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="booking-create">
+                    <div>
+                        <strong>@Html.LabelFor(model => model.UserID):</strong>
+                        @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        <strong>@Html.LabelFor(model => model.SitterID):</strong>
+                        @Html.DropDownList("SitterID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SitterID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        <strong>@Html.LabelFor(model => model.ServiceID):</strong>
+                        @Html.DropDownList("ServiceID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ServiceID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        <strong>@Html.LabelFor(model => model.BookingDate):</strong>
+                        @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <strong> @Html.Label("Start Date", htmlAttributes: new { @class = "form-label" }):</strong>
+                        @Html.TextBox("StartDate", null, new { @class = "form-control", type = "date", id = "startDate" })
+                    </div>
+                    <div class="mb-3">
+                        <strong>
+                            @Html.Label("Start Time", htmlAttributes: new { @class = "form-label" }):
+                        </strong>
+                        @Html.TextBox("StartTime", null, new { @class = "form-control", type = "time", id = "startTime", onchange = "calculateDuration()" })
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>
+                            @Html.Label("End Time", htmlAttributes: new { @class = "form-label" }):
+                        </strong>
+                        @Html.TextBox("EndTime", null, new { @class = "form-control", type = "time", id = "endTime", onchange = "calculateDuration()" })
+                    </div>
+
+
+                    <div class="mb-3">
+                        <strong>
+                            @Html.Label("Duration", htmlAttributes: new { @class = "form-label" }):
+                        </strong>
+                        @Html.TextBox("Duration", null, new { @class = "form-control", @readonly = "readonly", id = "duration" })
+                    </div>
+                    <div>
+                        <strong>@Html.LabelFor(model => model.TotalAmount):</strong>
+                        @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <br />
+                <div>
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a href="@Url.Action("GetBookings", "Admin")" class="btn btn-secondary">Back to List</a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <style>
+        .booking-create div {
+            margin: 10px 0;
+        }
+
+        .booking-create strong {
+            width: 150px;
+            display: inline-block;
+        }
+
+        .form-control {
+            display: inline-block;
+            width: calc(100% - 160px);
+        }
+
+        .text-danger {
+            display: block;
+            margin-left: 150px;
+        }
+    </style>*@
+
+@*<script>
+        function calculateDuration() {
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            const durationField = document.getElementById('duration');
+
+            if (startTime && endTime) {
+                const start = new Date('1970-01-01T' + startTime + 'Z');
+                const end = new Date('1970-01-01T' + endTime + 'Z');
+                let duration = (end - start) / 1000 / 60; // duration in minutes
+
+                if (duration < 0) {
+                    duration += 24 * 60; // adjust for times that cross midnight
+                }
+
+                const hours = Math.floor(duration / 60);
+                const minutes = duration % 60;
+
+                durationField.value = `${hours} hour(s) ${minutes} minute(s)`;
+            } else {
+                durationField.value = '';
+            }
+        }
+    </script>*@
+
+
+
+@*<script>
+        let currentHourlyRate = 0;
+
+
+        document.getElementById('SitterID').addEventListener('change', function () {
+            const sitterId = this.value;
+            if (sitterId) {
+                fetch(`/Bookings/GetSitterRate?sitterId=${sitterId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        currentHourlyRate = data.hourlyRate;
+                        calculateDuration();
+                    });
+            }
+        });
+
+        function calculateDuration() {
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            const durationField = document.getElementById('duration');
+
+            if (startTime && endTime) {
+
+                const start = new Date(`1970-01-01T${startTime}`);
+                const end = new Date(`1970-01-01T${endTime}`);
+
+
+                let durationMs = end - start;
+
+
+                if (durationMs < 0) {
+                    durationMs += 24 * 60 * 60 * 1000;
+                }
+
+
+                const totalHours = durationMs / (1000 * 60 * 60);
+                const hours = Math.floor(totalHours);
+                const minutes = Math.round((totalHours - hours) * 60);
+
+                durationField.value = `${hours} hour(s) ${minutes} minute(s)`;
+
+                calculateTotalAmount(totalHours);
+            } else {
+                durationField.value = '';
+                document.getElementById('TotalAmount').value = '';
+            }
+        }
+
+        function calculateTotalAmount(durationInHours) {
+            const totalAmountField = document.getElementById('TotalAmount');
+            if (currentHourlyRate && durationInHours) {
+                const total = currentHourlyRate * durationInHours;
+                totalAmountField.value = total.toFixed(2);
+
+                console.log(`Calculation: ${currentHourlyRate} (rate) × ${durationInHours} (hours) = ${total}`);
+            }
+        }
+
+        document.getElementById('startTime').addEventListener('change', calculateDuration);
+        document.getElementById('endTime').addEventListener('change', calculateDuration);
+    </script>*@
+
+
+
+@model MasterPiece.Models.Booking
 
 @{
     ViewBag.Title = "Create Booking";
@@ -15,57 +211,53 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.TotalAmount, new { id = "TotalAmount" })
 
-    <div class="booking-create">
-        <div>
-            <strong>@Html.LabelFor(model => model.UserID):</strong>
-            @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-        </div>
+            <div class="booking-create">
+                <div>
+                    <strong>@Html.LabelFor(model => model.UserID):</strong>
+                    @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                </div>
 
-        <div>
-            <strong>@Html.LabelFor(model => model.SitterID):</strong>
-            @Html.DropDownList("SitterID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.SitterID, "", new { @class = "text-danger" })
-        </div>
+                <div>
+                    <strong>@Html.LabelFor(model => model.SitterID):</strong>
+                    @Html.DropDownList("SitterID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SitterID, "", new { @class = "text-danger" })
+                </div>
 
-        <div>
-            <strong>@Html.LabelFor(model => model.ServiceID):</strong>
-            @Html.DropDownList("ServiceID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ServiceID, "", new { @class = "text-danger" })
-        </div>
+                <div>
+                    <strong>@Html.LabelFor(model => model.ServiceID):</strong>
+                    @Html.DropDownList("ServiceID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ServiceID, "", new { @class = "text-danger" })
+                </div>
 
-        <div>
-            <strong>@Html.LabelFor(model => model.BookingDate):</strong>
-            @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
-            @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
-        </div>
+                <div>
+                    <strong>@Html.LabelFor(model => model.BookingDate):</strong>
+                    @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                    @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
+                </div>
 
-        <div class="mb-3">
-            @Html.Label("Start Date", htmlAttributes: new { @class = "form-label" })
-            @Html.TextBox("StartDate", null, new { @class = "form-control", type = "date", id = "startDate" })
-        </div>
-        <div class="mb-3">
-            @Html.Label("Start Time", htmlAttributes: new { @class = "form-label" })
-            @Html.TextBox("StartTime", null, new { @class = "form-control", type = "time", id = "startTime", onchange = "calculateDuration()" })
-        </div>
+                <div class="mb-3">
+                    <strong>@Html.Label("Start Date", htmlAttributes: new { @class = "form-label" }):</strong>
+                    @Html.TextBox("StartDate", null, new { @class = "form-control", type = "date", id = "startDate" })
+                </div>
 
-        <div class="mb-3">
-            @Html.Label("End Time", htmlAttributes: new { @class = "form-label" })
-            @Html.TextBox("EndTime", null, new { @class = "form-control", type = "time", id = "endTime", onchange = "calculateDuration()" })
-        </div>
+                <div class="mb-3">
+                    <strong>@Html.Label("Start Time", htmlAttributes: new { @class = "form-label" }):</strong>
+                    @Html.TextBox("StartTime", null, new { @class = "form-control", type = "time", id = "startTime", onchange = "calculateDuration()" })
+                </div>
 
-        <!-- Duration -->
-        <div class="mb-3">
-            @Html.Label("Duration", htmlAttributes: new { @class = "form-label" })
-            @Html.TextBox("Duration", null, new { @class = "form-control", @readonly = "readonly", id = "duration" })
-        </div>
-        <div>
-            <strong>@Html.LabelFor(model => model.TotalAmount):</strong>
-            @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                <div class="mb-3">
+                    <strong>@Html.Label("End Time", htmlAttributes: new { @class = "form-label" }):</strong>
+                    @Html.TextBox("EndTime", null, new { @class = "form-control", type = "time", id = "endTime", onchange = "calculateDuration()" })
+                </div>
+
+                <div class="mb-3">
+                    <strong>@Html.Label("Duration", htmlAttributes: new { @class = "form-label" }):</strong>
+                    @Html.TextBox("Duration", null, new { @class = "form-control", @readonly = "readonly", id = "duration" })
+                </div>
+            </div>
 
             <br />
             <div>
@@ -98,26 +290,60 @@
 </style>
 
 <script>
+    let currentHourlyRate = 0;
+
+    // Add event listener for sitter selection change
+    document.getElementById('SitterID').addEventListener('change', function () {
+        const sitterId = this.value;
+        if (sitterId) {
+            fetch(`/Bookings/GetSitterRate?sitterId=${sitterId}`)
+                .then(response => response.json())
+                .then(data => {
+                    currentHourlyRate = data.hourlyRate;
+                    calculateDuration(); // Recalculate when rate changes
+                });
+        }
+    });
+
     function calculateDuration() {
         const startTime = document.getElementById('startTime').value;
         const endTime = document.getElementById('endTime').value;
         const durationField = document.getElementById('duration');
+        const totalAmountHidden = document.getElementById('TotalAmount');
 
         if (startTime && endTime) {
-            const start = new Date('1970-01-01T' + startTime + 'Z');
-            const end = new Date('1970-01-01T' + endTime + 'Z');
-            let duration = (end - start) / 1000 / 60; // duration in minutes
+            // Parse the times
+            const start = new Date(`1970-01-01T${startTime}`);
+            const end = new Date(`1970-01-01T${endTime}`);
 
-            if (duration < 0) {
-                duration += 24 * 60; // adjust for times that cross midnight
+            // Calculate duration in milliseconds
+            let durationMs = end - start;
+
+            // If end time is earlier than start time, add 24 hours
+            if (durationMs < 0) {
+                durationMs += 24 * 60 * 60 * 1000;
             }
 
-            const hours = Math.floor(duration / 60);
-            const minutes = duration % 60;
+            // Convert to hours and minutes
+            const totalHours = durationMs / (1000 * 60 * 60);
+            const hours = Math.floor(totalHours);
+            const minutes = Math.round((totalHours - hours) * 60);
 
+            // Update duration display
             durationField.value = `${hours} hour(s) ${minutes} minute(s)`;
+
+            // Calculate total amount and store in hidden field
+            if (currentHourlyRate) {
+                const total = currentHourlyRate * totalHours;
+                totalAmountHidden.value = total.toFixed(2);
+            }
         } else {
             durationField.value = '';
+            totalAmountHidden.value = '0';
         }
     }
+
+    // Add event listeners
+    document.getElementById('startTime').addEventListener('change', calculateDuration);
+    document.getElementById('endTime').addEventListener('change', calculateDuration);
 </script>

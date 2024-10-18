@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using MasterPiece.Models;
+using Microsoft.Ajax.Utilities;
 using PayPal.Api;
+using Stripe.Billing;
 
 namespace MasterPiece.Controllers
 {
@@ -99,6 +101,8 @@ namespace MasterPiece.Controllers
 
             return !conflictingBookings;
         }
+
+
         public JsonResult FilterSitters(string ExperienceRange, string HourlyRateRange, bool? HasSpecialNeedsLicense)
         {
             int? serviceDetailId = Session["ServiceDetailID"] as int?;
@@ -168,8 +172,13 @@ namespace MasterPiece.Controllers
                 filteredSitters = filteredSitters.Where(s => !string.IsNullOrEmpty(s.LicensePath) == HasSpecialNeedsLicense.Value);
             }
 
+            // After applying filters, check if the sitters are still available using the IsSitterAvailable method
+            var finalSitters = filteredSitters
+                .Where(sitter => IsSitterAvailable(sitter, serviceDetail))
+                .ToList();
+
             // Convert to list and select the required properties
-            var result = filteredSitters.ToList().Select(s => new
+            var result = finalSitters.Select(s => new
             {
                 s.SitterID,
                 s.FirstName,
@@ -185,6 +194,96 @@ namespace MasterPiece.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        //بداية قبل تعديل الفلتر النسخة الاخيرة 
+        //public JsonResult FilterSitters(string ExperienceRange, string HourlyRateRange, bool? HasSpecialNeedsLicense)
+        //{
+        //    int? serviceDetailId = Session["ServiceDetailID"] as int?;
+        //    if (serviceDetailId == null)
+        //    {
+        //        return Json(new { error = "Service detail not found." }, JsonRequestBehavior.AllowGet);
+        //    }
+
+        //    var serviceDetail = db.ServiceDetails.Find(serviceDetailId);
+        //    if (serviceDetail == null)
+        //    {
+        //        return Json(new { error = "Service detail not found in the database." }, JsonRequestBehavior.AllowGet);
+        //    }
+
+        //    // Get available sitters first
+        //    var availableSitters = GetAvailableSitters(serviceDetail);
+
+        //    // Apply filters to available sitters
+        //    var filteredSitters = availableSitters.AsQueryable();
+
+        //    // Filter by Experience Range
+        //    if (!string.IsNullOrEmpty(ExperienceRange))
+        //    {
+        //        switch (ExperienceRange)
+        //        {
+        //            case "0-2":
+        //                filteredSitters = filteredSitters.Where(s => (s.ExperienceYears ?? 0) >= 0 && (s.ExperienceYears ?? 0) <= 2);
+        //                break;
+        //            case "2-5":
+        //                filteredSitters = filteredSitters.Where(s => (s.ExperienceYears ?? 0) > 2 && (s.ExperienceYears ?? 0) <= 5);
+        //                break;
+        //            case "5-10":
+        //                filteredSitters = filteredSitters.Where(s => (s.ExperienceYears ?? 0) > 5 && (s.ExperienceYears ?? 0) <= 10);
+        //                break;
+        //            case "10+":
+        //                filteredSitters = filteredSitters.Where(s => (s.ExperienceYears ?? 0) > 10);
+        //                break;
+        //        }
+        //    }
+
+        //    // Filter by Hourly Rate Range
+        //    if (!string.IsNullOrEmpty(HourlyRateRange))
+        //    {
+        //        switch (HourlyRateRange)
+        //        {
+        //            case "3-5":
+        //                filteredSitters = filteredSitters.Where(s => (s.HourlyRate ?? 0) >= 3 && (s.HourlyRate ?? 0) <= 5);
+        //                break;
+        //            case "5-7":
+        //                filteredSitters = filteredSitters.Where(s => (s.HourlyRate ?? 0) > 5 && (s.HourlyRate ?? 0) <= 7);
+        //                break;
+        //            case "7-10":
+        //                filteredSitters = filteredSitters.Where(s => (s.HourlyRate ?? 0) > 7 && (s.HourlyRate ?? 0) <= 10);
+        //                break;
+        //            case "10-15":
+        //                filteredSitters = filteredSitters.Where(s => (s.HourlyRate ?? 0) > 10 && (s.HourlyRate ?? 0) <= 15);
+        //                break;
+        //            case "15+":
+        //                filteredSitters = filteredSitters.Where(s => (s.HourlyRate ?? 0) > 15);
+        //                break;
+        //        }
+        //    }
+
+        //    // Filter by Special Needs License
+        //    if (HasSpecialNeedsLicense.HasValue)
+        //    {
+        //        filteredSitters = filteredSitters.Where(s => !string.IsNullOrEmpty(s.LicensePath) == HasSpecialNeedsLicense.Value);
+        //    }
+
+        //    // Convert to list and select the required properties
+        //    var result = filteredSitters.ToList().Select(s => new
+        //    {
+        //        s.SitterID,
+        //        s.FirstName,
+        //        s.LastName,
+        //        s.ExperienceYears,
+        //        s.HourlyRate,
+        //        s.Bio,
+        //        s.sitterImage,
+        //        s.LicensePath,
+        //        HasSpecialNeedsLicense = !string.IsNullOrEmpty(s.LicensePath)
+        //    });
+
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+
+
+        //قبل تعديل الفلتر النسخة الاخيرة نهاية 
 
         //public JsonResult FilterSitters(string ExperienceRange, string HourlyRateRange,bool? HasSpecialNeedsLicense)
         //{
@@ -268,19 +367,87 @@ namespace MasterPiece.Controllers
             return File(filePath, "application/octet-stream", Path.GetFileName(filePath));
         }
 
+
+
+
+        //the last booking اخر اشي كان زابط
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult BookSitter(int sitterId)
+        //{
+        //    int? serviceDetailId = Session["ServiceDetailID"] as int?;
+        //    if (Session["UserId"]==null) {
+        //        return RedirectToAction("Login", "Account");
+
+
+        //    }
+
+        //    int userId =(int) Session["UserId"]; 
+
+        //    if (serviceDetailId == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Service detail not found.");
+        //    }
+
+        //    var serviceDetail = db.ServiceDetails.Find(serviceDetailId);
+        //    if (serviceDetail == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Service detail not found in the database.");
+        //    }
+
+        //    var sitter = db.Sitters.Find(sitterId);
+        //    if (sitter == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Sitter not found.");
+        //    }
+
+
+        //    string durationString = serviceDetail.Duration;
+
+
+        //    string numericPart = System.Text.RegularExpressions.Regex.Match(durationString, @"\d+").Value;
+
+
+        //    decimal durationInHours;
+        //    if (!decimal.TryParse(numericPart, out durationInHours))
+        //    {
+        //        durationInHours = 0; 
+        //    }
+
+        //    decimal hourlyRate = sitter.HourlyRate ?? 0;
+        //    decimal totalCost = durationInHours * hourlyRate;
+
+
+        //    var booking = new Booking
+        //    {
+        //        UserID = (int)Session["UserId"],
+        //        SitterID = sitterId,
+        //        ServiceID = serviceDetail.ServiceID,
+        //        DetailID = serviceDetailId,
+        //        BookingDate = DateTime.Now,
+        //        Status = "Pending",
+        //        CreatedAt = DateTime.Now,
+        //        TotalAmount = totalCost
+        //    };
+
+        //    db.Bookings.Add(booking);
+        //    db.SaveChanges();
+
+        //    return RedirectToAction("Payment", new { bookingId = booking.BookingID });
+        //}
+        //لهون شيلي الكومنت
+
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult BookSitter(int sitterId)
         {
             int? serviceDetailId = Session["ServiceDetailID"] as int?;
-            if (Session["UserId"]==null) {
-                return RedirectToAction("Login", "Account");
-            
-            
-            }
-            
-            int userId =(int) Session["UserId"]; 
-
             if (serviceDetailId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Service detail not found.");
@@ -298,42 +465,59 @@ namespace MasterPiece.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Sitter not found.");
             }
 
-            
             string durationString = serviceDetail.Duration;
-
-           
             string numericPart = System.Text.RegularExpressions.Regex.Match(durationString, @"\d+").Value;
-
-            
-            decimal durationInHours;
-            if (!decimal.TryParse(numericPart, out durationInHours))
-            {
-                durationInHours = 0; 
-            }
-
+            decimal durationInHours = !decimal.TryParse(numericPart, out durationInHours) ? 0 : durationInHours;
             decimal hourlyRate = sitter.HourlyRate ?? 0;
             decimal totalCost = durationInHours * hourlyRate;
 
-            
-            var booking = new Booking
+            Session["PendingBooking"] = new
             {
-                UserID = (int)Session["UserId"],
                 SitterID = sitterId,
                 ServiceID = serviceDetail.ServiceID,
                 DetailID = serviceDetailId,
+                TotalAmount = totalCost
+            };
+
+            if (Session["UserId"] == null)
+            {
+                //return RedirectToAction("Login", "Account");
+                  TempData["ShowLoginAlert"] = true;
+        return RedirectToAction("SelectSitter", "Booking");
+                
+            }
+
+            return CreateBookingAndRedirectToPayment();
+        }
+
+        private ActionResult CreateBookingAndRedirectToPayment()
+        {
+            dynamic pendingBooking = Session["PendingBooking"];
+            int userId = (int)Session["UserId"];
+
+            var booking = new Booking
+            {
+                UserID = userId,
+                SitterID = pendingBooking.SitterID,
+                ServiceID = pendingBooking.ServiceID,
+                DetailID = pendingBooking.DetailID,
                 BookingDate = DateTime.Now,
                 Status = "Pending",
                 CreatedAt = DateTime.Now,
-                TotalAmount = totalCost
+                TotalAmount = pendingBooking.TotalAmount
             };
 
             db.Bookings.Add(booking);
             db.SaveChanges();
 
+            Session["PendingBooking"] = null;
+
             return RedirectToAction("Payment", new { bookingId = booking.BookingID });
         }
 
-    
+
+
+
         public ActionResult Payment(int bookingId)
         {
             //var booking = db.Bookings

@@ -5,10 +5,66 @@
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
+@*<div class="main-container">
+        <div class="pd-ltr-20">
+            <br />
+            <h1>Users</h1>
+            <br /><br />
+            <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm" id="table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>User Image</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FirstName @item.LastName</td>
+
+
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.UserImage))
+                                {
+                                    <img src="~/Images/@item.UserImage" alt="User Image" style="width: 50px; height: 50px;" />
+                                }
+                                else
+                                {
+                                    <span>This user doesn't upload any Image</span>
+                                }
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>*@
+
+
+
 <div class="main-container">
     <div class="pd-ltr-20">
         <br />
         <h1>Users</h1>
+
+        @using (Html.BeginForm("GetAllUsers", "Admin", FormMethod.Get, new { id = "searchForm" }))
+        {
+            <div class="input-group rounded mb-3" style="max-width: 350px; margin:20px auto;">
+                <input type="search" name="searchTerm" class="form-control rounded" placeholder="Search by name, email or phone number" aria-label="Search" aria-describedby="search-addon" value="@Request.QueryString["searchTerm"]" style="border: 1px solid #ced4da;" />
+                <span class="input-group-text border-0" id="search-addon" style="cursor: pointer; background-color: #99005c; color: white;" onclick="document.getElementById('searchForm').submit();">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        }
         <br /><br />
         <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm" id="table">
             <thead>
@@ -25,9 +81,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.FirstName @item.LastName</td> 
-
-
+                        <td>@item.FirstName @item.LastName</td>
                         <td>
                             @if (!string.IsNullOrEmpty(item.UserImage))
                             {
@@ -61,6 +115,7 @@
         text-align: center;
         VERTICAL-ALIGN: MIDDLE;
     }
+
     .fa-book-reader:before {
         content: "\f5da";
         margin-left: 38px;

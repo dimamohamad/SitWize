@@ -817,8 +817,8 @@ document.addEventListener('DOMContentLoaded', function () {
             confirmButtonText: 'OK'
         });
     }
-
-    if (errorMessage && errorMessage !== '@TempData["ErrorMessage"]') {
+ 
+     if (errorMessage && errorMessage !== '@TempData["ErrorMessage"]') {
         Swal.fire({
             title: 'Error!',
             text: errorMessage,

@@ -1090,6 +1090,7 @@
     <Content Include="Views\Admin\LoginAdmin.cshtml" />
     <Content Include="Views\Admin\GetTest.cshtml" />
     <Content Include="Views\Home\privacy.cshtml" />
+    <Content Include="Views\Admin\_ServiceDetail2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

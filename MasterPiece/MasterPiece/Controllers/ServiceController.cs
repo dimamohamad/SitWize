@@ -132,6 +132,120 @@ namespace MasterPiece.Controllers
             return View(service);
         }
 
+
+
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult BookService2(int id, FormCollection form)
+        //{
+        //    var service = db.Services.FirstOrDefault(s => s.ServiceID == id);
+
+        //    if (service == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+
+
+        //    TimeSpan? startTime = TimeSpan.TryParse(form["StartTime"], out TimeSpan parsedStartTime) ? (TimeSpan?)parsedStartTime : null;
+        //    TimeSpan? endTime = TimeSpan.TryParse(form["EndTime"], out TimeSpan parsedEndTime) ? (TimeSpan?)parsedEndTime : null;
+        //    string duration = !string.IsNullOrEmpty(form["Duration"]) ? form["Duration"] : null;
+
+        //    // Check if StartTime and EndTime are valid
+        //    if (!startTime.HasValue || !endTime.HasValue)
+        //    {
+        //        ModelState.AddModelError("StartTime", "Please enter valid start and end times.");
+        //        return View(service); // Return the view with an error if times are invalid
+        //    }
+
+
+        //    string frequency = form["frequency"];
+        //    bool weekdays = form["weekdays"] == "on";
+        //    bool weekends = form["weekends"] == "on";
+        //    bool evenings = form["evenings"] == "on";
+        //    //string typicalDuration = form["typicalDuration"];
+
+        //    DateTime? startDate = null;
+
+        //    if (DateTime.TryParse(form["StartDate"], out DateTime parsedStartDate))
+        //    {
+        //        startDate = parsedStartDate;
+        //    }
+
+        //    bool startDateFlexible = form["StartDateFlexible"] == "on";
+
+
+
+
+        //    //if (string.IsNullOrEmpty(typicalDuration))
+        //    //{
+        //    //    ModelState.AddModelError("typicalDuration", "Please enter the typical duration of care.");
+        //    //    return View(service);
+        //    //}
+        //    // Set days based on selection
+        //    string days = string.Empty;
+        //    if (weekdays)
+        //    {
+        //        days = "Sunday, Monday, Tuesday, Wednesday, Thursday";
+        //    }
+        //    if (weekends)
+        //    {
+        //        days = string.IsNullOrEmpty(days) ? "Friday, Saturday" : days + ", Friday, Saturday";
+        //    }
+
+
+
+
+
+
+        //    string scheduleType = string.Join(", ", new List<string>
+        //    {
+        //        weekdays ? "Weekdays" : null,
+        //        weekends ? "Weekends" : null,
+        //        evenings ? "Evenings" : null
+        //    }.Where(s => !string.IsNullOrEmpty(s)));
+
+        //    var serviceDetail = new ServiceDetail
+        //    {
+        //        ServiceID = id,
+        //        DetailType = service.ServiceName,
+        //        Frequency = frequency,
+        //        ScheduleType = scheduleType,
+        //        Duration = duration,
+        //        Days = days,
+        //        StartDate = startDate,
+        //        StartDateFlexible = startDateFlexible,
+        //        StartTime = startTime,
+        //        EndTime = endTime
+        //    };
+
+        //    try
+        //    {
+        //        db.ServiceDetails.Add(serviceDetail);
+        //        db.SaveChanges();
+
+        //        System.Diagnostics.Debug.WriteLine("ServiceDetail saved successfully with DetailID: " + serviceDetail.DetailID);
+        //    }
+        //    catch (DbEntityValidationException ex)
+        //    {
+        //        foreach (var validationErrors in ex.EntityValidationErrors)
+        //        {
+        //            foreach (var validationError in validationErrors.ValidationErrors)
+        //            {
+        //                System.Diagnostics.Debug.WriteLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+        //                ModelState.AddModelError(validationError.PropertyName, validationError.ErrorMessage);
+        //            }
+        //        }
+
+        //        return View(service);
+        //    }
+        //    Session["ServiceDetailID"] = serviceDetail.DetailID;
+        //    return RedirectToAction("SelectSitter", "Booking");
+        //}
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult BookService2(int id, FormCollection form)
@@ -143,25 +257,35 @@ namespace MasterPiece.Controllers
                 return HttpNotFound();
             }
 
-
+            // Parse times
             TimeSpan? startTime = TimeSpan.TryParse(form["StartTime"], out TimeSpan parsedStartTime) ? (TimeSpan?)parsedStartTime : null;
             TimeSpan? endTime = TimeSpan.TryParse(form["EndTime"], out TimeSpan parsedEndTime) ? (TimeSpan?)parsedEndTime : null;
             string duration = !string.IsNullOrEmpty(form["Duration"]) ? form["Duration"] : null;
 
-            // Check if StartTime and EndTime are valid
             if (!startTime.HasValue || !endTime.HasValue)
             {
                 ModelState.AddModelError("StartTime", "Please enter valid start and end times.");
-                return View(service); // Return the view with an error if times are invalid
+                return View(service); // Return view with error if times are invalid
             }
 
+            // Get care time (radio button value)
+            string careTime = form["careTime"]; // "weekdays", "weekends", or "evenings"
+            string days = string.Empty;
+
+            switch (careTime)
+            {
+                case "weekdays":
+                    days = "Sunday, Monday, Tuesday, Wednesday, Thursday";
+                    break;
+                case "weekends":
+                    days = "Friday, Saturday";
+                    break;
+                case "evenings":
+                    days = "Evenings"; // Adjust based on your business logic
+                    break;
+            }
 
             string frequency = form["frequency"];
-            bool weekdays = form["weekdays"] == "on";
-            bool weekends = form["weekends"] == "on";
-            bool evenings = form["evenings"] == "on";
-            //string typicalDuration = form["typicalDuration"];
-
             DateTime? startDate = null;
 
             if (DateTime.TryParse(form["StartDate"], out DateTime parsedStartDate))
@@ -171,43 +295,13 @@ namespace MasterPiece.Controllers
 
             bool startDateFlexible = form["StartDateFlexible"] == "on";
 
-
-
-
-            //if (string.IsNullOrEmpty(typicalDuration))
-            //{
-            //    ModelState.AddModelError("typicalDuration", "Please enter the typical duration of care.");
-            //    return View(service);
-            //}
-            // Set days based on selection
-            string days = string.Empty;
-            if (weekdays)
-            {
-                days = "Sunday, Monday, Tuesday, Wednesday, Thursday";
-            }
-            if (weekends)
-            {
-                days = string.IsNullOrEmpty(days) ? "Friday, Saturday" : days + ", Friday, Saturday";
-            }
-
-
-
-
-
-
-            string scheduleType = string.Join(", ", new List<string>
-            {
-                weekdays ? "Weekdays" : null,
-                weekends ? "Weekends" : null,
-                evenings ? "Evenings" : null
-            }.Where(s => !string.IsNullOrEmpty(s)));
-
+            // Create new ServiceDetail object and save to the database
             var serviceDetail = new ServiceDetail
             {
                 ServiceID = id,
                 DetailType = service.ServiceName,
                 Frequency = frequency,
-                ScheduleType = scheduleType,
+                ScheduleType = careTime, // Care time is now directly "weekdays", "weekends", or "evenings"
                 Duration = duration,
                 Days = days,
                 StartDate = startDate,
@@ -234,11 +328,14 @@ namespace MasterPiece.Controllers
                     }
                 }
 
-                return View(service);
+                return View(service); // Return view with validation errors
             }
+
             Session["ServiceDetailID"] = serviceDetail.DetailID;
             return RedirectToAction("SelectSitter", "Booking");
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult BookService3(int id, FormCollection form)

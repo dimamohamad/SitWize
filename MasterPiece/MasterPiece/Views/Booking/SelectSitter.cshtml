@@ -495,62 +495,64 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @*<script>
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        function updateSitters() {
-            var experienceRange = $('#ExperienceRange').val();
-            var hourlyRateRange = $('#HourlyRateRange').val();
+            function updateSitters() {
+                var experienceRange = $('#ExperienceRange').val();
+                var hourlyRateRange = $('#HourlyRateRange').val();
 
-            $.ajax({
-                url: '@Url.Action("FilterSitters", "Booking")',
-                type: 'GET',
-                data: {
-                    ExperienceRange: experienceRange,
-                    HourlyRateRange: hourlyRateRange
-                },
-                success: function (sitters) {
-                    var sittersHtml = '';
+                $.ajax({
+                    url: '@Url.Action("FilterSitters", "Booking")',
+                    type: 'GET',
+                    data: {
+                        ExperienceRange: experienceRange,
+                        HourlyRateRange: hourlyRateRange
+                    },
+                    success: function (sitters) {
+                        var sittersHtml = '';
 
-                    // Get the anti-forgery token
-                    var antiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
+                        // Get the anti-forgery token
+                        var antiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
 
-                    $.each(sitters, function (index, sitter) {
-                        sittersHtml += '<div class="col-md-12">' +
-                                       '<div class="card mb-4">' +
-                                       '<div class="row no-gutters">' +
-                                       '<div class="col-md-4">' +
-                                       '<img src="' + sitter.sitterImage + '" class="card-img" alt="' + sitter.FirstName + '">' +
-                                       '</div>' +
-                                       '<div class="col-md-8">' +
-                                       '<div class="card-body">' +
-                                       '<h5 class="card-title">' + sitter.FirstName + ' ' + sitter.LastName + '</h5>' +
-                                       '<p class="card-text">' + sitter.ExperienceYears + ' years paid experience</p>' +
-                                       '<p class="card-text"><strong>Price per Hour:</strong> $' + sitter.HourlyRate + '</p>' +
-                                       '<p class="card-text">' + sitter.Bio + '</p>' +
-                                       '<form action="@Url.Action("BookSitter", "Booking")" method="post">' +
-                                       '<input type="hidden" name="sitterId" value="' + sitter.SitterID + '">' +
-                                       '<input type="hidden" name="__RequestVerificationToken" value="' + antiForgeryToken + '">' +
-                                       '<input type="submit" class="btn btn-primary" value="Book">' +
-                                       '</form>' +
-                                       '</div>' +
-                                       '</div>' +
-                                       '</div>' +
-                                       '</div>' +
-                                       '</div>';
-                    });
+                        $.each(sitters, function (index, sitter) {
+                            sittersHtml += '<div class="col-md-12">' +
+                                           '<div class="card mb-4">' +
+                                           '<div class="row no-gutters">' +
+                                           '<div class="col-md-4">' +
+                                           '<img src="' + sitter.sitterImage + '" class="card-img" alt="' + sitter.FirstName + '">' +
+                                           '</div>' +
+                                           '<div class="col-md-8">' +
+                                           '<div class="card-body">' +
+                                           '<h5 class="card-title">' + sitter.FirstName + ' ' + sitter.LastName + '</h5>' +
+                                           '<p class="card-text">' + sitter.ExperienceYears + ' years paid experience</p>' +
+                                           '<p class="card-text"><strong>Price per Hour:</strong> $' + sitter.HourlyRate + '</p>' +
+                                           '<p class="card-text">' + sitter.Bio + '</p>' +
+                                           '<form action="@Url.Action("BookSitter", "Booking")" method="post">' +
+                                           '<input type="hidden" name="sitterId" value="' + sitter.SitterID + '">' +
+                                           '<input type="hidden" name="__RequestVerificationToken" value="' + antiForgeryToken + '">' +
+                                           '<input type="submit" class="btn btn-primary" value="Book">' +
+                                           '</form>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>' +
+                                           '</div>';
+                        });
 
-                    // Update the sitter list with the new HTML
-                    $('#sitters-list').html(sittersHtml);
-                }
+                        // Update the sitter list with the new HTML
+                        $('#sitters-list').html(sittersHtml);
+                    }
+                });
+            }
+
+            // Trigger update when the filters change
+            $('#ExperienceRange, #HourlyRateRange').on('change', function () {
+                updateSitters();
             });
-        }
-
-        // Trigger update when the filters change
-        $('#ExperienceRange, #HourlyRateRange').on('change', function () {
-            updateSitters();
         });
-    });
-</script>*@
+    </script>*@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     $(document).ready(function () {
         function updateSitters() {
@@ -609,5 +611,31 @@
         $('#ExperienceRange, #HourlyRateRange, #HasSpecialNeedsLicense').on('change', function () {
             updateSitters();
         });
+
+
+          @if (TempData["ShowLoginAlert"] != null)
+  {
+      <text>
+          Swal.fire({
+              icon: 'warning',
+              title: 'Login Required',
+              text: 'You need to log in to complete your booking with payment.',
+              showConfirmButton: true,
+              confirmButtonText: 'Login Now',
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  // Redirect to the login page after confirmation
+                  window.location.href = '@Url.Action("Login", "Account")';
+              }
+          });
+      </text>
+  }
     });
+
+
+
+
+
+
+
 </script>

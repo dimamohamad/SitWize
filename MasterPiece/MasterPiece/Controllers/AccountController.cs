@@ -18,19 +18,54 @@ namespace MasterPiece.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public ActionResult Register(User user, string confirmPassword)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (user.PasswordHash != confirmPassword)
+        //        {
+        //            ModelState.AddModelError("confirmPassword", "Passwords do not match.");
+        //            ViewBag.ShowPasswordMismatchAlert = true;
+        //            return View(user);
+
+
+        //        }
+
+
+        //        user.PasswordHash = HashPassword(user.PasswordHash);
+        //        user.CreatedAt = DateTime.Now;
+        //        user.UserType = "Parent";
+        //        db.Users.Add(user);
+        //        db.SaveChanges();
+        //        TempData["RegistrationSuccess"] = "You have successfully registered. Please login to continue.";
+
+        //        return RedirectToAction("Login");
+
+        //    }
+        //    return View(user);
+        //}
+
+
         [HttpPost]
         public ActionResult Register(User user, string confirmPassword)
         {
             if (ModelState.IsValid)
             {
+                var existingUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+                if (existingUser != null)
+                {
+                    // If email exists, trigger a SweetAlert error and return the view
+                    ViewBag.ShowEmailExistsAlert = true;
+                    return View(user);
+                }
+
                 if (user.PasswordHash != confirmPassword)
                 {
                     ModelState.AddModelError("confirmPassword", "Passwords do not match.");
+                    ViewBag.ShowPasswordMismatchAlert = true;
                     return View(user);
-
-
                 }
-
 
                 user.PasswordHash = HashPassword(user.PasswordHash);
                 user.CreatedAt = DateTime.Now;
@@ -38,9 +73,11 @@ namespace MasterPiece.Controllers
                 db.Users.Add(user);
                 db.SaveChanges();
 
-                return RedirectToAction("Login");
+                TempData["RegistrationSuccess"] = true; 
 
+                return RedirectToAction("Register"); 
             }
+
             return View(user);
         }
 
@@ -98,81 +135,210 @@ namespace MasterPiece.Controllers
 
 
         //}
+        //[HttpPost]
+        //public ActionResult Login(string email, string password)
+        //{
+
+        //    var user = db.Users.FirstOrDefault(u => u.Email == email);
+
+        //    if (user == null)
+        //    {
+        //        TempData["ErrorMessage"] = "The email you entered does not exist.";
+        //    }
+        //    else
+        //    {
+
+        //        string hashedPassword = HashPassword(password);
+
+        //        if (user.PasswordHash != hashedPassword)
+        //        {
+        //            TempData["ErrorMessage"] = "The password you entered is incorrect.";
+        //        }
+        //        else
+        //        {
+        //            var userId = user.UserID;
+        //            var completedBookings = db.Bookings
+        //                .Where(b => b.UserID == userId && b.Status == "Completed"
+        //                            && !b.Testimonials.Any(t => t.UserID == userId))
+        //                .ToList();
+
+        //            if (completedBookings.Any())
+        //            {
+        //                TempData["ShowTestimonialPopup"] = true;
+        //                TempData["CompletedBookingIds"] = completedBookings.Select(b => b.BookingID).ToList(); 
+        //            }
+
+
+
+
+
+
+
+        //            if (Session["ServiceDetailID"] != null)
+        //            {
+        //                Session["UserId"] = user.UserID;
+        //                Session["username"] = user.FirstName;
+        //                return RedirectToAction("SelectSitter", "Booking");
+        //            }
+        //            else
+        //            {
+        //                Session["UserId"] = user.UserID;
+        //                Session["username"] = user.FirstName;
+        //                return RedirectToAction("Index", "Home");
+        //            }
+        //        }
+        //    }
+
+        //    return RedirectToAction("Login");
+
+
+        //    //string hashedPassword = HashPassword(password);
+
+        //    //var user = db.Users.FirstOrDefault(u => u.Email == email && u.PasswordHash == hashedPassword);
+
+
+        //    //if (user != null)
+        //    //{
+
+        //    //    Session["UserId"] = user.UserID;
+        //    //    return RedirectToAction("Index", "Home");
+
+        //    //}
+
+        //    //ViewBag.ErrorMessage = "Invalid Email or password.";
+        //    //return View();
+
+
+        //}
+
+
+
+
+
+        //اخر لوجن زابط من هون
+
+        //        [HttpPost]
+        //public ActionResult Login(string email, string password)
+        //{
+        //    var user = db.Users.FirstOrDefault(u => u.Email == email);
+
+        //    if (user == null)
+        //    {
+        //        TempData["ErrorMessage"] = "The email you entered does not exist.";
+        //        return RedirectToAction("Login");
+        //    }
+
+
+        //    string hashedPassword = HashPassword(password);
+
+        //    if (user.PasswordHash != hashedPassword)
+        //    {
+        //        TempData["ErrorMessage"] = "The password you entered is incorrect.";
+        //        return RedirectToAction("Login");
+        //    }
+        //    else
+        //    {
+
+        //        var userId = user.UserID;
+        //        var completedBookings = db.Bookings
+        //            .Where(b => b.UserID == userId && b.Status == "Completed"
+        //                        && !b.Testimonials.Any(t => t.UserID == userId))
+        //            .ToList();
+
+        //        if (completedBookings.Any())
+        //        {
+        //            TempData["ShowTestimonialPopup"] = true;
+        //            TempData["CompletedBookingIds"] = completedBookings.Select(b => b.BookingID).ToList();
+        //        }
+
+
+        //        Session["UserId"] = user.UserID;
+        //        Session["username"] = user.FirstName;
+
+
+        //        if (Session["ServiceDetailID"] != null)
+        //        {
+
+        //            return RedirectToAction("SelectSitter", "Booking");
+        //        }
+        //        else
+        //        {
+
+        //            return RedirectToAction("Index", "Home");
+        //        }
+        //    }
+        //}
+
+        // تغيرت مع اخر بوكينغ شيلي الجدادا ورجعي هدول اخر لوجن زابط لعند هون
+
+
+
         [HttpPost]
-        public ActionResult Login(string email, string password)
-        {
+    public ActionResult Login(string email, string password)
+    {
 
             var user = db.Users.FirstOrDefault(u => u.Email == email);
-
             if (user == null)
             {
                 TempData["ErrorMessage"] = "The email you entered does not exist.";
+                return RedirectToAction("Login");
             }
-            else
+
+            string hashedPassword = HashPassword(password);
+            if (user.PasswordHash != hashedPassword)
             {
-
-                string hashedPassword = HashPassword(password);
-
-                if (user.PasswordHash != hashedPassword)
-                {
-                    TempData["ErrorMessage"] = "The password you entered is incorrect.";
-                }
-                else
-                {
-                    var userId = user.UserID;
-                    var completedBookings = db.Bookings
-                        .Where(b => b.UserID == userId && b.Status == "Completed"
-                                    && !b.Testimonials.Any(t => t.UserID == userId))
-                        .ToList();
-
-                    if (completedBookings.Any())
-                    {
-                        TempData["ShowTestimonialPopup"] = true;
-                        TempData["CompletedBookingIds"] = completedBookings.Select(b => b.BookingID).ToList(); 
-                    }
-
-
-
-
-
-
-
-                    if (Session["ServiceDetailID"] != null)
-                    {
-                        Session["UserId"] = user.UserID;
-                        Session["username"] = user.FirstName;
-                        return RedirectToAction("SelectSitter", "Booking");
-                    }
-                    else
-                    {
-                        Session["UserId"] = user.UserID;
-                        Session["username"] = user.FirstName;
-                        return RedirectToAction("Index", "Home");
-                    }
-                }
+                TempData["ErrorMessage"] = "The password you entered is incorrect.";
+                return RedirectToAction("Login");
             }
 
-            return RedirectToAction("Login");
+            Session["UserId"] = user.UserID;
+            Session["username"] = user.FirstName;
 
+            var userId = user.UserID;
+            var completedBookings = db.Bookings
+                .Where(b => b.UserID == userId && b.Status == "Completed"
+                            && !b.Testimonials.Any(t => t.UserID == userId))
+                .ToList();
 
-            //string hashedPassword = HashPassword(password);
+            if (completedBookings.Any())
+            {
+                TempData["ShowTestimonialPopup"] = true;
+                TempData["CompletedBookingIds"] = completedBookings.Select(b => b.BookingID).ToList();
+            }
 
-            //var user = db.Users.FirstOrDefault(u => u.Email == email && u.PasswordHash == hashedPassword);
+            if (Session["PendingBooking"] != null)
+            {
+                dynamic pendingBooking = Session["PendingBooking"];
 
+                var booking = new Booking
+                {
+                    UserID = userId,
+                    SitterID = pendingBooking.SitterID,
+                    ServiceID = pendingBooking.ServiceID,
+                    DetailID = pendingBooking.DetailID,
+                    BookingDate = DateTime.Now,
+                    Status = "Pending",
+                    CreatedAt = DateTime.Now,
+                    TotalAmount = pendingBooking.TotalAmount
+                };
 
-            //if (user != null)
+                db.Bookings.Add(booking);
+                db.SaveChanges();
+
+                Session["PendingBooking"] = null;
+
+                return RedirectToAction("Payment", "Booking", new { bookingId = booking.BookingID });
+            }
+
+            //if (Session["ServiceDetailID"] != null)
             //{
-
-            //    Session["UserId"] = user.UserID;
-            //    return RedirectToAction("Index", "Home");
-
+            //    return RedirectToAction("SelectSitter", "Booking");
             //}
 
-            //ViewBag.ErrorMessage = "Invalid Email or password.";
-            //return View();
-
-
+            return RedirectToAction("Index", "Home");
         }
+    
+
 
 
             private string HashPassword(string password)

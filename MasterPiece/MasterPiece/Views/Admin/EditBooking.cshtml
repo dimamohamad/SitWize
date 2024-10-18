@@ -37,7 +37,7 @@
                 </dl>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <strong> @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })</strong>
                     <div class="col-md-10">
                         @Html.DropDownListFor(model => model.Status, (SelectList)ViewBag.Statuses, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
@@ -57,3 +57,8 @@
         </div>
     </div>
 </div>
+<style>
+    select#Status{
+        width:17%;
+    }
+</style>

@@ -108,25 +108,52 @@
                     </select>
                 </div>
 
+                @*<div class="mb-3">
+                <label class="form-label">When do you typically need care?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="weekdays" name="weekdays">
+                    <label class="form-check-label" for="weekdays">Weekdays</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="weekends" name="weekends">
+                    <label class="form-check-label" for="weekends">Weekends</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="evenings" name="evenings">
+                    <label class="form-check-label" for="evenings">Evenings</label>
+                </div>
+            </div>*@
+
                 <div class="mb-3">
                     <label class="form-label">When do you typically need care?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="weekdays" name="weekdays">
+                        <input class="form-check-input" type="radio" id="weekdays" name="careTime" value="weekdays">
                         <label class="form-check-label" for="weekdays">Weekdays</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="weekends" name="weekends">
+                        <input class="form-check-input" type="radio" id="weekends" name="careTime" value="weekends">
                         <label class="form-check-label" for="weekends">Weekends</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="evenings" name="evenings">
+                        <input class="form-check-input" type="radio" id="evenings" name="careTime" value="evenings">
                         <label class="form-check-label" for="evenings">Evenings</label>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
                 @*<div class="mb-3">
-                    <label for="typicalDuration" class="form-label">Typical duration of care</label>
-                    <input type="text" class="form-control" id="typicalDuration" name="typicalDuration" placeholder="Enter the duration (e.g., 4 hours)" required>
-                </div>*@
+                <label for="typicalDuration" class="form-label">Typical duration of care</label>
+                <input type="text" class="form-control" id="typicalDuration" name="typicalDuration" placeholder="Enter the duration (e.g., 4 hours)" required>
+            </div>*@
 
                 @*<div class="mb-3">
                 <label for="typicalDuration" class="form-label">Typical duration of care</label>

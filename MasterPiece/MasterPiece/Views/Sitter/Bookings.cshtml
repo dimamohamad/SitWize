@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Your Bookings";
     Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
 
 <!DOCTYPE html>
@@ -25,6 +26,12 @@
         .card-header.bg-primary.text-white {
             background-color: #99005c !important;
         }
+        h2 {
+            text-align: center;
+            margin: 20px;
+        }
+
+       
 
     </style>
 </head>
@@ -37,7 +44,7 @@
                 <div class="col">
                     <div class="card h-100 booking-card">
                         <div class="card-header bg-primary text-white">
-                            Booking ID: @booking.BookingID
+                            Service Name: @booking.Service.ServiceName
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">@booking.User.FirstName @booking.User.LastName</h5>
@@ -50,7 +57,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <strong>Total Amount:</strong> $@(booking.TotalAmount?.ToString("F2") ?? "N/A")
+                            <strong>Total Amount:</strong> $@((booking.TotalAmount)*0.75m)
                         </div>
                     </div>
                 </div>

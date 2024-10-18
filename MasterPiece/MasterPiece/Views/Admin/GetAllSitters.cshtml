@@ -1,4 +1,287 @@
-﻿@model IEnumerable<MasterPiece.Models.Sitter>
+﻿@*@model IEnumerable<MasterPiece.Models.Sitter>
+
+    @{
+        ViewBag.Title = "GetAllSitters";
+        Layout = "~/Views/Shared/_Admin.cshtml";
+    }*@
+
+@*<div class="main-container">
+        <div class="pd-ltr-20">
+            <br />
+            <h1>All Sitters</h1>
+            <br />
+            <p>
+                @Html.ActionLink("Add Sitter", "AddSitter", null, new { @class = "btn btn-sm btn-primary1" })
+            </p>
+            <div class="table-container">
+                <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.sitterImage)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+
+                            <th scope="col">@Html.DisplayNameFor(model => model.ExperienceYears)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.HourlyRate)</th>
+
+                            <th scope="col">@Html.DisplayNameFor(model => model.LicensePath)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.CreatedAt)</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.FirstName @item.LastName</th>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.sitterImage))
+                                    {
+                                        <img src="~/Images/@item.sitterImage" alt="Sitter Image" style="width: 50px; height: 50px;" />
+                                    }
+                                    else
+                                    {
+                                        <span>No image</span>
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+
+                                <td>@Html.DisplayFor(modelItem => item.ExperienceYears)</td>
+                                <td>@Html.DisplayFor(modelItem => item.HourlyRate)</td>
+
+                                <td>
+                                    @if (string.IsNullOrEmpty(item.LicensePath))
+                                    {
+                                        <span>This sitter has no license for special needs care</span>
+                                    }
+                                    else
+                                    {
+                                <a href="@Url.Action("DownloadSitterLicense", "Admin", new { id = item.SitterID })" class="btn btn-sm btn-secondary"> <i class="fas fa-download"></i> License</a>
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                                <td>
+                                    <a href="@Url.Action("SitterDetails", new { id = item.SitterID })" class="btn btn-sm btn-dark">Details</a>
+
+                                    <a href="@Url.Action("SitterEdit", new { id = item.SitterID })" class="btn btn-sm btn-primary">Edit</a>
+
+                                    <a href="javascript:void(0);"
+                                       onclick="confirmDelete('@item.SitterID',
+                              '@item.FirstName',
+                              '@item.LastName',
+                              '@item.Email',
+                              '@item.PhoneNumber',
+                              '@item.ExperienceYears',
+                              '@item.HourlyRate',
+                              '@item.LicensePath')"
+                                       class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .table .thead-light th {
+            text-align: center;
+            color: #000;
+            vertical-align: middle;
+            background-color: #99005c;
+            border-color: #99005c;
+        }
+
+        .btn-dark {
+            color: #fff;
+            background-color: #495057;
+            border-color: #495057;
+            margin: 2px;
+            width: 58px;
+        }
+
+        th {
+            background-color: white;
+            text-align: center;
+        }
+
+        td {
+            background-color: white;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #1b00ff;
+            border-color: #1b00ff;
+            width: 59px;
+            margin: 2px;
+        }
+
+        .btn-primary1 {
+            color: #fff;
+            background-color: black;
+            border-color: black;
+            height: 36px;
+            text-align: center;
+            margin-left: 22px
+        }
+
+        .h1, h1 {
+            font-size: 37.37px;
+            text-align: center;
+            color: #103741;
+            font-family: 'Lobster Two', cursive;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @@media (max-width: 426px) {
+            .btn-primary {
+                color: #fff;
+                background-color: #1b00ff;
+                border-color: #1b00ff;
+                width: 59px;
+                margin: 2px;
+            }
+        }
+
+        .fa-book-reader:before {
+            content: "\f5da";
+            margin-left: 38px;
+        }
+
+        .text-primary {
+            color: #99005C !important;
+        }
+
+        .left-side-bar {
+            background-color: white;
+        }
+
+        .bi-file-earmark-text::before {
+            content: "\f38b";
+            color: #212529;
+        }
+
+        .sidebar-menu .dropdown-toggle {
+            display: block;
+            padding: 14px 15px 14px 67px;
+            font-size: 15px;
+            color: #000;
+            font-weight: 500;
+            position: relative;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+
+        .bi-house::before {
+            content: "\f425";
+            color: #000;
+        }
+
+        .sidebar-menu > ul > li > .dropdown-toggle.active {
+            background-color: rgba(236, 240, 244, .19);
+            color: black;
+        }
+
+        .header-left {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            height: 100%;
+            width: 50%;
+            background: #99005c;
+        }
+
+        .header-right {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            height: 70px;
+            width: 50%;
+            background-color: #99005c;
+        }
+
+        .toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+            background: rgba(236, 240, 244, .19);
+            color: #000;
+        }
+
+        .sidebar-menu .submenu li a {
+            display: block;
+            padding: 14px 15px 14px 60px;
+            font-size: 14px;
+            color: #000;
+            font-weight: 400;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-menu .dropdown-toggle:hover, .sidebar-menu .show > .dropdown-toggle {
+            background: rgba(236, 240, 244, .19);
+            color: #000;
+        }
+    </style>*@
+
+<!-- SweetAlert2 CDN -->
+<!--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    function confirmDelete(sitterId, firstName, lastName, email, phoneNumber, experienceYears, hourlyRate, licensePath) {
+
+        Swal.fire({
+            title: `Details for ${firstName} ${lastName}`,
+            html: `
+                <strong>Email:</strong> ${email} <br>
+                <strong>Phone Number:</strong> ${phoneNumber} <br>
+                <strong>Experience :</strong> ${experienceYears}(Years) <br>
+                <strong>Hourly Rate:</strong> $${hourlyRate} <br>
+                <strong>License:</strong> ${licensePath ? licensePath : 'this sitter has no license for special needs care'} <br>
+                <hr>
+                <strong style="color: red;">Are you sure you want to delete this sitter?</strong>
+            `,
+            icon: 'warning',  // Danger style
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'This action cannot be undone!',
+                    text: `Are you sure you want to permanently delete ${firstName} ${lastName}?`,
+                    icon: 'error',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6'
+                }).then((finalResult) => {
+                    if (finalResult.isConfirmed) {
+
+                        window.location.href = '@Url.Action("DeleteSitter", "Admin")/' + sitterId;
+                    }
+                });
+            }
+        });
+    }
+</script>-->
+
+@model IEnumerable<MasterPiece.Models.Sitter>
 
 @{
     ViewBag.Title = "GetAllSitters";
@@ -9,10 +292,30 @@
     <div class="pd-ltr-20">
         <br />
         <h1>All Sitters</h1>
+        <!-- Display error message if there is one -->
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <!-- Search Form -->
+        @using (Html.BeginForm("GetAllSitters", "Admin", FormMethod.Get, new { id = "searchForm" }))
+        {
+            <div class="input-group rounded mb-3" style="max-width: 350px; margin:20px auto;">
+                <input type="search" name="searchTerm" class="form-control rounded" placeholder="Search by name, email or phone number" aria-label="Search" aria-describedby="search-addon" value="@Request.QueryString["searchTerm"]" style="border: 1px solid #ced4da;" />
+                <span class="input-group-text border-0" id="search-addon" style="cursor: pointer; background-color: #99005c; color: white;" onclick="document.getElementById('searchForm').submit();">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        }
+
         <br />
         <p>
-            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary1" })
+            @Html.ActionLink("Add Sitter", "AddSitter", null, new { @class = "btn btn-sm btn-primary1" })
         </p>
+
         <div class="table-container">
             <table class="table table-bordered table-hover table-responsive-sm table-sm shadow-sm">
                 <thead class="thead-light">
@@ -21,10 +324,8 @@
                         <th scope="col">@Html.DisplayNameFor(model => model.sitterImage)</th>
                         <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
                         <th scope="col">@Html.DisplayNameFor(model => model.PhoneNumber)</th>
-
                         <th scope="col">@Html.DisplayNameFor(model => model.ExperienceYears)</th>
                         <th scope="col">@Html.DisplayNameFor(model => model.HourlyRate)</th>
-
                         <th scope="col">@Html.DisplayNameFor(model => model.LicensePath)</th>
                         <th scope="col">@Html.DisplayNameFor(model => model.CreatedAt)</th>
                         <th scope="col">Actions</th>
@@ -47,7 +348,6 @@
                             </td>
                             <td>@Html.DisplayFor(modelItem => item.Email)</td>
                             <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
-
                             <td>@Html.DisplayFor(modelItem => item.ExperienceYears)</td>
                             <td>@Html.DisplayFor(modelItem => item.HourlyRate)</td>
                             <td>
@@ -57,15 +357,15 @@
                                 }
                                 else
                                 {
-                                    @Html.DisplayFor(modelItem => item.LicensePath)
+                                    <a href="@Url.Action("DownloadSitterLicense", "Admin", new { id = item.SitterID })" class="btn btn-sm btn-secondary">
+                                        <i class="fas fa-download"></i> License
+                                    </a>
                                 }
                             </td>
                             <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
                             <td>
                                 <a href="@Url.Action("SitterDetails", new { id = item.SitterID })" class="btn btn-sm btn-dark">Details</a>
-
                                 <a href="@Url.Action("SitterEdit", new { id = item.SitterID })" class="btn btn-sm btn-primary">Edit</a>
-
                                 <a href="javascript:void(0);"
                                    onclick="confirmDelete('@item.SitterID',
                           '@item.FirstName',
@@ -85,6 +385,48 @@
     </div>
 </div>
 
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    function confirmDelete(sitterId, firstName, lastName, email, phoneNumber, experienceYears, hourlyRate, licensePath) {
+        Swal.fire({
+            title: `Details for ${firstName} ${lastName}`,
+            html: `
+                <strong>Email:</strong> ${email} <br>
+                <strong>Phone Number:</strong> ${phoneNumber} <br>
+                <strong>Experience :</strong> ${experienceYears}(Years) <br>
+                <strong>Hourly Rate:</strong> $${hourlyRate} <br>
+                <strong>License:</strong> ${licensePath ? licensePath : 'this sitter has no license for special needs care'} <br>
+                <hr>
+                <strong style="color: red;">Are you sure you want to delete this sitter?</strong>
+            `,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'This action cannot be undone!',
+                    text: `Are you sure you want to permanently delete ${firstName} ${lastName}?`,
+                    icon: 'error',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6'
+                }).then((finalResult) => {
+                    if (finalResult.isConfirmed) {
+                        window.location.href = '@Url.Action("DeleteSitter", "Admin")/' + sitterId;
+                    }
+                });
+            }
+        });
+    }
+</script>
 
 <style>
     .table .thead-light th {
@@ -234,49 +576,3 @@
         color: #000;
     }
 </style>
-
-<!-- SweetAlert2 CDN -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript">
-    function confirmDelete(sitterId, firstName, lastName, email, phoneNumber, experienceYears, hourlyRate, licensePath) {
-       
-        Swal.fire({
-            title: `Details for ${firstName} ${lastName}`,
-            html: `
-                <strong>Email:</strong> ${email} <br>
-                <strong>Phone Number:</strong> ${phoneNumber} <br>
-                <strong>Experience :</strong> ${experienceYears}(Years) <br>
-                <strong>Hourly Rate:</strong> $${hourlyRate} <br>
-                <strong>License:</strong> ${licensePath ? licensePath : 'this sitter has no license for special needs care'} <br>
-                <hr>
-                <strong style="color: red;">Are you sure you want to delete this sitter?</strong>
-            `,
-            icon: 'warning',  // Danger style
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
-            reverseButtons: true,
-            confirmButtonColor: '#d33',  
-            cancelButtonColor: '#3085d6' 
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: 'This action cannot be undone!',
-                    text: `Are you sure you want to permanently delete ${firstName} ${lastName}?`,
-                    icon: 'error',  
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'No, cancel!',
-                    confirmButtonColor: '#d33',  
-                    cancelButtonColor: '#3085d6' 
-                }).then((finalResult) => {
-                    if (finalResult.isConfirmed) {
-                        
-                        window.location.href = '@Url.Action("DeleteSitter", "Admin")/' + sitterId;
-                    }
-                });
-            }
-        });
-    }
-</script>
-

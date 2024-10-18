@@ -25,7 +25,7 @@
 
     .login-container h1 {
         color: #103741;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
 
     .login-container form {
@@ -82,11 +82,12 @@
         color: #777;
         margin-top: 10px;
     }
+    
 </style>
 
 <main>
     <div class="login-container">
-        <h1>SitWise</h1>
+        <h1 class="text-center">Welcome back, Sitter</h1>
 
         @using (Html.BeginForm("Login", "Sitter", FormMethod.Post, new { id = "loginForm" }))
         {

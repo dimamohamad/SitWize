@@ -6,6 +6,41 @@
 <title>@ViewBag.Title</title>
 
 <style>
+    .service-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .service-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    .disabled-card {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .facility-item {
+        transition: transform 0.3s ease;
+    }
+
+        .facility-item:not(.disabled-card):hover {
+            transform: translateY(-5px);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     .testimonial-item.bg-light.rounded.p-5 {
         height: 322px;
     }
@@ -250,7 +285,7 @@
         </div>
         <!-- Carousel End -->
         <!-- Facilities Start -->
-        <div class="container-xxl py-5">
+        @*<div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Our Services</h1>
@@ -312,9 +347,156 @@
                         </div>
                     </div>
                 </div>
-                >
+
+            </div>
+        </div>*@
+
+
+
+
+
+        @*lastedit*@
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3">Our Services</h1>
+                <p>
+                    At SitWise, we provide a range of customized child care solutions designed to fit your
+                    family's unique needs. From dependable babysitters for occasional needs to skilled nannies for
+                    full-time care, our dedicated professionals ensure your children receive exceptional support and
+                    attention. Whether you require care for newborns, school-age kids, or teenagers, we offer
+                    personalized services that adapt to your schedule and preferences.
+                </p>
+            </div>
+            <div class="container service-cards py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        @{
+                            var isDisabled = Session["sitterId"] != null;
+                            var disabledClass = isDisabled ? "disabled-card" : "";
+                        }
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                            @if (!isDisabled)
+                            {
+                                <a href="@Url.Action("BookService", "Service", new { id = 1 })" class="service-link">
+                                    <div class="facility-item">
+                                        <div class="facility-icon">
+                                            <img src="~/img/Light.svg" alt="Babysitter" class="img-fluid">
+                                        </div>
+                                        <div class="facility-text">
+                                            <h3 class="text-secondary mb-3">Regular Sitter</h3>
+                                            <p class="mb-0">Regular support for after school, weekdays, and weekends</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="facility-item disabled-card">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light.svg" alt="Babysitter" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-secondary mb-3">Regular Sitter</h3>
+                                        <p class="mb-0">Regular support for after school, weekdays, and weekends</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                            @if (!isDisabled)
+                            {
+                                <a href="@Url.Action("BookService", "Service", new { id = 4 })" class="service-link">
+                                    <div class="facility-item">
+                                        <div class="facility-icon">
+                                            <img src="~/img/Light (1).svg" alt="Nanny" class="img-fluid">
+                                        </div>
+                                        <div class="facility-text">
+                                            <h3 class="text-dark mb-3">Nanny</h3>
+                                            <p class="mb-0">Ongoing, usually 2-5 full weekdays</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="facility-item disabled-card">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (1).svg" alt="Nanny" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-dark mb-3">Nanny</h3>
+                                        <p class="mb-0">Ongoing, usually 2-5 full weekdays</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                            @if (!isDisabled)
+                            {
+                                <a href="@Url.Action("BookService", "Service", new { id = 5 })" class="service-link">
+                                    <div class="facility-item">
+                                        <div class="facility-icon">
+                                            <img src="~/img/Light (2).svg" alt="Special needs" class="img-fluid">
+                                        </div>
+                                        <div class="facility-text">
+                                            <h3 class="text-info mb-3">Special needs</h3>
+                                            <p class="mb-0">Specialized care to meet the individual needs of your child</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="facility-item disabled-card">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (2).svg" alt="Special needs" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-info mb-3">Special needs</h3>
+                                        <p class="mb-0">Specialized care to meet the individual needs of your child</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                            @if (!isDisabled)
+                            {
+                                <a href="@Url.Action("BookService", "Service", new { id = 2 })" class="service-link">
+                                    <div class="facility-item">
+                                        <div class="facility-icon">
+                                            <img src="~/img/Light (3).svg" alt="Tutoring" class="img-fluid">
+                                        </div>
+                                        <div class="facility-text">
+                                            <h3 class="text-warning mb-3">Occasional sitter</h3>
+                                            <p class="mb-0">As-needed for when you need care</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="facility-item disabled-card">
+                                    <div class="facility-icon">
+                                        <img src="~/img/Light (3).svg" alt="Tutoring" class="img-fluid">
+                                    </div>
+                                    <div class="facility-text">
+                                        <h3 class="text-warning mb-3">Occasional sitter</h3>
+                                        <p class="mb-0">As-needed for when you need care</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+
+
+
         <!-- Facilities End -->
         <!-- About Start -->
         <div class="container-xxl py-5">
@@ -470,7 +652,7 @@
                     {
                         <div class="testimonial-item bg-light rounded p-5">
                             <p class="fs-5" style="word-wrap: break-word; word-break: break-word;">
-                                @testimonial.Text 
+                                @testimonial.Text
                             </p>
                             <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
                                 <img class="img-fluid flex-shrink-0 rounded-circle"

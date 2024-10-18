@@ -44,9 +44,9 @@
     <p>
         @Html.ActionLink("Edit Profile", "Edit", new { id = Model.SitterID }) |
         @Html.ActionLink("Reset Password", "ResetPassword", new { id = Model.SitterID }) |
-        @Html.ActionLink("View Bookings", "Bookings", "Sitter", null, new { @class = "btn btn-info" })
+        @Html.ActionLink("View Bookings", "Bookings", "Sitter"@*, null, new { @class = "btn btn-info" }*@) |
 
-        @Html.ActionLink("Back to Home", "Index", "Sitter")
+        @Html.ActionLink("Back to Home", "Index", "Home")
     </p>
 </div>
 
